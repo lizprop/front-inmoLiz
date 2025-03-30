@@ -1,0 +1,15 @@
+.contGralFormulario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('../../Images/fondo-1.jpeg');
+    background-size: cover; 
+    background-position: center;
+}
+
+@media screen and (max-width: 550px){
+    .contGralFormulario{
+        height: auto;
+    }
+}

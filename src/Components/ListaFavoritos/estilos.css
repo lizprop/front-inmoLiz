@@ -1,0 +1,16 @@
+.cont-listaProps-fav{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+.cont-card-lista-props{
+    width: 95%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap; /* para el orden de las CARDS */
+    justify-content: center; /* eje x */
+    align-items: start;
+}

@@ -1,0 +1,72 @@
+.cont-home{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.cont-titulo-filtros-listaProps{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: azure;
+}
+.titulo-busqueda{
+    width: 900%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cont-filtros-props{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+.cont-filtros-home{
+    width: 80%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    background-image: url('../../Images/Textura-04.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.cont-listaProps-home{
+    width: 100%;
+    min-height: 709px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: start;
+}
+
+/* responsive */
+@media screen and (max-width: 760px) {
+    .cont-filtros-props{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .cont-filtros-home{
+        width: 90%;
+        border-radius: 10px;
+    }
+    .titulo-busqueda{
+        font-size: 17px;
+    }
+}
+@media screen and (max-width: 400px) {
+    .cont-listaProps-home{
+        width: 90%;
+    }
+}

@@ -1,0 +1,9 @@
+.emp-img{
+    width: 120%;
+    height: 300px;
+}
+.locacion-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

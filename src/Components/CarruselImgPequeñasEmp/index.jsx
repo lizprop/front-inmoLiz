@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import './styles.css';
 
-function CarruselImgPequeñas({ imagenes, indexImgActual, handleClick }) {
+function CarruselImgPequeñasEmp({ imagenes, indexImgActual, handleClick }) {
     const imgRefs = useRef([]);
 
     useEffect(() => {
@@ -18,15 +18,15 @@ function CarruselImgPequeñas({ imagenes, indexImgActual, handleClick }) {
         <div className="miniaturas-container">
             {imagenes?.map((img, index) => (
                 <img
-                    key={index}
-                    src={img.pequeña}
-                    alt={`Miniatura ${index + 1}`}
-                    className={`miniatura ${index === indexImgActual ? 'active' : ''}`}
-                    onClick={() => handleClick(index)}
-                />
+                key={index}
+                src={img.imagenChica}
+                alt={`Miniatura ${index + 1}`}
+                className={`miniatura ${index === indexImgActual ? 'active' : ''}`}
+                onClick={() => handleClick(index)}
+            />
             ))}
         </div>
     );
 }
 
-export default CarruselImgPequeñas;
+export default CarruselImgPequeñasEmp;

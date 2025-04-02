@@ -1,0 +1,12 @@
+.cont-emp-page{
+    background-color: var(--color-gris);
+}
+.titulo-props-emprendimientos{
+    color: black;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    border-bottom: 1px solid black;
+}

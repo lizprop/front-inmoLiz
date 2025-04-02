@@ -32,7 +32,9 @@ function Filtros({muestraVntaAlq, setOperacion, setTipoPropiedad, setAmbientes, 
             </div>
             {/* filtro Vnt / Alq */}
             <div className='cont-venta-alq'>
-                <FiltroVentaAlq setOperacion={setOperacion}/>
+                {
+                    muestraVntaAlq !== 'false' && <FiltroVentaAlq setOperacion={setOperacion}/>
+                }
             </div>
 
             <div className='cont-filtros'>

@@ -14,8 +14,9 @@ function PropsInternacionales() {
     const [ambientes, setAmbientes] = useState('0');
     const [precioMin, setPrecioMin] = useState(10000);
     const [precioMax, setPrecioMax] = useState(1000000);
+    const internacionales = true
     const [currentPage, setCurrentPage] = useState(1);
-    const allProps = useSelector(state => state.propiedades);
+    const allPropsInternacionales = useSelector(state => state.propiedades);
     const totalPropiedades = useSelector(state => state.totPropiedades);
     const dispatch = useDispatch();
     const propiedadesPorPagina = 12;
@@ -29,8 +30,8 @@ function PropsInternacionales() {
     }, []); // El array vacío asegura que se ejecute solo al montar el componente
     
     useEffect(() => {
-        dispatch(getProps(limit, offset, operacion, tipoPropiedad, ambientes, precioMin, precioMax));
-    }, [dispatch, limit, offset, operacion, tipoPropiedad, ambientes, precioMin, precioMax]);
+        dispatch(getProps(limit, offset, operacion, tipoPropiedad, ambientes, precioMin, precioMax, internacionales));
+    }, [dispatch, limit, offset, operacion, tipoPropiedad, ambientes, precioMin, precioMax, internacionales]);
 
     return (
         <div className='cont-page-venta'>
@@ -55,11 +56,11 @@ function PropsInternacionales() {
                             />
                         </div>
                         <div className='cont-listaProps-home'>
-                            <ListaPropiedades allProps={allProps} id='listaProps' />
+                            <ListaPropiedades allProps={allPropsInternacionales} id='listaProps' />
                             {
-                                allProps.length > 0 && (
+                                allPropsInternacionales.length > 0 && (
                                     <Paginacion
-                                        allProps={allProps}
+                                        allProps={allPropsInternacionales}
                                         currentPage={currentPage}
                                         onPageChange={setCurrentPage}
                                         totalPropiedades={totalPropiedades}

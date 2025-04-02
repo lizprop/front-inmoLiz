@@ -14,6 +14,7 @@ import Contactanos from './Pages/Contactanos';
 import Footbar from './Components/Footbar';
 import PropsInternacionales from './Pages/PropsInternacionales';
 import './App.css';
+import DetalleEmp from './Pages/DetalleEmprendimiento';
 
 function App() {
 
@@ -34,6 +35,7 @@ function App() {
             <Route path='/nosotros' element={<NosotrosPage />} />
             <Route path='/contacto' element={<Contactanos />} />
             <Route path='/detalle/:id' element={<DetalleProp />} />
+            <Route path='/detalleEmp/:id' element={<DetalleEmp />} />
             <Route path='/favoritos' element={<FavoritosPage />} />
             <Route path='*' element={<Home />} />
           </Routes>

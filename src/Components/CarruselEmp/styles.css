@@ -61,7 +61,7 @@
     position: fixed;
     display: flex;
     justify-content: center;
-    top: 70px;
+    top: 80px;
     /* centrar eje x */
     left: 50%;
     transform: translateX(-50%);

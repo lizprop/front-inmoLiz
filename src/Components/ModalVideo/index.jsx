@@ -5,8 +5,8 @@ import './estilos.css';
 
 function ModalVideo({video}) {
 
-    //"https://www.youtube.com/embed/M6tLJTwcp1g?si=KwGiXd2BA_f_HULF"
     const contexto = useContext(InmobiliariaContext);
+
 
     return (
         <div className='contModalVideo'>
@@ -32,7 +32,7 @@ function ModalVideo({video}) {
                         allowfullscreen
                     ></iframe>
                 ) : (
-                    <h2 style={{color:'white'}}>Por el momento no hay Viedo</h2>
+                    <h2 style={{color:'white'}}>Por el momento la propiedad no tiene Viedo</h2>
                 )
             }
         </div>

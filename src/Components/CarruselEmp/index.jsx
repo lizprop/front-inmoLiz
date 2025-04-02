@@ -3,11 +3,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { isOpenModalPicture } from '../../Redux/Actions';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import Modal from '../../Components/Modal';
-import CarruselImgPequeñas from '../CarruselImgPequeñas';
+import Modal from '../Modal';
+import CarruselImgPequeñasEmp from '../CarruselImgPequeñasEmp';
 import './styles.css';
 
-function Carrusel({imagenes}) {
+function CarruselEmp({imagenes}) {
 
     const [indexImgActual, setIndexImgActual] = useState(0);
     const dispatch = useDispatch();    
@@ -15,13 +15,13 @@ function Carrusel({imagenes}) {
     /* para tooltip */
     const [showTooltip, setShowTooltip] = useState(false);
     const tooltipTextImg = "Agrandar imágen";
-    
     const handleMouseEnter = () => {
         setShowTooltip(true);
     };
     const handleMouseLeave = () => {
         setShowTooltip(false);
     };
+
     const handleClickPrev = () => {
         if(indexImgActual === 0){ return }
         else{
@@ -49,10 +49,9 @@ function Carrusel({imagenes}) {
                 <button className='btn-carrusel-prev' onClick={() => handleClickPrev()}>
                     <ArrowBackIosNewIcon />
                 </button>
-
                 {/* imagen a mostrar */}
                 <img 
-                    src={imagenes[indexImgActual].original} 
+                    src={imagenes[indexImgActual].imagen} 
                     alt='' 
                     onClick={() => handleOpenModal()}
                     onMouseEnter={handleMouseEnter}
@@ -71,7 +70,7 @@ function Carrusel({imagenes}) {
 
             {/* cont imagenes pequeñas */}
             <div className='cont-imgs-peq'>
-                <CarruselImgPequeñas 
+                <CarruselImgPequeñasEmp 
                     imagenes={imagenes}
                     indexImgActual={indexImgActual}
                     handleClick={handleClick}
@@ -91,4 +90,4 @@ function Carrusel({imagenes}) {
     )
 }
 
-export default Carrusel
+export default CarruselEmp

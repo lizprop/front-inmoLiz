@@ -46,7 +46,7 @@ function CarruselModal({imagenes}) {
                             <b>X</b>
                         </button>
                     </div>
-                    <img src={imagenes[indexImgActual]} alt='' className='img-carruselM' />
+                    <img src={imagenes[indexImgActual].original || imagenes[indexImgActual].imagen} alt='' className='img-carruselM' />
                 </div>
 
                 {/* btn prox */}

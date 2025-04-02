@@ -1,18 +1,26 @@
 .contModalVideo{
     width: 95%;
-    height: 90%;
+    height: 600px;
     position: absolute;
-    top: 80px;
+    top: 0px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     background-color: black;
-    z-index: 5;
+    z-index: 1000;
 }
 
 .cont-btn-cierra-modalVideo{
     margin-top: 0;
     margin-bottom: 5px;
-    color: white;
+}
+
+/* respoonsive */
+@media screen and (max-width: 550px){
+    .contModalVideo{
+        width: 95%;
+        height: 500px;
+        z-index: 1000;
+    }
 }

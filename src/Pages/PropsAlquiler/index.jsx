@@ -43,7 +43,7 @@ function PropsVenta() {
                     <div className='cont-filtros-props'>
                         <div className='cont-filtros-home'>
                             <Filtros
-                                muestraVntaAlq='true'
+                                muestraVntaAlq='false'
                                 precioMin={precioMin}
                                 precioMax={precioMax}
                                 setPrecioMin={setPrecioMin}

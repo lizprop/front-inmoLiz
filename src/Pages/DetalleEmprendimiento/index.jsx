@@ -4,14 +4,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getEmprendimiento, resetEmprendimientos, } from '../../Redux/Actions';
 import { InmobiliariaContext } from '../../Context';
 import { formatDate } from '../../Helps';
-import MapProp from '../../components/MapaProp';
-import FormularioContacto from '../../components/FormularioContacto';
-import ModalVideo from '../../components/ModalVideo';
-import IconoUbicacion from '../../Imagenes/iconoUbicacion.png';
+import MapProp from '../../Components/MapaProp';
+import IconoUbicacion from '../../Images/Iconos/iconoUbicacion.png';
+import ModalVideo from '../../Components/ModalVideo';
+import FormularioContacto from '../../Components/FormularioContacto';
 import OndemandVideoIcon from '@mui/icons-material/OndemandVideo';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import Loading from '../../components/Loading';
-import CarruselEmp from '../../components/CarruselEmp';
+import Loading from '../../Components/Loading';
+import CarruselEmp from '../../Components/CarruselEmp';
+
 import './estilos.css';
 
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import Logo from '../../Images/logo-blanco.webp';
+import Logo from '../../Images/logoNuevo.jpeg';
 import './styles.css';
 
 function Footbar() {

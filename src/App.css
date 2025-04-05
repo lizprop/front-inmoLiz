@@ -1,6 +1,6 @@
 :root {
     --fondo-page: white;
-    --fondo-navbar: rgb(56, 56, 56);
+    --fondo-navbar: rgba(1, 22, 41); /* mismo q el del logo */
     --color-fuente: white;
 }
 
@@ -12,3 +12,8 @@
     align-items: start;
     background-color: var(--fondo-page);
 }
+
+/* quitar barra de scroll horizontal */ /* NO SE xq aparece */
+/* html {
+    overflow-x: hidden;
+} */

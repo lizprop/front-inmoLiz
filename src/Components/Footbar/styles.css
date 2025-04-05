@@ -9,7 +9,10 @@
     flex-direction: column;
     justify-content: center;  
     align-items: center;
-    background-color: black;
+    background-color: rgb(1, 22, 41);
+    /* background-image: url('../../Images/Textura-04.jpg');
+    background-size: cover;
+    background-position: center; */
 }
 .footer {
     width: 80%;
@@ -28,7 +31,8 @@ footer ul {
     width: 100%;
 }
 .logo-footbar {
-    height: 4rem;
+    width: 200px;
+    height: 200px;
 }
 footer ul li {
     display: inline-block;
@@ -63,6 +67,7 @@ footer ul li h2 {
     font-size: 15px;
     font-weight: 200;
     color: white;
+    text-decoration: none;
 }
 .contTodasMedidas{
     display: flex;

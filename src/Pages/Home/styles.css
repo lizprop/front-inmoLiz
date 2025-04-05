@@ -16,7 +16,7 @@
     background-color: azure;
 }
 .titulo-busqueda{
-    width: 900%;
+    width: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,9 +37,7 @@
     align-items: center;
     border-radius: 10px;
     margin-bottom: 20px;
-    background-image: url('../../Images/Textura-04.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-color: rgb(1, 22, 41);
 }
 .cont-listaProps-home{
     width: 100%;

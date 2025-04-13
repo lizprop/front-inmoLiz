@@ -9,7 +9,7 @@ function Filtros({muestraVntaAlq, setOperacion, setTipoPropiedad, setAmbientes, 
         'Depto', 'Casa', 'PH', 'Local', 
         'Oficina', 'Cochera', 'Terreno', 'Galpón',
     ];
-    const [ambientesLocal, setAmbientesLocal] = React.useState('0'); //estado para ver el tilde en los checkbox
+    const [ambientesLocal, setAmbientesLocal] = React.useState(); //estado para ver el tilde en los checkbox
 
     // Actualizar `ambientes` en Home y `ambientesLocal` en BarraLateral
     const handleAmbientes = (event) => {

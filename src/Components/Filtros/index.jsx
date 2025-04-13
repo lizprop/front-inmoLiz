@@ -56,6 +56,18 @@ function Filtros({muestraVntaAlq, setOperacion, setTipoPropiedad, setAmbientes, 
                 </div>
             </div>
 
+            {/* btn TODAS */}
+            <div className='cont-todas'>
+                <button 
+                    id='todas' 
+                    onClickTodas={handleClick} 
+                    className='btn-filtro'
+                    style={{marginTop: '0px'}}
+                >
+                    Todas
+                </button>
+            </div>
+
             <div className='cont-amb'>
                 <p className='p-ambientes' data-translate>Ambientes: </p>
                 <div className='cont-ambientes'>

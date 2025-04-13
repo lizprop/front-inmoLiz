@@ -12,7 +12,7 @@ function PropsVenta() {
     const loading = useSelector(state => state.loading);
     const [operacion, setOperacion] = useState('Venta');
     const [tipoPropiedad, setTipoPropiedad] = useState('todas');
-    const [ambientes, setAmbientes] = useState('0');
+    const [ambientes, setAmbientes] = useState();
     const [precioMin, setPrecioMin] = useState(10000);
     const [precioMax, setPrecioMax] = useState(1000000);
     const [currentPage, setCurrentPage] = useState(1);
@@ -30,8 +30,8 @@ function PropsVenta() {
     }, []); // El array vacío asegura que se ejecute solo al montar el componente
     
     useEffect(() => {
-        dispatch(getProps(limit, offset, operacion, tipoPropiedad, ambientes, precioMin, precioMax));
-    }, [dispatch, limit, offset, operacion, tipoPropiedad, ambientes, precioMin, precioMax]);
+            dispatch(getProps(limit, offset, operacion, tipoPropiedad, precioMin, precioMax, ambientes));
+        }, [dispatch, limit, offset, operacion, tipoPropiedad, ambientes, precioMin, precioMax]);
 
     return (
         <div className='cont-page-venta'>

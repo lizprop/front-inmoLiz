@@ -29,7 +29,7 @@ function PropsVenta() {
     }, []); // El array vacío asegura que se ejecute solo al montar el componente
     
     useEffect(() => {
-        dispatch(getProps(limit, offset, operacion, tipoPropiedad, ambientes, precioMin, precioMax));
+        dispatch(getProps(limit, offset, operacion, tipoPropiedad, precioMin, precioMax, ambientes));
     }, [dispatch, limit, offset, operacion, tipoPropiedad, ambientes, precioMin, precioMax]);
 
     return (

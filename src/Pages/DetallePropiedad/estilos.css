@@ -393,12 +393,12 @@
         margin-left: 10px;
         font-size: 20px;
         font-weight: 300;
-        color: var(--primary-color);
+        color: var(--color-fuente);
     }
     .detalle-titulo-direccion{
         margin: 3px;
         font-size: 17px;
-        color: var(--primary-color);
+        color: var(--color-fuente);
     }
     .cont-imagenes{
         width: 100%;

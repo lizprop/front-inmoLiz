@@ -25,7 +25,7 @@ function App() {
           <Navbar />
         </header>
 
-        <main>          
+        <main style={{ width: '100%' }}>          
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path='/ventas' element={<PropsVenta />} />

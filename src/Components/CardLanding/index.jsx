@@ -9,11 +9,11 @@ function CardLanding({imagen, titulo, url}) {
             <img className='img-tarjeta' src={imagen} alt='Imagen de la propiedad'/>
         </div>
         <div className='cont-titulo-tarjeta'>
-            <h2 className='titulo-tarjeta'>{titulo}</h2>
+            <h2 className='titulo-tarjeta' data-translate>{titulo}</h2>
         </div>
         <div className='cont-btn'>
             <NavLink to={`/${url}`} style={{textDecoration: 'none'}}>
-              <button className='btn-comprar'>Ingresar</button>
+              <button className='btn-comprar' data-translate>Ingresar</button>
             </NavLink>
         </div>
     </div>

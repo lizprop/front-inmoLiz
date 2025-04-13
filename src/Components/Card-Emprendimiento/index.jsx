@@ -16,7 +16,7 @@ function CardEmprendimiento({ id, imagen, direccionF, locacion, tituloPublicacio
         <div className='contCard'>
             {/* titulo */}
             <div className='card-title'>
-                <h2 className='titulo-card'>Emprendimiento</h2>
+                <h2 className='titulo-card' data-translate>Emprendimiento</h2>
             </div>
 
             {/* img + animacion + abre detalle */}
@@ -32,7 +32,7 @@ function CardEmprendimiento({ id, imagen, direccionF, locacion, tituloPublicacio
 
                     {/* msj detalle si hay hover */}
                     <div className={`detail ${showDetail ? 'show' : ''}`}>
-                        <p className='palabra-abre-detalle'>Detalle</p>
+                        <p className='palabra-abre-detalle' data-translate>Detalle</p>
                     </div>
                 </div>
             </NavLink>
@@ -40,11 +40,11 @@ function CardEmprendimiento({ id, imagen, direccionF, locacion, tituloPublicacio
             {/* info 1 */}
             <div className='card-info1'>
                 <div className='cont-titulo-publicacion'>
-                    <span className='tituloPublicacion'>{tituloPublicacion}</span>
+                    <span className='tituloPublicacion' data-translate>{tituloPublicacion}</span>
                 </div>
                 <div className='cont-info1'>
                     <img src={IconoUbicacion} alt='iconoUbi' style={{width:'30px', height:'30px'}}/>
-                    <span className='direccion-card'>
+                    <span className='direccion-card' data-translate>
                         {/* Barrio: {ubicacion.barrio} | */} {direccionF}
                     </span>
                 </div>
@@ -63,17 +63,17 @@ function CardEmprendimiento({ id, imagen, direccionF, locacion, tituloPublicacio
 
                 <div className='div-info2'>
                     <IconoAmb />
-                    <p className='info2'>Ambientes</p>
+                    <p className='info2' data-translate>Ambientes</p>
                 </div>
 
                 <div className='div-info2'>
                     <IconoDormitorio />
-                    <p className='info2'>Dormitorios</p>
+                    <p className='info2' data-translate>Dormitorios</p>
                 </div>
 
                 <div className='div-info2'>
                     <DirectionsCarIcon sx={{ color: 'rgba(171, 132, 94, 1)', width: '28px', height: '28px' }} />
-                    <p className='info2'>Cocheras</p>
+                    <p className='info2' data-translate>Cocheras</p>
                 </div>
             </div>
         </div>

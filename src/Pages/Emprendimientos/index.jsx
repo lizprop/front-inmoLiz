@@ -32,7 +32,7 @@ function Emprendimiento() {
                     <div className='cont-Venta cont-emp-page'>
                         <div className='cont-titulo-y-props-venta'>
                             <div className='cont-titulo-venta'>
-                                <p className='titulo-props-emprendimientos'>Emprendimientos y oportunidades de negocios</p>
+                                <p className='titulo-props-emprendimientos' data-translate>Emprendimientos y oportunidades de negocios</p>
                             </div>
                             <div className='cont-barraLateral-Y-listaProps-venta'>
                                 <ListaEmprendimientos allEmp={allEmp} />

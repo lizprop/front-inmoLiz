@@ -28,7 +28,7 @@ function Filtros({muestraVntaAlq, setOperacion, setTipoPropiedad, setAmbientes, 
     return (
         <div className='cont-filtros'>
             <div className='titulo-filtros'>
-                <h2>Personalizá tu búsqueda</h2>
+                <h2 data-translate>Personalizá tu búsqueda</h2>
             </div>
             {/* filtro Vnt / Alq */}
             <div className='cont-venta-alq'>
@@ -38,7 +38,7 @@ function Filtros({muestraVntaAlq, setOperacion, setTipoPropiedad, setAmbientes, 
             </div>
 
             <div className='cont-filtros'>
-                <h3>Tipo de propiedad</h3>
+                <h3 data-translate>Tipo de propiedad</h3>
                 <div className='cont-filtros-map'>
                 {
                     arrayFiltros.map((filtro, index) => (
@@ -57,7 +57,7 @@ function Filtros({muestraVntaAlq, setOperacion, setTipoPropiedad, setAmbientes, 
             </div>
 
             <div className='cont-amb'>
-                <p className='p-ambientes'>Ambientes: </p>
+                <p className='p-ambientes' data-translate>Ambientes: </p>
                 <div className='cont-ambientes'>
                     <div className='cont-ambiente-1'>
                         <input type='checkbox' id='1' value={1} checked={ambientesLocal === '1'} onChange={handleAmbientes} className='check-amb' />

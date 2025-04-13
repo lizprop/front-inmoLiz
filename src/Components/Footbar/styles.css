@@ -31,8 +31,7 @@ footer ul {
     width: 100%;
 }
 .logo-footbar {
-    width: 200px;
-    height: 200px;
+    height: 15rem;
 }
 footer ul li {
     display: inline-block;
@@ -111,8 +110,8 @@ footer ul li h2 {
         align-items: center;
     }
     .logo-footbar {
-        height: 3rem;
-        margin-top: 20px;
+        height: 10rem;
+        margin-top: 10px;
     }
     footer ul {
         flex-direction: column;

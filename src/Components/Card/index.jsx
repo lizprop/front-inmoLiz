@@ -18,7 +18,7 @@ function Card({ id, direccionF, cantCocheras, operacion, imagenes, tituloPublica
         <div className='contCard'>
             {/* titulo */}
             <div className='card-title'>
-                <h2 className='titulo-card'>{operacion[0].operacion}</h2>
+                <h2 className='titulo-card' data-translate>{operacion[0].operacion}</h2>
             </div>
 
             {/* img + animacion + abre detalle */}
@@ -34,7 +34,7 @@ function Card({ id, direccionF, cantCocheras, operacion, imagenes, tituloPublica
 
                     {/* msj detalle si hay hover */}
                     <div className={`detail ${showDetail ? 'show' : ''}`}>
-                        <p className='palabra-abre-detalle'>Detalle</p>
+                        <p className='palabra-abre-detalle' data-translate>Detalle</p>
                     </div>
                 </div>
             </NavLink>
@@ -42,11 +42,11 @@ function Card({ id, direccionF, cantCocheras, operacion, imagenes, tituloPublica
             {/* info 1 */}
             <div className='card-info1'>
                 <div className='cont-titulo-publicacion-card'>
-                    <span className='tituloPublicacion'>{tituloPublicacion}</span>
+                    <span className='tituloPublicacion' data-translate>{tituloPublicacion}</span>
                 </div>
                 <div className='cont-info1'>
                     <img src={IconoUbicacion} alt='iconoUbi' style={{width:'30px', height:'30px'}}/>
-                    <span className='direccion-card'>
+                    <span className='direccion-card' data-translate>
                         {/* Barrio: {ubicacion.barrio} | */} {direccionF}
                     </span>
                 </div>
@@ -79,7 +79,7 @@ function Card({ id, direccionF, cantCocheras, operacion, imagenes, tituloPublica
             <div className='card-info2'>
                 <div className='div-info2'>
                     <IconoSup />                    
-                    <p className='info2'>Superficie</p>
+                    <p className='info2' data-translate>Superficie</p>
                     <p className='info2'>{supTotal}m2</p>
                 </div>
 
@@ -88,19 +88,19 @@ function Card({ id, direccionF, cantCocheras, operacion, imagenes, tituloPublica
                         <>
                             <div className='div-info2'>
                                 <IconoAmb />
-                                <p className='info2'>Ambientes</p>
+                                <p className='info2' data-translate>Ambientes</p>
                                 <p className='info2'>{ambientes}</p>
                             </div>
 
                             <div className='div-info2'>
                                 <IconoDormitorio />
-                                <p className='info2'>Dormitorios</p>
+                                <p className='info2' data-translate>Dormitorios</p>
                                 <p className='info2'>{dormitorios}</p>
                             </div>
 
                             <div className='div-info2'>
                                 <DirectionsCarIcon sx={{ color: 'rgba(171, 132, 94, 1)', width: '28px', height: '28px' }} />
-                                <p className='info2'>Cocheras</p>
+                                <p className='info2' data-translate>Cocheras</p>
                                 <p className='info2'>{cantCocheras}</p>
                             </div>
                         </>

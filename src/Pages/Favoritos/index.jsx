@@ -39,7 +39,7 @@ function PropsVenta() {
                     <Loading />
                 ) : (
                     <div className='cont-titulo-filtros-listaProps'>
-                        <h1 className='titulo-busqueda'>Tus favoritos</h1>
+                        <h1 className='titulo-busqueda' data-translate>Tus favoritos</h1>
                     <div className='cont-filtros-props'>
                         <div className='cont-filtros-home'>
                             <Filtros

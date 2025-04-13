@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import './styles.css';
 import { InmobiliariaContext } from '../../Context';
+import './styles.css';
 
 function LanguageSelector() {
   const { traducirPagina } = useContext(InmobiliariaContext);

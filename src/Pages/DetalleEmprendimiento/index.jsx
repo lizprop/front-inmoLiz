@@ -75,7 +75,7 @@ function DetalleEmp(){
                             <div className='info-1'>
                                 {/* Titulo prop */}
                                 <div className='cont-titulo-detalle'>
-                                    <span className='detalle-titulo-prop'>
+                                    <span className='detalle-titulo-prop' data-translate>
                                         {emprendimiento.tituloPublicacion} || Fecha entrega: {formatDate(emprendimiento.fechaEntrega)}
                                     </span>
                                 </div>
@@ -97,7 +97,7 @@ function DetalleEmp(){
                                     {/* dirección */}
                                     <div className='cont-titulo-icono-direcc'>
                                         <img src={IconoUbicacion} alt='' style={{ width: '40px', height: '40px' }} />
-                                        <span className='detalle-titulo-direccion'>
+                                        <span className='detalle-titulo-direccion' data-translate>
                                             {emprendimiento.direccionF}
                                         </span>
                                     </div>
@@ -131,8 +131,7 @@ function DetalleEmp(){
 
                                 <div className='cont-form-contacto'>
                                     <FormularioContacto
-                                        tituloPublicacion={emprendimiento.tituloPublicacion}
-                                        
+                                        tituloPublicacion={emprendimiento.tituloPublicacion}                                        
                                     />
                                 </div>
                             </div>
@@ -140,10 +139,11 @@ function DetalleEmp(){
                             {/* descrip prop */}
                             <div className='cont-titulo-descripcion-form descripEmp'>
                                 <div className='cont-descrip detalleEmp'>
-                                    <p className='titulo-descrip-prop'>Descripción emprendimiento</p>
+                                    <p className='titulo-descrip-prop' data-translate>Descripción emprendimiento</p>
                                     {/* Renderizar HTML dentro de la descripción */}
                                         <p
                                             className="p-descrip-detalle"
+                                            data-translate
                                             dangerouslySetInnerHTML={{
                                                 __html: emprendimiento?.descripcion
                                                     ? emprendimiento.descripcion.replace(/\n/g, '<br />')
@@ -157,7 +157,7 @@ function DetalleEmp(){
 
                             {/* google map */}
                             <div className='cont-map'>
-                                <p className='p-titulo-mapa'>Ubicacion emprendimiento</p>
+                                <p className='p-titulo-mapa' data-translate>Ubicacion emprendimiento</p>
                                 <MapProp lat={emprendimiento.geolat} lng={emprendimiento.geolong} />
                             </div>
 

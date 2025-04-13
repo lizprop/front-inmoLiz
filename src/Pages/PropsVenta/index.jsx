@@ -40,7 +40,7 @@ function PropsVenta() {
                     <Loading />
                 ) : (
                     <div className='cont-titulo-filtros-listaProps'>
-                    <h1 className='titulo-busqueda'>Propiedades en venta</h1>
+                    <h1 className='titulo-busqueda' data-translate>Propiedades en venta</h1>
                     <div className='cont-filtros-props'>
                         <div className='cont-filtros-home'>
                             <Filtros

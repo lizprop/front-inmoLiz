@@ -16,7 +16,7 @@ function ListaPropiedadesPage() {
 
     return (
         <div className='cont-listaPropsAdmin'>
-            <h1>Lista de Propiedades</h1>
+            <h1 data-translate>Lista de Propiedades</h1>
             <div className='cont-tabla-page'>
                 <ListaPropiedades propiedades={propiedades}/>
             </div>

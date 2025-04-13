@@ -77,9 +77,9 @@ function DetalleProp(){
                             <div className='info-1'>
                                 {/* Titulo prop */}
                                 <div className='cont-titulo-detalle'>
-                                    <span className='detalle-titulo-prop'>
+                                    <p className='detalle-titulo-prop' data-translate>
                                         {propiedad.tituloPublicacion}
-                                    </span>
+                                    </p>
                                 </div>
 
                                 <div className='cont-btns-direccion'>
@@ -99,7 +99,7 @@ function DetalleProp(){
                                     {/* dirección */}
                                     <div className='cont-titulo-icono-direcc'>
                                         <img src={IconoUbicacion} alt='' style={{ width: '40px', height: '40px' }} />
-                                        <span className='detalle-titulo-direccion'>
+                                        <span className='detalle-titulo-direccion' data-translate>
                                             {propiedad.direccion}
                                         </span>
                                     </div>
@@ -142,10 +142,11 @@ function DetalleProp(){
                             {/* descrip prop */}
                             <div className='cont-titulo-descripcion-form'>
                                 <div className='cont-descrip'>
-                                    <p className='titulo-descrip-prop'>Descripción Propiedad</p>
+                                    <p className='titulo-descrip-prop' data-translate>Descripción Propiedad</p>
                                     {/* Renderizar HTML dentro de la descripción */}
                                         <p
                                             className="p-descrip-detalle"
+                                            data-translate
                                             dangerouslySetInnerHTML={{
                                                 __html: propiedad?.descripcion
                                                     ? propiedad.descripcion.replace(/\n/g, '<br />')
@@ -160,46 +161,46 @@ function DetalleProp(){
                                     <div className='col-descrip-prop'>
                                         <div className='col-descrip-prop-1'>
                                             <div className='cont-p-col-1'>
-                                                <p className='p-col-1'>Precio:</p>
+                                                <p className='p-col-1' data-translate>Precio:</p>
                                                 <p className='p-col-1'>{moneda}{formatMoney(precio)}</p>
                                             </div>
                                             <div className='cont-p-col-1'>
-                                                <p className='p-col-1'>Sup. Cubierta:</p>
+                                                <p className='p-col-1' data-translate>Sup. Cubierta:</p>
                                                 <p className='p-col-1'>{propiedad.supCubierta}{propiedad.unidadMedida}</p>
                                             </div>
                                             <div className='cont-p-col-1'>
-                                                <p className='p-col-1'>Sup. Total:</p>
+                                                <p className='p-col-1' data-translate>Sup. Total:</p>
                                                 <p className='p-col-1'>{propiedad.supTotal}{propiedad.unidadMedida}</p>
                                             </div>
                                             <div className='cont-p-col-1'>
-                                                <p className='p-col-1'>Dormitorios:</p>
+                                                <p className='p-col-1' data-translate>Dormitorios:</p>
                                                 <p className='p-col-1'>{propiedad.dormitorios}</p>
                                             </div>
                                         </div>
                                         <div className='col-descrip-prop-1'>
                                             <div className='cont-p-col-1'>
-                                                <p className='p-col-1'>Ambientes:</p>
+                                                <p className='p-col-1' data-translate>Ambientes:</p>
                                                 <p className='p-col-1'>{propiedad.ambientes}</p>
                                             </div>
                                             <div className='cont-p-col-1'>
-                                                <p className='p-col-1'>Baños:</p>
+                                                <p className='p-col-1' data-translate>Baños:</p>
                                                 <p className='p-col-1'>{propiedad.baños}</p>
                                             </div>
                                             <div className='cont-p-col-1'>
-                                                <p className='p-col-1'>Tipo Op:</p>
+                                                <p className='p-col-1' data-translate>Tipo Op:</p>
                                                 {
                                                     propiedad.operacion?.map(o => {
                                                         return (
                                                             <div key={o.operacion_id}>
-                                                                <p className='p-col-1'>{propiedad.operacion[0]?.operacion}</p>
+                                                                <p className='p-col-1' data-translate>{propiedad.operacion[0]?.operacion}</p>
                                                             </div>
                                                         )
                                                     })
                                                 }
                                             </div>
                                             <div className='cont-p-col-1'>
-                                                <p className='p-col-1'>Tipo:</p>
-                                                <p className='p-col-1'>{propiedad.tipo?.nombre}</p>
+                                                <p className='p-col-1' data-translate>Tipo:</p>
+                                                <p className='p-col-1' data-translate>{propiedad.tipo?.nombre}</p>
                                             </div>
                                         </div>
 
@@ -209,7 +210,7 @@ function DetalleProp(){
 
                             {/* google map */}
                             <div className='cont-map'>
-                                <p className='p-titulo-mapa'>Ubicacion Propiedad</p>
+                                <p className='p-titulo-mapa' data-translate>Ubicacion Propiedad</p>
                                 <MapProp lat={propiedad.geoLat} lng={propiedad.geoLong} />
                             </div>
 

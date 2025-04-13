@@ -12,13 +12,13 @@ function LandigA() {
             {/* contenedor de textos */}
             <div className='cont-textosLanding'>
                 <div className='cont-textoLanding-h1'>
-                    <h1 className='tituloLanding'>
+                    <h1 className='tituloLanding' data-translate>
                         Nuestros 50 años de experiencia nos respaldan...
                     </h1>
-                    <p className='textoLanding-p'>
+                    <p className='textoLanding-p' data-translate>
                         Encontrá la propiedad que estás buscando, en el lugar que siempre soñaste...
                     </p>
-                    <p className='texto-inf-landing'>
+                    <p className='texto-inf-landing' data-translate>
                     Trabajamos propiedades exclusivas...
                 </p>
                 </div>

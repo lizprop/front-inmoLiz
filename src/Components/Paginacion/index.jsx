@@ -24,11 +24,12 @@ function Paginacion({ currentPage, onPageChange, totalPropiedades, propiedadesPo
                 className="paginacion-button"
                 onClick={handlePrevPage}
                 disabled={currentPage === 1}
+                data-translate
             >
                 Anterior
             </button>
 
-            <span className="paginacion-info">
+            <span className="paginacion-info" data-translate>
                 Página {currentPage} de {totalPaginas}
             </span>
 
@@ -36,6 +37,7 @@ function Paginacion({ currentPage, onPageChange, totalPropiedades, propiedadesPo
                 className="paginacion-button"
                 onClick={handleNextPage}
                 disabled={currentPage === totalPaginas}
+                data-translate
             >
                 Siguiente
             </button>

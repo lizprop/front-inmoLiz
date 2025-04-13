@@ -19,18 +19,18 @@ function Footbar() {
                         <li>
                             <div className='divLinks'>
                                 <h2>
-                                    <p className='titulo-col-foot'>Encontranos en</p>
+                                    <p className='titulo-col-foot' data-translate>Encontranos en</p>
                                 </h2>
                                 <p className='info-contactos'>
-                                    De paula 569 - Azul
+                                    Gral. Roca 1238 - Mar del Plata
                                 </p>
 
                                 <p className='info-contactos'>
-                                    Whatsapp +54 9 2281 359060
+                                    Whatsapp +54 9 223 6162426
                                 </p>
 
                                 <p className='info-contactos'>
-                                    Forastieri.Propiedades@hotmail.com
+                                    mail
                                 </p>
                             </div>
                         </li>
@@ -38,13 +38,13 @@ function Footbar() {
                         <li>
                             <div className='divLinks'>
                             <h2>
-                                <p className='titulo-col-foot'>Seguinos</p>
+                                <p className='titulo-col-foot' data-translate>Seguinos</p>
                             </h2>
                             <div className='cont-iconos-redes'>
                                 <a href='https://www.instagram.com/jf.negociosinmobiliarios/'>
                                     <InstagramIcon sx={{'color':'rgba(255, 255, 255, 1)'}}/>
                                 </a>
-                                <a href='http://api.whatsapp.com/send?phone=2281359060'>
+                                <a href='http://api.whatsapp.com/send?phone=2236162426'>
                                     <WhatsAppIcon sx={{'color':'rgba(255, 255, 255, 1)'}}/>
                                 </a>
                                 </div>
@@ -54,14 +54,14 @@ function Footbar() {
                         <li>
                             <div className='divLinks'>
                                 <h2>
-                                    <p className='titulo-col-foot'>Links</p>
+                                    <p className='titulo-col-foot' data-translate>Links</p>
                                 </h2>
 
-                                <Link to={'/venta'} className='link-footbar'>Ventas</Link>
-                                <Link to={'/alquiler'} className='link-footbar'>Alquileres</Link>
-                                <Link to={'/destacadas'} className='link-footbar'>Destacadas</Link>
-                                <Link to={'/contacto'} className='link-footbar'>Contacto</Link>
-                                <Link to={'/nosotros'} className='link-footbar'>Nosotros</Link>
+                                <Link to={'/venta'} className='link-footbar' data-translate>Ventas</Link>
+                                <Link to={'/alquiler'} className='link-footbar' data-translate>Alquileres</Link>
+                                <Link to={'/emprendimientos'} className='link-footbar' data-translate>Emprendimientos</Link>
+                                <Link to={'/contacto'} className='link-footbar' data-translate>Contacto</Link>
+                                <Link to={'/nosotros'} className='link-footbar' data-translate>Nosotros</Link>
                             </div>
                         </li>
                     </ul>
@@ -69,13 +69,13 @@ function Footbar() {
             </div>    
             
             <div className='cont-info-derechos'>
-                <p className='info-derechos'>
+                <p data-translate className='info-derechos'>
                     Todas las medidas enunciadas son meramente orientativas, 
                     las medidas exactas serán las que se expresen en el respectivo 
                     título de propiedad de cada inmueble. Todas las fotos, 
                     imagenes y videos son meramente ilustrativos y no contractuales. 
                     Los precios enunciados son meramente orientativos y no contractuales..
-                    © 2024 Juan Forastieri Negocios Inmobiliario. DESARROLLO WEB: Marcos Forastiere
+                    © 2025 Ortiz Lizmar Propiedades. DESARROLLO WEB: Marcos Forastiere
                 </p>
             </div>
         </footer>

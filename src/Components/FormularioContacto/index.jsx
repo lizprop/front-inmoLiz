@@ -106,17 +106,17 @@ const FormularioContacto = ({ tituloPublicacion, codigoReferencia }) => {
 
                 <div className="form__group field">
                     <input required className="form__field" type="text" name='nombre' value={nombre} onChange={(e) => setNombre(e.target.value)} />
-                    <label className="form__label" htmlFor="name">Nombre y Apellido</label>
+                    <label className="form__label" htmlFor="name" data-translate>Nombre y Apellido</label>
                 </div>
 
                 <div className="form__group field">
                     <input required className="form__field" type="text" name='telefono' value={telefono} onChange={(e) => setTelefono(e.target.value)} />
-                    <label className="form__label" htmlFor="name">Telefono</label>
+                    <label className="form__label" htmlFor="name" data-translate>Telefono</label>
                 </div>
 
                 <div className="form__group field">
                     <input required className="form__field" type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-                    <label className="form__label" htmlFor="name">Email</label>
+                    <label className="form__label" htmlFor="name" data-translate>Email</label>
                 </div>
                 
                 <div className="form__group field">
@@ -138,6 +138,7 @@ const FormularioContacto = ({ tituloPublicacion, codigoReferencia }) => {
                             variant="outlined" 
                             type="submit"  
                             className='btn-form'
+                            data-translate
                         >
                             Enviar
                         </button>
@@ -145,6 +146,7 @@ const FormularioContacto = ({ tituloPublicacion, codigoReferencia }) => {
                             type='button' 
                             className='btn-form' 
                             onClick={handleLlamar}
+                            data-translate
                         >
                             Llamar
                         </button>

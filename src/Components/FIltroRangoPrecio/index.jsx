@@ -18,7 +18,7 @@ const FiltraPrecio = ({precioMin, precioMax, setPrecioMin, setPrecioMax, setCurr
 
     return (
         <div className="price-range-filter">
-            <h3 className='titulo-rango-precio'>Rango de precio</h3>
+            <h3 className='titulo-rango-precio' data-translate>Rango de precio</h3>
             <div className="price-range-slider">
                 <input 
                     type="range" 

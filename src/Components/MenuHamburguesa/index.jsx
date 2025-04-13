@@ -49,28 +49,28 @@ function MenuHamburguesa() {
             <div className={`cont-menuHamburguesa__menu ${menu ? 'open' : 'ocultar'}`}>
                 <ul className='ul-menuHamburguesa'>
                     <li onClick={toggleMenu}>
-                        <Link to='/' ref={el => menuItemsRef.current[0] = el}>Inicio</Link>
+                        <Link to='/' ref={el => menuItemsRef.current[0] = el} data-translate>Inicio</Link>
                     </li>
                     <li onClick={toggleMenu}>
-                        <Link to='/ventas' ref={el => menuItemsRef.current[1] = el}>Ventas</Link>
+                        <Link to='/ventas' ref={el => menuItemsRef.current[1] = el} data-translate>Ventas</Link>
                     </li>
                     <li onClick={toggleMenu}>
-                        <Link to='/alquileres' ref={el => menuItemsRef.current[2] = el}>Alquileres</Link>
+                        <Link to='/alquileres' ref={el => menuItemsRef.current[2] = el} data-translate>Alquileres</Link>
                     </li>
                     <li onClick={toggleMenu}>
-                        <Link to='/emprendimientos' ref={el => menuItemsRef.current[3] = el}>Emprendimientos</Link>
+                        <Link to='/emprendimientos' ref={el => menuItemsRef.current[3] = el} data-translate>Emprendimientos</Link>
                     </li>
                     <li onClick={toggleMenu}>
-                        <Link to='/internacional' ref={el => menuItemsRef.current[4] = el}>Internacional</Link>
+                        <Link to='/internacional' ref={el => menuItemsRef.current[4] = el} data-translate>Internacional</Link>
                     </li>
                     <li onClick={toggleMenu}>
-                        <Link to='/quienes-somos' ref={el => menuItemsRef.current[5] = el}>Quienes Somos</Link>
+                        <Link to='/quienes-somos' ref={el => menuItemsRef.current[5] = el} data-translate>Quienes Somos</Link>
                     </li>
                     <li onClick={toggleMenu}>
-                        <Link to='/contacto' ref={el => menuItemsRef.current[6] = el}>Contacto</Link>
+                        <Link to='/contacto' ref={el => menuItemsRef.current[6] = el} data-translate>Contacto</Link>
                     </li>
                     <li data-translate>
-                        <Link to='/favoritos' className={'navlink-navbarInf'}>Favoritos</Link>
+                        <Link to='/favoritos' className={'navlink-navbarInf'} data-translate>Favoritos</Link>
                     </li>
                 </ul>
             </div>

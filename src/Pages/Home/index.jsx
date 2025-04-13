@@ -50,7 +50,7 @@ function Home() {
                 <LandingMuestraTarjetas />
 
                 <div className='cont-titulo-filtros-listaProps'>
-                    <h1 className='titulo-busqueda'>Busqueda de propiedades personalizada</h1>
+                    <h1 className='titulo-busqueda' data-translate>Busqueda de propiedades personalizada</h1>
                     <div className='cont-filtros-props'>
                         <div className='cont-filtros-home'>
                             <Filtros

@@ -60,7 +60,7 @@ function Filtros({muestraVntaAlq, setOperacion, setTipoPropiedad, setAmbientes, 
             <div className='cont-todas'>
                 <button 
                     id='todas' 
-                    onClickTodas={handleClick} 
+                    onClick={handleClick} 
                     className='btn-filtro'
                     style={{marginTop: '0px'}}
                 >

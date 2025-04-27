@@ -1,10 +1,9 @@
 .cont-navbarSup{
     width: 100%;
-    height: 20px;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-color: rgb(56, 56, 56); */
 }
 .sub-cont-navbarSup{
     width: 90%;
@@ -29,6 +28,11 @@
 }
 
 /* responsive */
+@media screen and (max-width: 720px) {
+    .cont-navbarSup{
+        display: none;
+    }
+}
 @media screen and (max-width: 660px) {
     .p-tel-navSup{
         font-size: 12px;

@@ -10,7 +10,7 @@ function LandigA() {
                 <CarruselLnding />
             </div>
             {/* contenedor de textos */}
-            <div className='cont-textosLanding'>
+            <div className='cont-textosLanding' data-translate>
                 <div className='cont-textoLanding-h1'>
                     <h1 className='tituloLanding' data-translate>
                         Nuestros 50 años de experiencia nos respaldan...

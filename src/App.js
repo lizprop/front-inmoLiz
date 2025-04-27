@@ -13,8 +13,8 @@ import WhatsAppButton from './Components/BotonWhastApp';
 import Contactanos from './Pages/Contactanos';
 import Footbar from './Components/Footbar';
 import PropsInternacionales from './Pages/PropsInternacionales';
-import './App.css';
 import DetalleEmp from './Pages/DetalleEmprendimiento';
+import './App.css';
 
 function App() {
 
@@ -29,7 +29,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path='/ventas' element={<PropsVenta />} />
-            <Route path='/alquiler' element={<PropsAlquiler />} />
+            <Route path='/alquiler' element={<PropsAlquiler/>} />
             <Route path='/emprendimientos' element={<Emprendimientos />} />
             <Route path='/internacional' element={<PropsInternacionales />} />
             <Route path='/nosotros' element={<NosotrosPage />} />

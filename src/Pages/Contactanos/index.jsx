@@ -10,9 +10,9 @@ function Contactanos() {
     }, []);
 
     return (
-        <div className='contGralFormulario'> 
-            <div style={{width:'60%'}}>
-                <FormularioContacto />            
+        <div className='contGralFormulario'>
+            <div className='cont-formulario-page'>
+                <FormularioContacto />
             </div>
         </div>
     )

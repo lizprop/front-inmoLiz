@@ -13,7 +13,7 @@ function PropsVenta() {
     const [operacion, setOperacion] = useState('Venta');
     const [tipoPropiedad, setTipoPropiedad] = useState('todas');
     const [ambientes, setAmbientes] = useState();
-    const [precioMin, setPrecioMin] = useState(10000);
+    const [precioMin, setPrecioMin] = useState(100);
     const [precioMax, setPrecioMax] = useState(1000000);
     const [currentPage, setCurrentPage] = useState(1);
     const allProps = useSelector(state => state.propiedades);

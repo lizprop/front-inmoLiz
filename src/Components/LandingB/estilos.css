@@ -7,7 +7,6 @@
     background-image: url('../../Images/Textura-04.jpg');
     background-size: cover;
     background-position: center;
-    /* background-color: var(--fondo-navbar); */
 }
 .subCont-landing-b{
     width: 80%;
@@ -34,7 +33,9 @@
     align-items: center;
 }
 .logo-landing-B{
-    height: 6.5rem;
+    width: 230px;
+    height: 230px;
+    margin-top: 40px;
 }
 .cont-texto-landing-b{
     width: 100%;
@@ -93,7 +94,7 @@
         height: 600px;
     }
     .logo-landing-B{
-        height: 4.5rem;
+        
     }
     .cont-titulo-landing-b{
         width: 100%;
@@ -123,7 +124,9 @@
         height: 15%;
     }
     .logo-landing-B{
-        height: 4rem;
+        width: 130px;
+        height: 130px;
+        margin: 0;
     }
     .cont-texto-landing-b{
         height: 65%;

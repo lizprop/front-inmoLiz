@@ -55,7 +55,7 @@ function MenuHamburguesa() {
                         <Link to='/ventas' ref={el => menuItemsRef.current[1] = el} data-translate>Ventas</Link>
                     </li>
                     <li onClick={toggleMenu}>
-                        <Link to='/alquileres' ref={el => menuItemsRef.current[2] = el} data-translate>Alquileres</Link>
+                        <Link to='/alquiler' ref={el => menuItemsRef.current[2] = el} data-translate>Alquileres</Link>
                     </li>
                     <li onClick={toggleMenu}>
                         <Link to='/emprendimientos' ref={el => menuItemsRef.current[3] = el} data-translate>Emprendimientos</Link>
@@ -63,14 +63,14 @@ function MenuHamburguesa() {
                     <li onClick={toggleMenu}>
                         <Link to='/internacional' ref={el => menuItemsRef.current[4] = el} data-translate>Internacional</Link>
                     </li>
+                    <li data-translate>
+                        <Link to='/favoritos' className={'navlink-navbarInf'} data-translate>Favoritos</Link>
+                    </li>
                     <li onClick={toggleMenu}>
-                        <Link to='/quienes-somos' ref={el => menuItemsRef.current[5] = el} data-translate>Quienes Somos</Link>
+                        <Link to='/nosotros' ref={el => menuItemsRef.current[5] = el} data-translate>Quienes Somos</Link>
                     </li>
                     <li onClick={toggleMenu}>
                         <Link to='/contacto' ref={el => menuItemsRef.current[6] = el} data-translate>Contacto</Link>
-                    </li>
-                    <li data-translate>
-                        <Link to='/favoritos' className={'navlink-navbarInf'} data-translate>Favoritos</Link>
                     </li>
                 </ul>
             </div>

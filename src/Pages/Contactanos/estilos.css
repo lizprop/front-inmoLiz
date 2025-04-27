@@ -3,13 +3,30 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+    margin-top: 80px;
     background-image: url('../../Images/fondo-1.jpeg');
     background-size: cover; 
     background-position: center;
 }
-
-@media screen and (max-width: 550px){
+.cont-formulario-page {
+    width: 60%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0px;
+}
+@media screen and (max-width: 600px){
     .contGralFormulario{
         height: auto;
+    }
+    .cont-formulario-page {
+        width: 80%;
+        
+    }
+}
+@media screen and (max-width: 450px){
+    .cont-formulario-page {
+        width: 95%;        
     }
 }

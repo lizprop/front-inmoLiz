@@ -84,7 +84,7 @@ function Card({ id, direccionF, cantCocheras, operacion, imagenes, tituloPublica
                 </div>
 
                 {
-                    tipo.name !== "Terreno" && (
+                    tipo?.name !== "Terreno" && (
                         <>
                             <div className='div-info2'>
                                 <IconoAmb />

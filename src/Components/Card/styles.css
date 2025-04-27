@@ -2,7 +2,7 @@
     position: relative; /* es para Al paea el mouse funcione la opcacidad y msj detalle */
     display: grid;
     grid-template-columns: 420px; /* ANCHO CARD */
-    grid-template-rows: 50px 270px 155px 100px;
+    grid-template-rows: 45px 270px 155px 100px;
     grid-template-areas: "title" "image" "info1" "info2";
     /* box-shadow:  2px 5px rgba(0, 0, 0, 0.9); */
     font-family: roboto;

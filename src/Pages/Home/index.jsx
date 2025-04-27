@@ -21,7 +21,7 @@ function Home() {
     const [operacion, setOperacion] = useState('');
     const [tipoPropiedad, setTipoPropiedad] = useState('todas'); 
     const [ambientes, setAmbientes] = useState(); //en el back lo convierto a int
-    const [precioMin, setPrecioMin] = useState(1000);
+    const [precioMin, setPrecioMin] = useState(100);
     const [precioMax, setPrecioMax] = useState(10000000);
     //estados para paginación
     const [currentPage, setCurrentPage] = useState(1);

@@ -10,7 +10,7 @@ function NavbarSup() {
             <div className='sub-cont-navbarSup'>
                 <div className='cont-navbarSup__tel'>
                     <LocalPhoneIcon sx={{ fontSize: 15, color: 'white' }} />
-                    <p className='p-tel-navSup'>02236871534</p>
+                    <p className='p-tel-navSup'>226162426</p>
                 </div>
                 <div className='cont-navbarSup__email'>
                     <EmailIcon sx={{ fontSize: 15, color: 'white' }} />

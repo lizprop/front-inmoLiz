@@ -57,7 +57,7 @@ function Footbar() {
                                     <p className='titulo-col-foot' data-translate>Links</p>
                                 </h2>
 
-                                <Link to={'/venta'} className='link-footbar' data-translate>Ventas</Link>
+                                <Link to={'/ventas'} className='link-footbar' data-translate>Ventas</Link>
                                 <Link to={'/alquiler'} className='link-footbar' data-translate>Alquileres</Link>
                                 <Link to={'/emprendimientos'} className='link-footbar' data-translate>Emprendimientos</Link>
                                 <Link to={'/contacto'} className='link-footbar' data-translate>Contacto</Link>

@@ -13,7 +13,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: azure;
+    background-color: #EEEEED;
 }
 .titulo-busqueda{
     width: 90%;
@@ -29,7 +29,8 @@
     justify-content: start;
     align-items: center;
 }
-.cont-filtros-home{
+.cont-filtros-home,
+.cont-filtros-select{
     width: 80%;
     height: auto;
     display: flex;
@@ -38,6 +39,9 @@
     border-radius: 10px;
     margin-bottom: 20px;
     background-color: rgb(1, 22, 41);
+}
+.cont-filtros-select{
+    background-color: white;
 }
 .cont-listaProps-home{
     width: 100%;

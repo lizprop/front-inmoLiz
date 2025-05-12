@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import LogoTextoNegro from '../../Images/logo-blanco.webp';
 import './styles.css';
 
 const FormularioContacto = ({ tituloPublicacion, codigoReferencia }) => { 
@@ -8,7 +6,6 @@ const FormularioContacto = ({ tituloPublicacion, codigoReferencia }) => {
     const [telefono, setTelefono] = useState('');
     const [email, setEmail] = useState('');
     const numeroTelefonoAsignado = "2234422665";
-    
     // Iniciamos el mensaje vacío
     const [mensaje, setMensaje] = useState('');
 
@@ -34,8 +31,6 @@ const FormularioContacto = ({ tituloPublicacion, codigoReferencia }) => {
                 },
                 body: JSON.stringify(payload),
             });
-            console.log("entré");
-            console.log("resp:", response);
             if (response.ok) {
                 const text = await response.text();
                 if (text) {
@@ -67,11 +62,6 @@ const FormularioContacto = ({ tituloPublicacion, codigoReferencia }) => {
 
     const handleLlamar = () => {
         window.location.href = `tel:${numeroTelefonoAsignado}`;
-    };
-
-    const handleWhatsApp = () => {
-        const mensajeWhatsApp = `Hola, me llamo ${nombre} y estoy interesado en la propiedad ${codigoReferencia}. ${tituloPublicacion}`;
-        window.open(`https://wa.me/${numeroTelefonoAsignado}?text=${encodeURIComponent(mensajeWhatsApp)}`, '_blank');
     };
 
     // Ajustar la altura del textarea dinámicamente
@@ -146,12 +136,7 @@ const FormularioContacto = ({ tituloPublicacion, codigoReferencia }) => {
                             Llamar
                         </button>
                     </div>
-                    <div className='cont-btn-form-whatsApp'>                        
-                        <button type='button' className='btn-form-whatsApp' onClick={handleWhatsApp}>
-                            <WhatsAppIcon style={{ width: '25px', height: '25px', color: 'green' }} />    
-                            WhatsApp
-                        </button>
-                    </div>
+                    
                 </div>
         </form>
     );

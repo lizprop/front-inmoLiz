@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProps } from '../../Redux/Actions';
 import LandingA from '../../Components/LandingA';
-import LandingB from '../../Components/LandingB';
 import LandingC from '../../Components/LandingC';
 import Loading from '../../Components/Loading';
 import LandingMuestraTarjetas from '../../Components/LandingMuestraTarjetas';
@@ -45,9 +44,6 @@ function Home() {
         ) : (
             <div className='cont-home page'>
                 <LandingA />
-                <LandingB />
-                <LandingC />
-                <LandingMuestraTarjetas />
 
                 <div className='cont-titulo-filtros-listaProps'>
                     <h1 className='titulo-busqueda' data-translate>Busqueda de propiedades personalizada</h1>
@@ -81,6 +77,9 @@ function Home() {
                         </div>
                     </div>
                 </div>
+
+                <LandingC />
+                <LandingMuestraTarjetas />
             </div>
         )
     )

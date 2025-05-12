@@ -1,8 +1,4 @@
 .contFooter{
-    /*
-    position: fixed;
-    bottom: 0; */ /*SI quiero q qde fija como pie de pag o en el view heigth*/
-    /* left: 0; */
     width: 100%;
     height: auto;  
     display: flex;
@@ -10,9 +6,6 @@
     justify-content: center;  
     align-items: center;
     background-color: rgb(1, 22, 41);
-    /* background-image: url('../../Images/Textura-04.jpg');
-    background-size: cover;
-    background-position: center; */
 }
 .footer {
     width: 80%;

@@ -1,11 +1,11 @@
 .cont-landing-A{
     width: 100%;
-    height: 700px;
+    height: 100lvh;
     position: relative;
 }
 .cont-carruselLanding{
     width: 100%;
-    height: 700px;
+    height: 100lvh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,8 +17,8 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 700px;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+    height: 100lvh;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
     pointer-events: none;
 }
 .cont-textosLanding{
@@ -61,7 +61,7 @@
     }
 }
 .tituloLanding, .textoLanding-p, .texto-inf-landing {
-    color: var(--color-fuente);
+    color: white;
     text-align: center;
     margin-bottom: 10px;
 }
@@ -85,8 +85,8 @@
     align-items: center;
 }
 .logoNuevoLanding{
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     border-radius: 20px;
 }
 /* animación */

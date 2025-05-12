@@ -26,7 +26,7 @@
 }
 /* col-2-logo-navbarInf */
 .col-2-logo-navbarInf{
-    width: 10%;
+    width: 12%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,22 +38,33 @@
     align-items: center;
 }
 /* logos */
-.logo-navbarInf{
-    position: relative;
-    width: 140px;
-    height: 140px;
-    top: 10px;
-}
 .logo-navbarInfR{
     position: relative;
-    width: 100px;
-    height: 80px;
+    height: 3rem;
     top: -15px;
+    border-radius: 10px;
 }
 .logo-navbarInf:hover{
     cursor: pointer;
     border-radius: 20px;
     background-color: rgb(50, 50, 50);
+}
+/* nombre y palabra prop */
+.cont-ortizLizmar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.nav-nombre{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0;
+}
+.p-propiedades{
+    font-size: 12px;
+    margin: 0;
 }
 .items-nav{
     width: 90%;

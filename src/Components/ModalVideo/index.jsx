@@ -7,12 +7,11 @@ function ModalVideo({video}) {
 
     const contexto = useContext(InmobiliariaContext);
 
-
     return (
         <div className='contModalVideo'>
             <div className='cont-btn-cierra-modalVideo'>
                 <button
-                    className='btn-close-modal'
+                    className='btn-close-modal-img'
                     onClick={() => contexto.handleIsClose()}
                 >
                     <b>X</b>

@@ -4,7 +4,7 @@ import './estilos.css'; // Archivo CSS para los estilos del mapa
 const MapProp = ({ lat,lng }) => {
 
     //apikey google map
-    const apiKey = process.env.REACT_APP_API_GOOGLE_MAP;
+    const apiKey = "AIzaSyBRL5HhMoPtnSqZ5VjFR6rbpMu0ZsRLTxc";
 
     // Función para generar la URL de Google Maps con la dirección proporcionada
     const generateMapUrl = (lat, lng) => {

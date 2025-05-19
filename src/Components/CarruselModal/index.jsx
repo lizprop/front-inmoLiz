@@ -40,7 +40,7 @@ function CarruselModal({imagenes}) {
                 <div className='cont-img-carruselM-btnCierraModal'>
                     <div className='cont-btn-cierra-modal'>
                         <button
-                            className='btn-close-modal'
+                            className='btn-close-modal-img'
                             onClick={() => handleOnclickClose()}
                         >
                             <b>X</b>

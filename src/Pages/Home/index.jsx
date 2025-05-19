@@ -5,10 +5,11 @@ import LandingA from '../../Components/LandingA';
 import LandingC from '../../Components/LandingC';
 import Loading from '../../Components/Loading';
 import LandingMuestraTarjetas from '../../Components/LandingMuestraTarjetas';
-import Filtros from '../../Components/Filtros';
+//import Filtros from '../../Components/Filtros';
 import ListaPropiedades from '../../Components/ListaPropiedades';
 import Paginacion from '../../Components/Paginacion';
 import './styles.css';
+import FiltrosSelect from '../../Components/FiltrosSelect';
 
 
 function Home() {
@@ -18,10 +19,10 @@ function Home() {
     const totalPropiedades = useSelector(state => state.totPropiedades);
     //estados para las propiedades
     const [operacion, setOperacion] = useState('');
-    const [tipoPropiedad, setTipoPropiedad] = useState('todas'); 
+    const [tipoPropiedad, setTipoPropiedad] = useState('Todas'); 
     const [ambientes, setAmbientes] = useState(); //en el back lo convierto a int
-    const [precioMin, setPrecioMin] = useState(100);
-    const [precioMax, setPrecioMax] = useState(10000000);
+    const [precioMin, setPrecioMin] = useState();
+    const [precioMax, setPrecioMax] = useState();
     //estados para paginación
     const [currentPage, setCurrentPage] = useState(1);
     const propiedadesPorPagina = 12;
@@ -49,7 +50,18 @@ function Home() {
                     <h1 className='titulo-busqueda' data-translate>Busqueda de propiedades personalizada</h1>
                     <div className='cont-filtros-props'>
                         <div className='cont-filtros-home'>
-                            <Filtros
+                            {/* <Filtros
+                                muestraVntaAlq='true'
+                                precioMin={precioMin}
+                                precioMax={precioMax}
+                                setPrecioMin={setPrecioMin}
+                                setPrecioMax={setPrecioMax}
+                                setCurrentPage={setCurrentPage}
+                                setOperacion={setOperacion}
+                                setTipoPropiedad={setTipoPropiedad}
+                                setAmbientes={setAmbientes}
+                            /> */}
+                            <FiltrosSelect
                                 muestraVntaAlq='true'
                                 precioMin={precioMin}
                                 precioMax={precioMax}
@@ -61,6 +73,7 @@ function Home() {
                                 setAmbientes={setAmbientes}
                             />
                         </div>
+                        {/* lista props */}
                         <div className='cont-listaProps-home'>
                             <ListaPropiedades allProps={allProps} id='listaProps' />
                             {

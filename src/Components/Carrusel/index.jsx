@@ -12,16 +12,7 @@ function Carrusel({imagenes}) {
     const [indexImgActual, setIndexImgActual] = useState(0);
     const dispatch = useDispatch();    
     const isOpen = useSelector(state => state.isOpenModalPicture);
-    /* para tooltip */
-    const [showTooltip, setShowTooltip] = useState(false);
-    const tooltipTextImg = "Agrandar imágen";
-    
-    const handleMouseEnter = () => {
-        setShowTooltip(true);
-    };
-    const handleMouseLeave = () => {
-        setShowTooltip(false);
-    };
+
     const handleClickPrev = () => {
         if(indexImgActual === 0){ return }
         else{
@@ -55,14 +46,8 @@ function Carrusel({imagenes}) {
                     src={imagenes[indexImgActual].original} 
                     alt='' 
                     onClick={() => handleOpenModal()}
-                    onMouseEnter={handleMouseEnter}
-                    onMouseLeave={handleMouseLeave}
                     className='img-carrusel'
                 />
-                {/* msj toolTip "Agranda imagen"*/}
-                {
-                    showTooltip && <div className="tooltipImg">{tooltipTextImg}</div>
-                }
                 {/* btn prox */}
                 <button className='btn-carrusel-next' onClick={() => handleClickNext()}>
                     <ArrowForwardIosIcon />

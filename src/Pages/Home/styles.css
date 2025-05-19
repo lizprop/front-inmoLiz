@@ -26,25 +26,21 @@
     height: auto;
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
 }
-.cont-filtros-home,
-.cont-filtros-select{
-    width: 80%;
+.cont-filtros-home{
+    width: 1230px;
     height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
     margin-bottom: 20px;
-    background-color: rgb(1, 22, 41);
-}
-.cont-filtros-select{
-    background-color: white;
+    margin-right: 25px;
 }
 .cont-listaProps-home{
-    width: 100%;
+    width: 1300px;
     min-height: 709px;
     display: flex;
     flex-wrap: wrap;

@@ -10,20 +10,20 @@
 .cont-btn-cierra-modal{
     width: 70px;
     position: relative;
-    top: 30px;
-    left: 0;
+    top: 28px;
+    left: -20px;
     z-index: 1;
 }
 .mesaj-pos-horizontal{
     display: none;
 }
-.btn-close-modal{
+.btn-close-modal-img{
     border-radius: 50%;
     border: none;
     width: auto;
     height: auto;
-    color: var(--primary-color);
-    background-color: var(--color-negro-logo);
+    color: red;
+    background-color: black;
     cursor: pointer;
     font-size: 20px;
 }

@@ -1,0 +1,81 @@
+.cont-filtrosSelect{
+    width: 100%;
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    /* background-color: rgb(107, 108, 108); */
+}
+.subCont-filtrosSelect{
+    width: 100%;
+    height: 140px;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+.cont-filtro-tipoOperacion{
+    height: 40%;
+}
+.focoCompra{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: black;
+    width: 150px;
+    height: 100%;
+    font-size: 18px;
+    border: none;
+}
+/* div selects */
+.cont-selects{
+    width: 100%;
+    height: 60%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 5px;
+    background-color: white;
+}
+.select-tipoProp{
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    font-size: 15px;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    background-color: rgb(223, 223, 224);
+}
+/* precios */
+.cont-filtro-precioMaxMin {
+    position: relative;
+    width: 300px;
+    height: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    padding: 20px 10px 10px;
+    border-radius: 5px;
+}
+.cont-filtro-precioMaxMin label {
+    position: absolute;
+    top: -10px;
+    left: 10px;;
+    background: white;
+    /* Asegura que el texto no se mezcle con el fondo */
+    padding: 0 5px;
+    font-size: 14px;
+    color: black;
+}
+.input-precioMin{
+    width: 130px;
+    font-size: 14px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid rgb(152, 152, 152);
+    background-color: rgb(223, 223, 224);
+}

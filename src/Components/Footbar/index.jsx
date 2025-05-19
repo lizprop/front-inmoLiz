@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import Logo from '../../Images/logoNuevo.jpeg';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import FacebookIcon from '@mui/icons-material/Facebook';
 import './styles.css';
 
 function Footbar() {
@@ -37,16 +39,42 @@ function Footbar() {
                         {/* Redes */}
                         <li>
                             <div className='divLinks'>
-                            <h2>
-                                <p className='titulo-col-foot' data-translate>Seguinos</p>
-                            </h2>
-                            <div className='cont-iconos-redes'>
-                                <a href='https://www.instagram.com/jf.negociosinmobiliarios/'>
-                                    <InstagramIcon sx={{'color':'rgba(255, 255, 255, 1)'}}/>
-                                </a>
-                                <a href='http://api.whatsapp.com/send?phone=2236162426'>
-                                    <WhatsAppIcon sx={{'color':'rgba(255, 255, 255, 1)'}}/>
-                                </a>
+                                <h2>
+                                    <p className='titulo-col-foot' data-translate>Seguinos</p>
+                                </h2>
+                                <div className='cont-iconos-redes'>
+                                    <a
+                                        href="https://www.facebook.com/OrtizLizmarPropiedades"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        style={{ marginLeft: '5px' }}
+                                    >
+                                        <InstagramIcon sx={{ 'color': 'rgba(255, 255, 255, 1)' }} />
+                                    </a>
+                                    <a 
+                                        href='http://api.whatsapp.com/send?phone=2236162426'
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        style={{ marginLeft: '5px' }}
+                                    >
+                                        <WhatsAppIcon sx={{ 'color': 'rgba(255, 255, 255, 1)' }} />
+                                    </a>
+                                    <a 
+                                        href='https://www.youtube.com/@OLpropiedades/videos' 
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        style={{ marginLeft: '5px' }}
+                                    >
+                                        <YouTubeIcon sx={{ 'color': 'rgba(255, 255, 255, 1)' }} />
+                                    </a>
+                                    <a 
+                                        href='https://www.facebook.com/OrtizLizmarPropiedades'
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        style={{ marginLeft: '5px' }}
+                                    >
+                                        <FacebookIcon sx={{ 'color': 'rgba(255, 255, 255, 1)' }} />
+                                    </a>
                                 </div>
                             </div>
                         </li>
@@ -66,14 +94,14 @@ function Footbar() {
                         </li>
                     </ul>
                 </div>
-            </div>    
-            
+            </div>
+
             <div className='cont-info-derechos'>
                 <p data-translate className='info-derechos'>
-                    Todas las medidas enunciadas son meramente orientativas, 
-                    las medidas exactas serán las que se expresen en el respectivo 
-                    título de propiedad de cada inmueble. Todas las fotos, 
-                    imagenes y videos son meramente ilustrativos y no contractuales. 
+                    Todas las medidas enunciadas son meramente orientativas,
+                    las medidas exactas serán las que se expresen en el respectivo
+                    título de propiedad de cada inmueble. Todas las fotos,
+                    imagenes y videos son meramente ilustrativos y no contractuales.
                     Los precios enunciados son meramente orientativos y no contractuales..
                     © 2025 Ortiz Lizmar Propiedades. DESARROLLO WEB: Marcos Forastiere
                 </p>

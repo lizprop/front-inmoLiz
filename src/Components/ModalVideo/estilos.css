@@ -1,8 +1,8 @@
 .contModalVideo{
-    width: 95%;
-    height: 600px;
+    width: 90%;
+    height: 620px;
     position: absolute;
-    top: 0px;
+    top: 80px;
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -15,7 +15,6 @@
     margin-top: 0;
     margin-bottom: 5px;
 }
-
 /* respoonsive */
 @media screen and (max-width: 550px){
     .contModalVideo{

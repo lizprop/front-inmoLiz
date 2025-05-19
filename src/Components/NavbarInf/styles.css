@@ -95,12 +95,18 @@
 
 
 /* responsive */
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1300px) {
+    .col-2-logo-navbarInf{
+        width: 15%;
+    }
+    .nav-nombre{
+        font-size: 15px;
+    }
     .ul-navbarInf > li{
         font-size: 15px;
     }
 }
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 780px) {
     /* col-1 */
     .items-nav{
         display: none;
@@ -113,6 +119,9 @@
         width: 100px;
         height: 80px;
         top: 0px;
+    }
+    .col-2-logo-navbarInf{
+        width: 50%;
     }
 }
 

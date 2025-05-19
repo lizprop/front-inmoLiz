@@ -34,6 +34,7 @@
     height: 550px;
     border-radius: 10px;
     margin-top: 20px;
+    cursor: zoom-in;
 }
 .btn-carrusel-next{
     right: 10px;

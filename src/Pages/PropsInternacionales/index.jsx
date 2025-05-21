@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProps } from '../../Redux/Actions';
-import Filtros from '../../Components/Filtros';
+import FiltrosSelect from '../../Components/FiltrosSelect';
 import ListaPropiedades from '../../Components/ListaPropiedades';
 import Paginacion from '../../Components/Paginacion';
 import Loading from '../../Components/Loading';
@@ -43,17 +43,17 @@ function PropsInternacionales() {
                     <h1 className='titulo-busqueda' data-translate>Propiedades en el exterior</h1>
                     <div className='cont-filtros-props'>
                         <div className='cont-filtros-home'>
-                            <Filtros
-                                muestraVntaAlq='true'
-                                precioMin={precioMin}
-                                precioMax={precioMax}
-                                setPrecioMin={setPrecioMin}
-                                setPrecioMax={setPrecioMax}
-                                setCurrentPage={setCurrentPage}
-                                setOperacion={setOperacion}
-                                setTipoPropiedad={setTipoPropiedad}
-                                setAmbientes={setAmbientes}
-                            />
+                            <FiltrosSelect
+                                    muestraVntaAlq='true'
+                                    precioMin={precioMin}
+                                    precioMax={precioMax}
+                                    setPrecioMin={setPrecioMin}
+                                    setPrecioMax={setPrecioMax}
+                                    setCurrentPage={setCurrentPage}
+                                    setOperacion={setOperacion}
+                                    setTipoPropiedad={setTipoPropiedad}
+                                    setAmbientes={setAmbientes}
+                                />
                         </div>
                         <div className='cont-listaProps-home'>
                             <ListaPropiedades allProps={allPropsInternacionales} id='listaProps' />

@@ -1,8 +1,25 @@
 .cont-emp-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 80px;
     background-color: var(--color-gris);
 }
+.cont-titulo-y-props-venta{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.cont-titulo-emp{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .titulo-props-emprendimientos{
+    width: 80%;
     color: black;
     font-size: 20px;
     font-weight: 700;

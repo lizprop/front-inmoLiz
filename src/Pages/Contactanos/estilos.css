@@ -1,12 +1,30 @@
 .contGralFormulario{
+    height: 100lvh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin-top: 80px;
     background-image: url('../../Images/fondo-1.jpeg');
     background-size: cover; 
     background-position: center;
+}
+.subcont-contacto{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.subCont{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: rgb(244, 247, 246);
+}
+.cont-info-Contacto{
+    display: flex;
+    justify-content: start;
+    align-items: center;
 }
 .cont-formulario-page {
     width: 60%;

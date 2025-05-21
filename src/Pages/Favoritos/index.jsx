@@ -3,7 +3,7 @@ import ListaFavoritos from '../../Components/ListaFavoritos';
 import './styles.css';
 
 function FavoritosPage() {
-    const [fav, setFav] = useState([]); console.log("fav:", fav)
+    const [fav, setFav] = useState([]);
 
     // Desplaza la página hacia la parte superior cuando el componente se monta
     useEffect(() => {
@@ -17,7 +17,7 @@ function FavoritosPage() {
 
 
     return (
-        <div >
+        <div className='page-favoritos'>
             <ListaFavoritos allProps={fav} />            
         </div>
     )

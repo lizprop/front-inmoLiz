@@ -4,6 +4,7 @@
     --color-fuente: black;
     --gris-fondo: #EEEEED
 }
+
 .app-container {
     display: flex;
     flex-direction: column;

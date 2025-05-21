@@ -15,7 +15,7 @@ function NavbarSup() {
                 <div className='cont-navbarSup__email'>
                     <EmailIcon sx={{ fontSize: 15, color: 'white' }} />
                     <a href="mailto: info@ortizlizmar" className='a-email-navSup'>
-                        <p className='p-tel-navSup'>info@ortizlizmar</p>
+                        <p className='p-tel-navSup'>info@ortizlizmar.com</p>
                     </a>
                 </div>
             </div>

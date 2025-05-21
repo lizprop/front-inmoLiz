@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getEmprendimientos } from '../../Redux/Actions';
-import WhatsAppButton from '../../Components/BotonWhastApp';
 import Loading from '../../Components/Loading';
 import ListaEmprendimientos from '../../Components/ListaEmprendimientos';
 import './styles.css';
@@ -24,22 +23,21 @@ function Emprendimiento() {
     },[dispatch]);
 
     return (
-        <div>
+        <div className='cont-emp-page'>
             {
                 loading ? (
                     <Loading />
-                ) : (
-                    <div className='cont-Venta cont-emp-page'>
+                ) : (                    
                         <div className='cont-titulo-y-props-venta'>
-                            <div className='cont-titulo-venta'>
+                            <div className='cont-titulo-emp'>
                                 <p className='titulo-props-emprendimientos' data-translate>Emprendimientos y oportunidades de negocios</p>
                             </div>
                             <div className='cont-barraLateral-Y-listaProps-venta'>
                                 <ListaEmprendimientos allEmp={allEmp} />
                             </div>
                         </div>
-                        <WhatsAppButton />
-                    </div>
+                    
+                    
                 )
             }
         </div>

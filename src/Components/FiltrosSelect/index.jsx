@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import './style.css'
 
 function FiltrosSelect ({muestraVntaAlq, setOperacion, setTipoPropiedad, setAmbientes, precioMin, precioMax, setPrecioMin, setPrecioMax, setCurrentPage}) {

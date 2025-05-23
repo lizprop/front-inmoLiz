@@ -4,7 +4,7 @@ import './estilos.css'; // Archivo CSS para los estilos del mapa
 const MapProp = ({ lat,lng }) => {
 
     //apikey google map
-    const apiKey = "AIzaSyBRL5HhMoPtnSqZ5VjFR6rbpMu0ZsRLTxc";
+    const apiKey = process.env.REACT_APP_API_GOOGLE_MAP;
 
     // Función para generar la URL de Google Maps con la dirección proporcionada
     const generateMapUrl = (lat, lng) => {
@@ -13,14 +13,12 @@ const MapProp = ({ lat,lng }) => {
     };
 
     return (
-        <div className="map-container">
-            <iframe
-                title="Map"
-                className="map"
-                src={generateMapUrl(lat, lng)}
-                allowFullScreen
-            ></iframe>
-        </div>
+        <iframe
+            title="Map"
+            className="map"
+            src={generateMapUrl(lat, lng)}
+            allowFullScreen
+        ></iframe>
     );
 };
 

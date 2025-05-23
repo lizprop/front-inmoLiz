@@ -22,21 +22,21 @@ function Contactanos() {
             <div className='subcont-contacto'>
                 <div className='subCont'>
                     <div className='cont-dataOficina'>
-                        <div>
+                        <div className='cont-contacto-info-1'>
                             <h2>Nuestra oficina</h2>
-                            <div className='cont-info-Contacto'>
+                            <div className='sub-cont-info-Contacto-1'>
                                 <RoomIcon sx={{ marginRight: '5px' }} />
                                 <p>Gral. Roca 1238 - Mar del Plata</p>
                             </div>
                         </div>
 
-                        <div>
+                        <div className='cont-contacto-info-2'>
                             <h2>Información de contacto</h2>
-                            <div className='cont-info-Contacto'>
+                            <div className='sub-cont-info-Contacto-2'>
                                 <EmailIcon sx={{ marginRight: '5px' }} />
                                 <p>info@ortizlizmar.com</p>
                             </div>
-                            <div className='cont-info-Contacto'>
+                            <div className='sub-cont-info-Contacto-2'>
                                 <CallIcon sx={{ marginRight: '5px' }} />
                                 <p>2236162426</p>
                             </div>
@@ -81,7 +81,7 @@ function Contactanos() {
                         </div>
                     </div>
                     <div className='cont-mapaOfi'>
-                        <MapaProp /* lat={} lng={} */ />
+                        <MapaProp lat={-38.019081} lng={-57.543701} /> 
                     </div>
                 </div>
                 <div className='cont-formulario-page'>

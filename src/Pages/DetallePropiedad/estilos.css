@@ -12,7 +12,7 @@
 
 /* div con la info*/
 .cont-detail {
-    width: 95%;
+    width: 80vw;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -24,21 +24,20 @@
 
 /* estilos seccion titulo y btn atras, video */
 .info-1 {
-    width: 90%;
+    width: 100%;
     height: 80px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: start;
+    align-items: center;
     margin-top: 10px;
     margin-bottom: 10px;
-    background-color: var(--fondo-navbar);
     border-radius: 10px;
-    padding: 10px;
+    background-color: var(--fondo-navbar);
 }
 
 .cont-btn_Y_tituilo-precio {
-    width: 100%;
+    width: 95%;
     height: 80px;
     display: flex;
     justify-content: center;
@@ -68,7 +67,7 @@
 }
 
 .cont-btns-direccion {
-    width: 50%;
+    width: 95%;
     height: 30px;
     display: flex;
     justify-content: start;
@@ -114,7 +113,7 @@
 /* estilos seccion imagenes */
 .cont-imgs-info {
     position: relative;
-    width: 90%;
+    width: 100%;
     height: 750px;
     display: flex;
     justify-content: space-around;
@@ -213,15 +212,8 @@
 }
 
 /* cont descr  */
-.cont-titulo-descripcion-form {
-    display: flex;
-    justify-content: space-around;
-    align-items: start;
-    width: 95%;
-}
-
 .cont-descrip {
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -229,6 +221,12 @@
     border-radius: 20px;
     background-color: var(--fondo-navbar);
     margin-bottom: 40px;
+}
+.cont-titulo-descripcion-form {
+    width: 95%;
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
 }
 
 .caracteristicas-prop {
@@ -294,7 +292,7 @@
 
 /* detalles */
 .cont-texto-descrip-detalle {
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -331,19 +329,25 @@
 
 /* mapa */
 .cont-map-detalle {
-    width: 70%;
+    width: 100%;
     height: 500px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* sombra derecha e inferior */
 }
-
 .p-titulo-mapa {
-    width: 250px;
+    width: 80%;
     font-size: 23px;
     font-weight: 200;
     padding: 10px;
     border-radius: 10px;
     color: rgb(4, 4, 4);
 }
-
+.cont-mapa-detalle{
+    height: 400px;
+}
 /* responsive */
 @media screen and (max-width: 1100px) {
     .info-1 {

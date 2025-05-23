@@ -87,8 +87,8 @@ function FiltrosSelect ({muestraVntaAlq, setOperacion, setTipoPropiedad, setAmbi
                         />
                         <input 
                             type="number" 
-                            value={precioMin} 
-                            onChange={(e) => setPrecioMin(e.target.value)} 
+                            value={precioMax} 
+                            onChange={(e) => setPrecioMax(e.target.value)} 
                             placeholder="Hasta" 
                             className="input-precioMin"
                         />

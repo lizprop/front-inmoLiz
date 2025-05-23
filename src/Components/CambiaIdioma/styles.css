@@ -1,0 +1,30 @@
+.select-language{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    color: white;
+    border: none;
+    background-image: url('../../Images/Textura-04.jpg');
+    background-size: cover;
+    background-position: center;
+    /* background-color: rgb(56, 56, 56); */
+    z-index: 1;
+}
+.opc-select-language{   
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    background-color: transparent;
+    color: black;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+}
+
+/* responsive */
+@media screen and (max-width: 1060px) {
+    .select-language{
+        font-size: 10px;
+    }
+}

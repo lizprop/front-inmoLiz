@@ -1,0 +1,409 @@
+.cont-crea-prop {
+    width: 100%;
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    
+}
+.formulario-crea-prop {
+    width: 70%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    border-radius: 10px;
+}
+.vista-1,
+.vista-2,
+.vista-3,
+.vista-4 {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.notVista1,
+.notVista2,
+.notVista3,
+.notVista4 {
+    display: none;
+}
+.cont-data-vista-1,
+.cont-data-vista-2,
+.cont-data-vista-3 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.cont-dato {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    margin-bottom: 10px;
+}
+.cont-operaciones {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cont-opVenta-y-precio,
+.cont-opAlq-y-precio {
+    width: 50%;
+    display: flex;
+    justify-content: cester;
+    align-items: center;
+}
+.cont-venta,
+.cont-alquiler {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cont-precio-venta,
+.cont-precio-alq {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* estilo labels */
+.label-crea-prop,
+.label-venta,
+.label-alq,
+.label-precio-venta
+.label-precio-alq {
+    font-size: 25px;
+    font-weight: 400;
+    margin-right: 3px;
+    margin-bottom: 3px;
+    color: var(--color-negro);
+}
+.label-precio-venta,
+.label-precio-alq {
+    font-size: 20px;
+    font-weight: 400;
+    margin-right: 2px;
+}
+/* estilos inputs */
+.input-tituloPublicacion{
+    background-color: rgb(234, 233, 233);
+}
+.input-precio-venta,
+.input-check-venta,
+.input-tituloPublicacion,
+.input-descripcion-prop {
+    width: 99%;
+    font-size: 20px;
+    border-radius: 5px;
+    border: none;
+    padding: 3px;
+    background-color: rgb(234, 233, 233);
+}
+.input-check-venta {
+    width: 15px;
+    height: 15px;
+}
+.input-moneda-venta,
+.input-moneda-alq {
+    width: auto;
+    font-size: 20px;
+    text-align: center;
+    background-color: rgb(234, 233, 233);
+}
+.input-precio-venta {
+    width: 110px;
+}
+/* botones */
+.cont-campReq-botones,
+.cont-campReq-botones-vista-2 {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-top: 10px;
+}
+.cont-botones-crea-prop-Disable {
+    display: none;
+}
+.cont-campo-requerido{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.cont-botones-sgt-atras,
+.cont-botones-sgt-atras-vista-2 {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.btn-sgt-vista1,
+.btn-atras-vista-2,
+.btn-sgt-vista-2,
+.btn-crea {
+    padding: 3px 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    color: var(--color-blanco);
+    background-color: var(--color-negro);
+}
+.btn-sgt-vista1,
+.btn-atras-vista-2,
+.btn-sgt-vista-2 {
+    width: 30%;
+}
+/* vista 2 */
+.cont-ubicacion{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+.cont-ubicacion-direcc,
+.cont-ubicacion-barrio {
+    width: 49%;
+}
+.cont-btns-sgt-atras-vista-2{
+    margin-top: 20px;
+}
+/* vista 3 */
+.vista-3{
+    width: 95%;
+    height: 300px;
+}
+.cont-data-vista-3{
+    height: 300px;
+}
+.cont-ambts{
+    width: 98%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+.cont-amb{
+    width: 23%;
+    height: 100%;
+}
+.input-amb{
+    width: 97%;
+    font-size: 20px;
+    border-radius: 5px;
+    border: none;
+    padding: 3px;
+    background-color: rgb(234, 233, 233);
+}
+/* vista 4 */
+.cont-servicios {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid grey;
+    background-color: rgb(229, 232, 231);
+}
+.sub-cont-servicios{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.titulo-servicio {
+    position: absolute;
+    top: -30px;
+    left: 20px;
+    padding: 0 5px;
+    background-color: #fff;
+}
+.check-luz {
+    width: 20px;
+    height: 20px;
+}
+.img-cloudinary,
+.video-cloudinary {
+    width: 100%;
+    margin: 20px 0 10px 0;
+}
+.image-preview,
+.video-preview{
+    width: 100%; /* Ajusta el ancho al 100% del contenedor principal */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Espacio entre las miniaturas */
+    overflow: hidden; /* Evita el desbordamiento */
+    justify-content: center; /* Centra las miniaturas */
+    padding: 10px;
+    box-sizing: border-box;
+}
+.cont-img-miniatura{
+    width: 100px; /* Ajusta el tamaño de cada contenedor de miniatura */
+    position: relative; /* Permite posicionar el botón de eliminación */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+.img-miniatura,
+.video-miniatura {
+    width: 100px;
+    height: 100px;
+    margin-right: 2px;
+}
+.btn-elimina-img{
+    width: 20px;
+    height: 20px;
+    position: absolute; /* el padre debe tener position relative */
+    top: 0px;
+    right: 1px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: red;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.cont-botones-crea-prop {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.btn-crea {
+    width: 50%;
+    margin-bottom: 20px;
+}
+/* msj error input */
+.input-error {
+    border: 1px solid red;
+}
+
+
+/* responsive */
+@media screen and (max-width: 1180px){
+    .formulario-crea-prop {
+        width: 98%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        border-radius: 10px;
+    }
+    .operacion{
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        align-items: start;
+    }
+    .cont-opVenta-y-precio,
+    .cont-opAlq-y-precio {
+        width: 100%;
+        margin-right: 5px;
+    }
+    .label-venta{
+        margin-right: 0;
+    }
+    
+    .cont-precio-venta,
+    .cont-precio-alq {
+        width: 70%;
+        align-items: start;
+    }
+    .label-precio-venta,
+    .label-precio-alq {
+        margin-right: 5px;
+    }
+    .btn-sgt-vista1{
+        width: 50%;
+    }
+}
+/* para la vista 3 */
+@media screen and (max-width:720px) {
+    .cont-ambts{
+        width: 90%;
+        flex-direction: column;
+        align-items: start;
+    }
+    .cont-amb{
+        width: 90%;
+        margin-bottom: 10px;
+    }
+}
+@media screen and (max-width: 670px){
+    /* vista 1 */
+    .cont-opVenta-y-precio,
+    .cont-opAlq-y-precio {
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .cont-precio-venta,
+    .cont-precio-alq {
+        width: 100%;
+        justify-content: center;
+        align-items: start;
+    }
+    .input-precio-venta {
+        width: 100px;
+    }
+    .btn-sgt-vista1{
+        width: 70%;
+    }
+    /* vista 2 */
+    .cont-data-vista-2{
+        width: 90%;
+    }
+    .cont-ubicacion{
+        width: 100%;
+        flex-direction: column;
+        align-items: start;
+    }
+    .cont-ubicacion-direcc,
+    .cont-ubicacion-barrio {
+        width: 100%;
+    }
+    .cont-botones-sgt-atras-vista-2{
+        width: 70%;
+        justify-content: center;
+    }
+    .btn-atras-vista-2,
+    .btn-sgt-vista-2 {
+        width: 50%;
+    }
+}
+/* vista 4 */
+@media screen and (max-width:530px) {
+    .sub-cont-servicios{
+        flex-direction: column;
+        align-items: start;
+    }
+}
+@media screen and (max-width: 455px) {
+    .cont-campReq-botones{
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+    }
+    .cont-campo-requerido,
+    .cont-botones-sgt-atras-vista-2{
+        width: 100%;
+    }
+}

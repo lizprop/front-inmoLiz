@@ -1,11 +1,11 @@
 import React from "react";
 import './style.css'
 
-function FiltrosSelect ({muestraVntaAlq, setOperacion, setTipoPropiedad, setAmbientes, precioMin, precioMax, setPrecioMin, setPrecioMax, setCurrentPage}) {
+function FiltrosSelect ({muestraVntaAlq, setOperacion, setTipoPropiedad, setAmbientes, precioMin, precioMax, setPrecioMin, setPrecioMax, setCurrentPage, destacadas,setDestacadas}) {
 
     const operacion = ['Todas','Venta', 'Alquiler', 'Emprendimiento'];
     const tipoProp = [
-        'Todas', 'Depto', 'Casa', 'PH', 'Local', 
+        'Todas', 'Departamento', 'Casa', 'PH', 'Local', 
         'Oficina', 'Cochera', 'Terreno', 'Galpón',
     ];
     const ambientes = ['1', '2', '3', '4', 'mas'];
@@ -37,6 +37,9 @@ function FiltrosSelect ({muestraVntaAlq, setOperacion, setTipoPropiedad, setAmbi
     }
     const onChangeAmb = (e) => {
         setAmbientes(e.target.value);
+    }
+    const onChangeDestacadas = (e) => {
+        setDestacadas(e.target.checked);       
     }
 
     return(
@@ -92,7 +95,11 @@ function FiltrosSelect ({muestraVntaAlq, setOperacion, setTipoPropiedad, setAmbi
                             placeholder="Hasta" 
                             className="input-precioMin"
                         />
-                    </div> 
+                    </div>
+                    <div style={{display: 'flex'}}>
+                        <input type="checkbox" checked={destacadas} onChange={onChangeDestacadas} className="check-destacadas" />
+                        <p style={{fontSize: '18px'}}>Destacadas</p>
+                    </div>
                 </div>
             </div>
         </div>

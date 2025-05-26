@@ -27,7 +27,7 @@ function CardEmprendimiento({ id, imagen, direccionF, locacion, tituloPublicacio
                 >
                     {/* imagen */}
                     <div className='card-image'>
-                        <img src={imagen} alt='not found' className='card-img emp-img' />
+                        <img src={imagen} alt='not found' className='card-img' />
                     </div>
 
                     {/* msj detalle si hay hover */}

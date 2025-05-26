@@ -23,6 +23,8 @@ function Home() {
     const [ambientes, setAmbientes] = useState(); //en el back lo convierto a int
     const [precioMin, setPrecioMin] = useState();
     const [precioMax, setPrecioMax] = useState();
+    const [destacadas, setDestacadas] = useState(false); 
+
     //estados para paginación
     const [currentPage, setCurrentPage] = useState(1);
     const propiedadesPorPagina = 12;
@@ -36,8 +38,8 @@ function Home() {
     }, []);
 
     useEffect(() => {
-        dispatch(getProps(limit, offset, operacion, tipoPropiedad, precioMin, precioMax, ambientes));
-    }, [dispatch, limit, offset, operacion, tipoPropiedad, ambientes, precioMin, precioMax]);
+        dispatch(getProps(limit, offset, operacion, tipoPropiedad, precioMin, precioMax, ambientes, destacadas));
+    }, [dispatch, limit, offset, operacion, tipoPropiedad, ambientes, precioMin, precioMax, destacadas]);
 
     return (
         loading ? (
@@ -50,27 +52,18 @@ function Home() {
                     <h1 className='titulo-busqueda' data-translate>Busqueda de propiedades personalizada</h1>
                     <div className='cont-filtros-props'>
                         <div className='cont-filtros-home'>
-                            {/* <Filtros
-                                muestraVntaAlq='true'
-                                precioMin={precioMin}
-                                precioMax={precioMax}
-                                setPrecioMin={setPrecioMin}
-                                setPrecioMax={setPrecioMax}
-                                setCurrentPage={setCurrentPage}
-                                setOperacion={setOperacion}
-                                setTipoPropiedad={setTipoPropiedad}
-                                setAmbientes={setAmbientes}
-                            /> */}
                             <FiltrosSelect
                                 muestraVntaAlq='true'
                                 precioMin={precioMin}
                                 precioMax={precioMax}
+                                destacadas={destacadas}
                                 setPrecioMin={setPrecioMin}
                                 setPrecioMax={setPrecioMax}
                                 setCurrentPage={setCurrentPage}
                                 setOperacion={setOperacion}
                                 setTipoPropiedad={setTipoPropiedad}
                                 setAmbientes={setAmbientes}
+                                setDestacadas={setDestacadas}
                             />
                         </div>
                         {/* lista props */}

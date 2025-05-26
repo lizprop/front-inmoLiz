@@ -1,6 +1,6 @@
 :root {
     --fondo-page: white;
-    --fondo-navbar: rgba(1, 22, 41); /* mismo q el del logo */
+    --fondo-navbar: #0c2a3c; /* mismo q el del logo */
     --color-fuente: black;
     --gris-fondo: #EEEEED
 }

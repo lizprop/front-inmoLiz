@@ -14,5 +14,5 @@
 }
 
 .navbar.scrolled {
-    background-color: rgb(1, 22, 41);
+    background-color: var(--fondo-navbar);
 }

@@ -5,10 +5,14 @@
     --gris-fondo: #EEEEED
 }
 
-.app-container {
+.App {
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* ocupa toda la altura de la pantalla */
+}
+
+.cont-main {
+    flex: 1;
 }
 
 .page {

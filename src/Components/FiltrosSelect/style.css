@@ -1,4 +1,4 @@
-.cont-filtrosSelect{
+.cont-filtrosSelect {
     width: 100%;
     height: 140px;
     display: flex;
@@ -7,18 +7,22 @@
     align-items: start;
     /* background-color: rgb(107, 108, 108); */
 }
-.subCont-filtrosSelect{
+
+.subCont-filtrosSelect {
     width: 100%;
     height: 140px;
     flex-direction: column;
     display: flex;
     justify-content: center;
     align-items: start;
+    padding: 0 10px;
 }
-.cont-filtro-tipoOperacion{
+
+.cont-filtro-tipoOperacion {
     height: 40%;
 }
-.focoCompra{
+
+.focoCompra {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,8 +33,9 @@
     font-size: 18px;
     border: none;
 }
+
 /* div selects */
-.cont-selects{
+.cont-selects {
     width: 100%;
     height: 60%;
     display: flex;
@@ -39,7 +44,16 @@
     gap: 5px;
     background-color: white;
 }
-.select-tipoProp{
+
+.cont-op-tipoP,
+.cont-amb-destacadas {
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.select-tipoProp {
     width: 200px;
     height: 50px;
     text-align: center;
@@ -49,6 +63,7 @@
     margin-left: 10px;
     background-color: rgb(223, 223, 224);
 }
+
 /* precios */
 .cont-filtro-precioMaxMin {
     position: relative;
@@ -61,21 +76,99 @@
     padding: 20px 10px 10px;
     border-radius: 5px;
 }
+
 .cont-filtro-precioMaxMin label {
     position: absolute;
     top: -10px;
-    left: 10px;;
+    left: 10px;
+    ;
     background: white;
     /* Asegura que el texto no se mezcle con el fondo */
     padding: 0 5px;
     font-size: 14px;
     color: black;
 }
-.input-precioMin{
+
+.input-precioMin {
     width: 130px;
     font-size: 14px;
     padding: 5px;
     border-radius: 5px;
     border: 1px solid rgb(152, 152, 152);
     background-color: rgb(223, 223, 224);
+}
+
+.cont-destacadas {
+    width: 175px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    padding: 0px 10px;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+/* responsive */
+@media screen and (max-width: 1200px) {
+    .cont-filtrosSelect {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .cont-selects {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: start;
+        align-items: center;
+        background-color: white;
+    }
+
+    .select-tipoProp {
+        margin: 10px;
+    }
+}
+
+@media screen and (max-width: 860px) {
+    .cont-filtrosSelect {
+        width: 95%;
+        height: auto;
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+
+    .subCont-filtrosSelect {
+        width: 100%;
+        height: 140px;
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        padding: 0 10px;
+    }
+
+    .cont-filtro-precioMaxMin {
+        margin-left: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .select-tipoProp {
+        width: 200px;
+        height: 40px;
+        text-align: center;
+        font-size: 15px;
+    }
+
+    .cont-destacadas {
+        width: 175px;
+        height: 38px;
+        font-size: 15px;
+        border-radius: 5px;
+        margin-left: 10px;
+    }
 }

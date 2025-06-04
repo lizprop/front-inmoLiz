@@ -49,36 +49,46 @@ function FiltrosSelect ({muestraVntaAlq, setOperacion, setTipoPropiedad, setAmbi
                     <p className='focoCompra' >Filtros</p>
                 </div>
                 <div className="cont-selects">
-                    <select onChange={(e) => {onChangeTipoOp(e)}} className="select-tipoProp">
-                        <option>Tipo de operación</option>
-                        {
-                            operacion?.map(op => {
-                                return(
-                                    <option key={op} value={op}>{op}</option>
-                                )
-                            })
-                        }
-                    </select>
-                    <select onChange={onChangeTipoProp} className="select-tipoProp">
-                        <option>Tipo de propiedad</option>
-                        {
-                            tipoProp?.map(prop => {
-                                return(
-                                    <option key={prop} value={prop}>{prop}</option>
-                                )
-                            })
-                        }
-                    </select>
-                    <select onChange={onChangeAmb} className="select-tipoProp">
-                        <option>Ambientes</option>
-                        {
-                            ambientes?.map(amb => {
-                                return(
-                                    <option key={amb} value={amb}>{amb}</option>
-                                )
-                            })
-                        }
-                    </select>
+                    <div className="cont-op-tipoP">
+                        <select onChange={(e) => { onChangeTipoOp(e) }} className="select-tipoProp">
+                            <option>Tipo de operación</option>
+                            {
+                                operacion?.map(op => {
+                                    return (
+                                        <option key={op} value={op}>{op}</option>
+                                    )
+                                })
+                            }
+                        </select>
+                        <select onChange={onChangeTipoProp} className="select-tipoProp">
+                            <option>Tipo de propiedad</option>
+                            {
+                                tipoProp?.map(prop => {
+                                    return (
+                                        <option key={prop} value={prop}>{prop}</option>
+                                    )
+                                })
+                            }
+                        </select>
+                    </div>
+
+                    <div className="cont-amb-destacadas">
+                        <select onChange={onChangeAmb} className="select-tipoProp">
+                            <option>Ambientes</option>
+                            {
+                                ambientes?.map(amb => {
+                                    return (
+                                        <option key={amb} value={amb}>{amb}</option>
+                                    )
+                                })
+                            }
+                        </select>
+                        <div className="cont-destacadas">
+                            <input type="checkbox" checked={destacadas} onChange={onChangeDestacadas} className="check-destacadas" />
+                            <p style={{ fontSize: '18px' }}>Destacadas</p>
+                        </div>
+                    </div>
+                    
                     <div className="cont-filtro-precioMaxMin">
                         <label>Precio</label>
                         <input 
@@ -95,10 +105,6 @@ function FiltrosSelect ({muestraVntaAlq, setOperacion, setTipoPropiedad, setAmbi
                             placeholder="Hasta" 
                             className="input-precioMin"
                         />
-                    </div>
-                    <div style={{display: 'flex'}}>
-                        <input type="checkbox" checked={destacadas} onChange={onChangeDestacadas} className="check-destacadas" />
-                        <p style={{fontSize: '18px'}}>Destacadas</p>
                     </div>
                 </div>
             </div>

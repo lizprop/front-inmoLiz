@@ -107,7 +107,7 @@
 }
 
 /* responsive */
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
     .titulo-tarjetas {
         top: -37px;
     }
@@ -119,7 +119,6 @@
         align-items: center;
         overflow-x: auto; /* Permite el desplazamiento horizontal */
         scroll-snap-type: x mandatory; /* Hace que las tarjetas encajen al deslizar */
-        padding: 20px; /* Espaciado para evitar cortes */
         gap: 10px; /* Espaciado entre tarjetas */
     }
 

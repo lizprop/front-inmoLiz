@@ -13,7 +13,7 @@ import WhatsAppButton from './Components/BotonWhastApp';
 import Contactanos from './Pages/Contactanos';
 import Footbar from './Components/Footbar';
 import PropsInternacionales from './Pages/PropsInternacionales';
-import DetalleEmp from './Pages/DetalleEmprendimiento'
+import DetalleEmp from './Pages/DetalleEmprendimiento';
 import './App.css';
 
 function App() {
@@ -25,7 +25,7 @@ function App() {
           <Navbar />
         </header>
 
-        <main style={{ width: '100%' }}>          
+        <main className='cont-main'>          
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path='/ventas' element={<PropsVenta />} />

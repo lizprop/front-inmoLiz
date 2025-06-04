@@ -16,8 +16,8 @@ const InmobiliariaProvider = ({ children }) => {
     //estado para menú hamburguesa
     const [ isOpenModalVideo, setisOpenModalVideo ] = useState(false);
     
-    const login = () => {
-      setIsAuthenticated(true);
+  const login = () => {
+    setIsAuthenticated(true);
   };
   const logout = () => {
       setIsAuthenticated(false);

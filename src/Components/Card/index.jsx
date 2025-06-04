@@ -37,7 +37,7 @@ function Card({ id, direccionF, cantCocheras, operacion, imagenes, tituloPublica
             </NavLink>
 
             {/* titulo */}
-            <div className='card-title'>
+            <div className='cont-operacion'>
                 <h2 className='titulo-card' data-translate>{operacion[0].operacion}</h2>
             </div>
 

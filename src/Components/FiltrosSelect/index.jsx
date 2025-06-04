@@ -85,26 +85,28 @@ function FiltrosSelect ({muestraVntaAlq, setOperacion, setTipoPropiedad, setAmbi
                         </select>
                         <div className="cont-destacadas">
                             <input type="checkbox" checked={destacadas} onChange={onChangeDestacadas} className="check-destacadas" />
-                            <p style={{ fontSize: '18px' }}>Destacadas</p>
+                            <p className="p-destacadas">Destacadas</p>
                         </div>
                     </div>
                     
-                    <div className="cont-filtro-precioMaxMin">
-                        <label>Precio</label>
-                        <input 
-                            type="number" 
-                            value={precioMin} 
-                            onChange={(e) => setPrecioMin(e.target.value)}
-                            placeholder="Desde" 
-                            className="input-precioMin"
-                        />
-                        <input 
-                            type="number" 
-                            value={precioMax} 
-                            onChange={(e) => setPrecioMax(e.target.value)} 
-                            placeholder="Hasta" 
-                            className="input-precioMin"
-                        />
+                    <div className="cont-primario-precio">
+                        <div className="cont-filtro-precioMaxMin">
+                            <label>Precio</label>
+                            <input
+                                type="number"
+                                value={precioMin}
+                                onChange={(e) => setPrecioMin(e.target.value)}
+                                placeholder="Desde"
+                                className="input-precioMin"
+                            />
+                            <input
+                                type="number"
+                                value={precioMax}
+                                onChange={(e) => setPrecioMax(e.target.value)}
+                                placeholder="Hasta"
+                                className="input-precioMin"
+                            />
+                        </div>
                     </div>
                 </div>
             </div>

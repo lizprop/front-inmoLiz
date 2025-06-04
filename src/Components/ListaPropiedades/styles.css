@@ -5,11 +5,11 @@
     width: 100%;
 }
 .contListaP {
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    width: 100%;
 }
 .no-props{
     width: 100%;
@@ -38,8 +38,9 @@
 }
 @media screen and (max-width: 600px) {
     .cont-card{
-        width: 100%;
+        width: 99%;
         display: flex;
         justify-content: center;
+        margin-left: 10px;
     }
 }

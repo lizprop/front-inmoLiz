@@ -45,7 +45,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: start;
+    align-items: center;
 }
 
 /* responsive */
@@ -54,8 +54,8 @@
         font-size: 17px;
     }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 600px) {
     .cont-listaProps-home{
-        width: 90%;
+        width: 95%;
     }
 }

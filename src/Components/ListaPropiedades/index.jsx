@@ -13,7 +13,6 @@ function ListaPropiedades({ allProps }) {
                         allProps?.map(p => (
                             <div className='cont-card' key={p.id}>
                                 <Card
-                                    className='card'
                                     id={p.id}
                                     direccionF={p.direccionF}
                                     operacion={p.operacion}

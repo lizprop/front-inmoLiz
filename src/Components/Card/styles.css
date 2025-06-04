@@ -11,7 +11,8 @@
     margin: 0 20px 20px 0;
     border-radius: 3px;
     background-color: #fff;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* sombra derecha e inferior */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    /* sombra derecha e inferior */
 }
 
 /* manejo espacio img */
@@ -21,12 +22,26 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden; /* Asegura que la imagen no se desborde del contenedor */
+    overflow: hidden;
+    /* Asegura que la imagen no se desborde del contenedor */
 }
+
 .card-img {
-    width: 100%; /* Se ajusta al 100% del ancho del contenedor */
-    height: auto; /* Mantiene la proporción de la imagen */
+    width: 100%;
+    /* Se ajusta al 100% del ancho del contenedor */
+    height: auto;
+    /* Mantiene la proporción de la imagen */
     transition: transform 0.3s ease;
+}
+
+.cont-operacion {
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 /* estilos msj detalle */
@@ -45,31 +60,26 @@
     opacity: 0;
     transition: opacity 0.3s ease;
 }
+
 .detail.show {
     display: flex;
     opacity: 1;
 }
-.palabra-abre-detalle{
+
+.palabra-abre-detalle {
     font-size: 25px;
     font-weight: 200;
 }
 
 /* espacio titulo */
-.card-title {
-    width: 100%;
-    height: 40px;
-    position: absolute;
-    top: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.titulo-card{
+
+.titulo-card {
     font-size: 28px;
     font-weight: 200;
     color: #fff;
 }
-.navLink-car{
+
+.navLink-car {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -84,22 +94,26 @@
     display: flex;
     flex-direction: column;
     justify-content: start;
-    align-items: start;    
+    align-items: start;
     color: var(--color-fuente);
 }
-.cont-info1{
+
+.cont-info1 {
+    height: 25px;
     display: flex;
     justify-content: start;
     align-items: center;
     margin: 3px 0 3px 3px;
 }
-.cont-titulo-publicacion-card{
+
+.cont-titulo-publicacion-card {
     width: 100%;
     height: 75px;
     display: flex;
     justify-content: start;
     align-items: center;
 }
+
 /* titulo card */
 .tituloPublicacion {
     font-size: 20px;
@@ -107,37 +121,41 @@
     text-align: start;
     margin: 5px 0;
 }
+
 .direccion-card {
     font-size: 17px;
     font-weight: 100;
     color: grey;
 }
-.cont-precio-fav{
+
+.cont-precio-fav {
     width: 100%;
-    height: 40px;    
-    display: flex;
-    justify-content: start;
-    align-items: center;
-}
-.cont-precio {
-    width: 50%;
     height: 40px;
     display: flex;
     justify-content: start;
     align-items: center;
 }
+
+.cont-precio,
 .cont-fav {
-    width: 50%;
-    height: 40px;
+    width: 60%;
+    height: 100%;
     display: flex;
-    justify-content: end;
+    justify-content: start;
     align-items: center;
 }
-.precio{
+
+.cont-fav {
+    width: 40%;
+    justify-content: end;
+}
+
+.precio {
     font-size: 25px;
     font-weight: 500;
     color: var(--color-fuente);
 }
+
 /* manejo de info2 */
 .card-info2 {
     width: 95%;
@@ -146,74 +164,47 @@
     align-items: center;
     border-top: 1px solid var(--color-fuente);
 }
-.div-info2{
+
+.div-info2 {
     width: 100%;
     margin-top: 5px;
 }
+
 .info2,
 .icono-info-2 {
     margin: 3px;
     font-size: 15px;
     color: var(--color-fuente);
 }
-.icono-info-2{
+
+.icono-info-2 {
     width: 20px;
     height: 20px;
 }
 
 /* responsive */
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 600px) {
     .contCard {
-        grid-template-columns: 330px; /* ANCHO CARD */
-        grid-template-rows: 40px 270px 155px 100px;
-        margin: 0 0 20px 0;
-    }
-}
-@media screen and (max-width: 780px) {
-    .contCard {
-        grid-template-columns: 400px; /* ANCHO CARD */
-        grid-template-rows: 40px 270px 155px 100px;
-        margin: 0 0 20px 0;
-    }
-}
-@media screen and (max-width: 580px) {
-    .contCard {
-        grid-template-columns: 370px; /* ANCHO CARD */
-        margin: 0 0 20px 0;
-    }
-}
-@media screen and (max-width: 390px) {
-    .contCard {
-        grid-template-columns: 100%; /* Ajusta el ancho al 100% del contenedor */
-        grid-template-rows: auto; /* Ajusta las filas según el contenido */
-        margin: 0 auto 20px auto; /* Centra la card y ajusta el margen */
+        width: 100%;
     }
     .card-title {
-        height: 50px;
-        
+        height: auto;
     }
-    .cont-precio-fav{
-        width: 100%;
-        height: 30px;
-    }
-    .precio{
+
+    .precio {
         margin-left: 10px;
         font-size: 23px;
         font-weight: 500;
     }
+
     .cont-fav {
-        position: absolute;
-        top: 80px;
-        left: 90%;
         display: flex;
         justify-content: end;
         align-items: center;
     }
-    .div-info2{
+
+    .div-info2 {
         margin-top: 8px;
         margin-bottom: 3px;
     }
 }
-
-
-

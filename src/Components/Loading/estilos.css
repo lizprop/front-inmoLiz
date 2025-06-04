@@ -5,7 +5,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: url('../../Images/Textura-04.jpg');
 }
 .spinner {
     width: 3em;

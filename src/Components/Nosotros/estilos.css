@@ -1,30 +1,48 @@
 .cont-nosotros {
     width: 100%;
-    min-height: 90vh;
+    height: 90lvh;
     display: flex;
+    flex-direction: column;
     justify-content: start;
     align-items: start;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), url('../../Images/img-2.jpg');
     background-size: cover; 
     background-position: center;
 }
-.cont-textos-nosotros {
-    width: 60%;
-    min-height: auto;
+.cont-mitad-sup,
+.cont-mitad-inf {
+    width: 100%;
+    height: 50%;
+}
+.cont-mitad-sup{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: start;
-    margin: 80px 0 0 50px;
+    justify-content: start;
+    align-items: center;
+}
+.cont-textos-nosotros{
+    width: 60%;
+    margin-left: 30px;
 }
 .p-texto-nosotros {
     font-size: 28px;
     font-weight: 500;
     padding: 10px;
     margin: 0;
-    color: var(--color-fuente);
+    color: white;
 }
 
+.cont-mitad-inf{
+    display: flex;
+    justify-content: end;
+    align-items: end;
+}
+.cont-nombre-inmo{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
 /* Responsive */
 @media screen and (max-width: 600px) {
     .cont-textos-nosotros {

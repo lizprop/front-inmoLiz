@@ -19,24 +19,20 @@ function Contactanos() {
 
     return (
         <div className='contGralFormulario'>
-            <div className='subcont-contacto'>
-                <div className='subCont'>
+            <div className='cont-info-ofi-Y-formulario'>
+                <div className='cont-info-ofi'>
                     <div className='cont-dataOficina'>
                         <div className='cont-contacto-info-1'>
-                            <h2>Nuestra oficina</h2>
+                            <h2 style={{margin:'5px 0 0 0'}}>Nuestra oficina</h2>
                             <div className='sub-cont-info-Contacto-1'>
                                 <RoomIcon sx={{ marginRight: '5px' }} />
-                                <p>Gral. Roca 1238 - Mar del Plata</p>
+                                <p >Gral. Roca 1238 - Mar del Plata</p>
                             </div>
-                        </div>
-
-                        <div className='cont-contacto-info-2'>
-                            <h2>Información de contacto</h2>
-                            <div className='sub-cont-info-Contacto-2'>
+                            <div className='sub-cont-info-Contacto-1'>
                                 <EmailIcon sx={{ marginRight: '5px' }} />
                                 <p>info@ortizlizmar.com</p>
                             </div>
-                            <div className='sub-cont-info-Contacto-2'>
+                            <div className='sub-cont-info-Contacto-1'>
                                 <CallIcon sx={{ marginRight: '5px' }} />
                                 <p>2236162426</p>
                             </div>
@@ -51,7 +47,7 @@ function Contactanos() {
                                     rel="noopener noreferrer"
                                     style={{ marginLeft: '5px' }}
                                 >
-                                    <InstagramIcon sx={{ 'color': 'rgb(6, 6, 6)' }} />
+                                    <InstagramIcon sx={{ color: 'white' }} />
                                 </a>
                                 <a
                                     href='http://api.whatsapp.com/send?phone=2236162426'
@@ -59,7 +55,7 @@ function Contactanos() {
                                     rel="noopener noreferrer"
                                     style={{ marginLeft: '5px' }}
                                 >
-                                    <WhatsAppIcon sx={{ 'color': 'rgb(6, 6, 6)' }} />
+                                    <WhatsAppIcon sx={{ color: 'white' }} />
                                 </a>
                                 <a
                                     href='https://www.youtube.com/@OLpropiedades/videos'
@@ -67,7 +63,7 @@ function Contactanos() {
                                     rel="noopener noreferrer"
                                     style={{ marginLeft: '5px' }}
                                 >
-                                    <YouTubeIcon sx={{ 'color': 'rgb(6, 6, 6)' }} />
+                                    <YouTubeIcon sx={{ color: 'white' }} />
                                 </a>
                                 <a
                                     href='https://www.facebook.com/OrtizLizmarPropiedades'
@@ -75,15 +71,17 @@ function Contactanos() {
                                     rel="noopener noreferrer"
                                     style={{ marginLeft: '5px' }}
                                 >
-                                    <FacebookIcon sx={{ 'color': 'rgb(6, 6, 6)' }} />
+                                    <FacebookIcon sx={{ color: 'white' }} />
                                 </a>
                             </div>
                         </div>
                     </div>
+
                     <div className='cont-mapaOfi'>
                         <MapaProp lat={-38.019081} lng={-57.543701} /> 
                     </div>
                 </div>
+
                 <div className='cont-formulario-page'>
                     <FormularioContacto />
                 </div>

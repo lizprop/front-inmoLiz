@@ -13,7 +13,7 @@ function Footbar() {
             <div className="footer">
                 <div className='divF'>
                     {/* logo */}
-                    <a href='/home'>
+                    <a href='/home' className='a-logo'>
                         <img src={Logo} alt='' className='logo-footbar' />
                     </a>
                     <ul>

@@ -57,7 +57,6 @@ function DetalleProp() {
         return resultado.join('');
     }
 
-
     //efecto para iniciar la Pag desd la parte SUPERIOR
     useEffect(() => {
         // Desplaza la página hacia la parte superior cuando el componente se monta

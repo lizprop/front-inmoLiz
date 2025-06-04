@@ -110,3 +110,16 @@ export const resetEmprendimientos = () => {
         dispatch({type: RESET_EMPRENDIMIENTO});
     }
 }
+
+//--botón me gusta------------------------------------
+export const sumoMeGusta = (id) => { 
+    return async function(){
+        await axios.post(`${actual}/meGusta/suma`, {id});
+    }
+};
+
+export const restaMeGusta = (id) => {
+    return async function () {
+        await axios.put(`${actual}/meGusta/resta`, {id});
+    }
+}

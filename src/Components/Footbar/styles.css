@@ -5,7 +5,7 @@
     flex-direction: column;
     justify-content: center;  
     align-items: center;
-    background-color: rgb(1, 22, 41);
+    background-color: var(--fondo-navbar);
 }
 .footer {
     width: 80%;
@@ -23,8 +23,12 @@ footer ul {
     display: flex;
     width: 100%;
 }
+.a-logo{
+    padding: 10px;
+}
 .logo-footbar {
-    height: 15rem;
+    height: 13rem;
+    border-radius: 10px;
 }
 footer ul li {
     display: inline-block;

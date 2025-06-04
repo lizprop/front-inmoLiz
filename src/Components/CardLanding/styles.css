@@ -5,11 +5,9 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-image: url('../../Images/Textura-05.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
     border-radius: 10px;
-    box-shadow: 0px 0px 8px 0px #d1d0d0;
+    background-color: azure;
+    box-shadow: 0px 0px 8px 0px #8a8a8a;
     margin: 10px;
     transition: 0.5s;
 }

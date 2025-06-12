@@ -35,6 +35,11 @@ function PropsVenta() {
         dispatch(getProps(limit, offset, operacion, tipoPropiedad, precioMin, precioMax, ambientes));
     }, [dispatch, limit, offset, operacion, tipoPropiedad, ambientes, precioMin, precioMax]);
 
+    //vuelve el scroll hacia arriba
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [currentPage]);
+
     return (
         <div className='cont-page-ventas'>
             {

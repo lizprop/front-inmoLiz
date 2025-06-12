@@ -41,6 +41,11 @@ function Home() {
         dispatch(getProps(limit, offset, operacion, tipoPropiedad, precioMin, precioMax, ambientes, destacadas));
     }, [dispatch, limit, offset, operacion, tipoPropiedad, ambientes, precioMin, precioMax, destacadas]);
 
+    //vuelve el scroll hacia arriba
+    useEffect(() => {
+        window.scrollTo(0, 600);
+    }, [currentPage]);
+
     return (
         loading ? (
             <Loading />

@@ -8,13 +8,12 @@ function FavoritosPage() {
     // Desplaza la página hacia la parte superior cuando el componente se monta
     useEffect(() => {
         window.scrollTo(0, 0);
-      }, []); // El array vacío asegura que se ejecute solo al montar el componente
+    }, []); // El array vacío asegura que se ejecute solo al montar el componente
 
     useEffect(()=>{
         let listaFav = JSON.parse(localStorage.getItem('favorites')) || [];
         setFav(listaFav);
     },[]);
-
 
     return (
         <div className='page-favoritos'>

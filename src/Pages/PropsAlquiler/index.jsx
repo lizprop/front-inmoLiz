@@ -31,6 +31,11 @@ function PropsAlquiler() {
         window.scrollTo(0, 0);
     }, []); // El array vacío asegura que se ejecute solo al montar el componente
 
+    //vuelve el scroll hacia arriba
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [currentPage]);
+
     useEffect(() => {
         dispatch(getProps(limit, offset, operacion, tipoPropiedad, precioMin, precioMax, ambientes));
     }, [dispatch, limit, offset, operacion, tipoPropiedad, ambientes, precioMin, precioMax]);

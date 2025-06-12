@@ -36,13 +36,13 @@ function PropsAlquiler() {
     }, [dispatch, limit, offset, operacion, tipoPropiedad, ambientes, precioMin, precioMax]);
 
     return (
-        <div className='cont-page-venta'>
+        <div className='cont-page-ventas'>
             {
                 loading ? (
                     <Loading />
                 ) : (
                     <div className='cont-titulo-filtros-listaProps'>
-                        <h1 className='titulo-busqueda' data-translate>Propiedades en Alquiler</h1>
+                        <h1 className='titulo-busqueda' data-translate>Propiedades en alquiler</h1>
                         <div className='cont-filtros-props'>
                             <div className='cont-filtros-home'>
                                 <FiltrosSelect

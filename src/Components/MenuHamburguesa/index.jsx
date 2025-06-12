@@ -60,9 +60,9 @@ function MenuHamburguesa() {
                     <li onClick={toggleMenu}>
                         <Link to='/emprendimientos' ref={el => menuItemsRef.current[3] = el} data-translate>Emprendimientos</Link>
                     </li>
-                    <li onClick={toggleMenu}>
+                    {/* <li onClick={toggleMenu}>
                         <Link to='/internacional' ref={el => menuItemsRef.current[4] = el} data-translate>Internacional</Link>
-                    </li>
+                    </li> */}
                     <li data-translate>
                         <Link to='/favoritos' className={'navlink-navbarInf'} data-translate>Favoritos</Link>
                     </li>

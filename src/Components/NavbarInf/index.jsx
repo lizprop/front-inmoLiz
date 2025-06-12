@@ -43,11 +43,11 @@ function NavbarInf() {
                                     Emprendimientos
                                 </NavLink>
                             </li>
-                            <li data-translate>
+                            {/* <li data-translate>
                                 <NavLink to='/internacional' className={'navlink-navbarInf'}>
                                     Internacional
                                 </NavLink>
-                            </li>
+                            </li> */}
                             <li data-translate>
                                 <NavLink to='/favoritos' className={'navlink-navbarInf'}>
                                     Favoritos

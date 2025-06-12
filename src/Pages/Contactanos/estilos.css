@@ -61,6 +61,22 @@
 }
 @media screen and (max-width: 450px){
     .cont-formulario-page {
-        width: 95%;        
+        width: 95%;
+    }
+    .cont-info-ofi{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .cont-dataOficina{
+        display: flex;
+        justify-content: start;
+    }
+    .cont-info-ofi-Y-formulario{
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
     }
 }

@@ -11,8 +11,8 @@ import IconoSup from '../../Images/Iconos/IconoSup';
 import MeGusta from '../BotonMeGusta';
 import './styles.css'
 
-function Card({ id, direccionF, cantCocheras, operacion, imagenes, tituloPublicacion, ambientes, dormitorios, supTotal, supCubierta, supDescubierta, unidadMedida, tipo }) {
-
+function Card({ id, direccionF, cantCocheras, operacion, imagenes, tituloPublicacion, ambientes, dormitorios, supTotal, supCubierta, supDescubierta, unidadMedida, tipo, vista }) {
+console.log("vista: ", vista)
     //estado para el hover
     const [showDetail, setShowDetail] = useState(false);
 
@@ -38,7 +38,12 @@ function Card({ id, direccionF, cantCocheras, operacion, imagenes, tituloPublica
 
             {/* titulo */}
             <div className='cont-operacion'>
-                <h2 className='titulo-card' data-translate>{operacion[0].operacion}</h2>
+                {
+                    vista === 'Venta' ?
+                    <h2 className='titulo-card' data-translate>Venta</h2>
+                    :
+                    <h2 className='titulo-card' data-translate>Alquiler</h2>
+                }
             </div>
 
             {/* info 1 */}
@@ -55,10 +60,46 @@ function Card({ id, direccionF, cantCocheras, operacion, imagenes, tituloPublica
                 {/* precio */}
                 <div className='cont-precio-fav'>
                     <div className='cont-precio'>
-                        <p className='precio'>
-                            {operacion[0].precios[0].moneda} {formatMoney(operacion[0].precios[0].precio)}
-                        </p>
+                        {
+                            vista === "Venta" &&
+                            <>
+                                {
+                                    operacion.map(op => {
+                                        if (op.operacion === "Venta") {
+                                            return (
+                                                <div key={op.operacion_id}>
+                                                    <p className='precio'>
+                                                        {op.precios[0].moneda} {formatMoney(op.precios[0].precio)}
+                                                    </p>
+                                                </div>
+                                            )
+                                        }
+                                        return null;
+                                    })
+                                }
+                            </>
+                        }
+                        {
+                            vista === "Alquiler" &&
+                            <>
+                                {
+                                    operacion.map(op => {
+                                        if (op.operacion === 'Alquiler') {
+                                            return (
+                                                <div key={op.operacion_id}>
+                                                    <p className='precio'>
+                                                        {op.precios[0].moneda} {formatMoney(op.precios[0].precio)}
+                                                    </p>
+                                                </div>
+                                            )
+                                        }
+                                        return null;
+                                    })
+                                }
+                            </>
+                        }
                     </div>
+
                     {/* favorito */}
                     <div className='cont-fav'>
                         <MeGusta id={id}/>

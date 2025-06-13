@@ -63,7 +63,7 @@ function PropsVenta() {
                                 />
                             </div>
                             <div className='cont-listaProps-home'>
-                                <ListaPropiedades allProps={allProps} id='listaProps' />
+                                <ListaPropiedades allProps={allProps} vista="Venta" id='listaProps' />
                                 {
                                     allProps.length > 0 && (
                                         <Paginacion

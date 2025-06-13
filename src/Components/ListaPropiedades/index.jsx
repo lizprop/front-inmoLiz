@@ -3,7 +3,7 @@ import Card from '../Card';
 import NoHayProps from '../NoHayProps';
 import './styles.css';
 
-function ListaPropiedades({ allProps }) {
+function ListaPropiedades({ allProps, vista }) {
 
     return (
         <div className='contGralListaP'>
@@ -24,6 +24,7 @@ function ListaPropiedades({ allProps }) {
                                     cantCocheras={p.cantCocheras}
                                     supTotal={p.supTotal}
                                     tipo={p.tipo}
+                                    vista={vista}
                                 />
                             </div>
                         ))

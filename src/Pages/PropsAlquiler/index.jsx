@@ -63,7 +63,7 @@ function PropsAlquiler() {
                                 />
                             </div>
                             <div className='cont-listaProps-home'>
-                                <ListaPropiedades allProps={allProps} id='listaProps' />
+                                <ListaPropiedades allProps={allProps} vista="Alquiler" id='listaProps' />
                                 {
                                     allProps.length > 0 && (
                                         <Paginacion

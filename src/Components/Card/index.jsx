@@ -98,6 +98,14 @@ console.log("vista: ", vista)
                                 }
                             </>
                         }
+                        {
+                            vista === "ambas" &&
+                            <div >
+                                <p className='precio'>
+                                    {operacion[0].precios[0]?.moneda} {formatMoney(operacion[0].precios[0]?.precio)}
+                                </p>
+                            </div>
+                        }
                     </div>
 
                     {/* favorito */}

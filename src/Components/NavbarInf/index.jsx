@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-//import LogoSinFondo from '../../Images/logoSoloNombre.JPG'
+import LogoNuevo from '../../Images/logoNuevo.jpeg'
 import LanguageSelector from '../CambiaIdioma';
 import MenuHamburguesa from '../MenuHamburguesa';
 import './styles.css';
@@ -18,11 +18,11 @@ function NavbarInf() {
                 <div className='col-2-navbarInf'>
                     <div className='col-2-logo-navbarInf'>
                         <NavLink to='/' className='navlink-navbarInf'>
-                            {/* <img src={LogoSinFondo} alt='Logo' className='logo-navbarInfR' /> */}
-                            <div className='cont-ortizLizmar'>
+                            <img src={LogoNuevo} alt='Logo' className='logo-navbarInfR' />
+                            {/* <div className='cont-ortizLizmar'>
                                 <p className='nav-nombre'>ORTIZ LIZMAR</p>
                                 <p className='p-propiedades'>PROPIEDADES</p>
-                            </div>
+                            </div> */}
                         </NavLink>
                     </div>
                     {/* items */}

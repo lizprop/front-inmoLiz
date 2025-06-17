@@ -12,9 +12,11 @@ import MeGusta from '../BotonMeGusta';
 import './styles.css'
 
 function Card({ id, direccionF, cantCocheras, operacion, imagenes, tituloPublicacion, ambientes, dormitorios, supTotal, supCubierta, supDescubierta, unidadMedida, tipo, vista }) {
-console.log("vista: ", vista)
+
     //estado para el hover
     const [showDetail, setShowDetail] = useState(false);
+    const venta = operacion.find(op => op.operacion === "Venta");
+    const alquiler = operacion.find(op => op.operacion === "Alquiler");
 
     return (
         <div className='contCard'>
@@ -38,12 +40,13 @@ console.log("vista: ", vista)
 
             {/* titulo */}
             <div className='cont-operacion'>
-                {
-                    vista === 'Venta' ?
+                {operacion.length > 1 ? (
+                    <h2 className='titulo-card' data-translate>Venta/Alq</h2>
+                ) : operacion[0]?.operacion === 'Venta' ? (
                     <h2 className='titulo-card' data-translate>Venta</h2>
-                    :
+                ) : operacion[0]?.operacion === 'Alquiler' ? (
                     <h2 className='titulo-card' data-translate>Alquiler</h2>
-                }
+                ) : null}
             </div>
 
             {/* info 1 */}
@@ -60,53 +63,37 @@ console.log("vista: ", vista)
                 {/* precio */}
                 <div className='cont-precio-fav'>
                     <div className='cont-precio'>
-                        {
-                            vista === "Venta" &&
-                            <>
-                                {
-                                    operacion.map(op => {
-                                        if (op.operacion === "Venta") {
-                                            return (
-                                                <div key={op.operacion_id}>
-                                                    <p className='precio'>
-                                                        {op.precios[0]?.moneda} {formatMoney(op.precios[0]?.precio)}
-                                                    </p>
-                                                </div>
-                                            )
-                                        }
-                                        return null;
-                                    })
-                                }
-                            </>
-                        }
-                        {
-                            vista === "Alquiler" &&
-                            <>
-                                {
-                                    operacion.map(op => {
-                                        if (op.operacion === 'Alquiler') {
-                                            return (
-                                                <div key={op.operacion_id}>
-                                                    <p className='precio'>
-                                                        {op.precios[0]?.moneda} {formatMoney(op.precios[0]?.precio)}
-                                                    </p>
-                                                </div>
-                                            )
-                                        }
-                                        return null;
-                                    })
-                                }
-                            </>
-                        }
-                        {
-                            vista === "ambas" &&
-                            <div >
-                                <p className='precio'>
-                                    {operacion[0].precios[0]?.moneda} {formatMoney(operacion[0].precios[0]?.precio)}
-                                </p>
-                            </div>
-                        }
+                        {vista === "Venta" && venta && (
+                            <p className='precio'>
+                                {venta.precios[0]?.moneda} {formatMoney(venta.precios[0]?.precio)}
+                            </p>
+                        )}
+
+                        {vista === "Alquiler" && alquiler && (
+                            <p className='precio'>
+                                {alquiler.precios[0]?.moneda} {formatMoney(alquiler.precios[0]?.precio)}
+                            </p>
+                        )}
+
+                        {vista === "ambas" && venta && alquiler && (
+                            <p className='precio'>
+                                {venta.precios[0]?.moneda} {formatMoney(venta.precios[0]?.precio)} / {alquiler.precios[0]?.moneda} {formatMoney(alquiler.precios[0]?.precio)}
+                            </p>
+                        )}
+
+                        {vista === "ambas" && venta && !alquiler && (
+                            <p className='precio'>
+                                {venta.precios[0]?.moneda} {formatMoney(venta.precios[0]?.precio)}
+                            </p>
+                        )}
+
+                        {vista === "ambas" && alquiler && !venta && (
+                            <p className='precio'>
+                                {alquiler.precios[0]?.moneda} {formatMoney(alquiler.precios[0]?.precio)}
+                            </p>
+                        )}
                     </div>
+
 
                     {/* favorito */}
                     <div className='cont-fav'>

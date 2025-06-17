@@ -69,7 +69,7 @@ console.log("vista: ", vista)
                                             return (
                                                 <div key={op.operacion_id}>
                                                     <p className='precio'>
-                                                        {op.precios[0].moneda} {formatMoney(op.precios[0].precio)}
+                                                        {op.precios[0]?.moneda} {formatMoney(op.precios[0]?.precio)}
                                                     </p>
                                                 </div>
                                             )
@@ -88,7 +88,7 @@ console.log("vista: ", vista)
                                             return (
                                                 <div key={op.operacion_id}>
                                                     <p className='precio'>
-                                                        {op.precios[0].moneda} {formatMoney(op.precios[0].precio)}
+                                                        {op.precios[0]?.moneda} {formatMoney(op.precios[0]?.precio)}
                                                     </p>
                                                 </div>
                                             )

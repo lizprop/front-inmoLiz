@@ -34,8 +34,11 @@ function Home() {
 
     //efecto para iniciar pag desde scroll 0
     useEffect(() => {
-        window.scrollTo(0, 0);
+        requestAnimationFrame(() => {
+            window.scrollTo(0, 0);
+        });
     }, []);
+
 
     useEffect(() => {
         dispatch(getProps(limit, offset, operacion, tipoPropiedad, precioMin, precioMax, ambientes, destacadas));

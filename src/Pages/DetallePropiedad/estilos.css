@@ -312,6 +312,9 @@
 }
 
 .p-viñeta {
+    margin: 0;
+}
+.p-viñeta {
     padding-left: 1.5em;
     text-indent: -1.7em;
     margin: 0;

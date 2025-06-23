@@ -45,12 +45,12 @@ function DetalleProp() {
             if (!linea) continue;
 
             if (linea.endsWith(':')) {
-                resultado.push(`<p>${linea}</p>`);
+                resultado.push(`<div className="p-parrafo">${linea}</div>`);
                 enLista = true;
             } else if (enLista) {
                 resultado.push(`<p class="p-viñeta">🔸 ${linea}</p>`);
             } else {
-                resultado.push(`<p>${linea}</p>`);
+                resultado.push(`<div>${linea}</div>`);
             }
         }
 

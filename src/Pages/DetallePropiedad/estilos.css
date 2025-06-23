@@ -457,7 +457,16 @@
 }
 
 @media screen and (max-width: 730px) {
-    /* estilos seccion titulo y btn atras, video */
+    .cont-detail {
+    width: 98vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+    margin-bottom: 10px;
+}
     .info-1 {
         width: 95%;
         height: 80px;

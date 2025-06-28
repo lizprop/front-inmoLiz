@@ -1,11 +1,33 @@
 import axios from "axios";
-import {  GET_PROPERTY,  GET_PROPS, IS_OPEN_MODAL_PICTURE, LOADING, RESET_PROPS, 
+import {  GET_PROPERTY,  GET_PROPS, IS_OPEN_MODAL_PICTURE, LOADING, RESET_PROPS, GET_PROPS_MAP,
     RESET_PROPERTY, GET_EMPRENDIMIENTOS, GET_EMPRENDIMIENTO, RESET_EMPRENDIMIENTO, 
 } from "./actionsType";
 import { actual } from "../../url";
 
 
 //--actions para props-------------------------------------------------------------
+export const getPropsMap = (limit, offset, operacion, tipoPropiedad, precioMin, precioMax, ambientes, destacadas) => {
+    return async function (dispatch) {
+        
+        try {
+            //construimos los parametros dinamicamente
+            let queryParams = `?limit=${limit}&offset=${offset}`;
+
+            if(operacion) queryParams += `&operacion=${operacion}`;
+            if(tipoPropiedad) queryParams += `&tipo=${tipoPropiedad}`;
+            if(ambientes) queryParams += `&ambientes=${ambientes}`;
+            if(precioMin) queryParams += `&precioMin=${precioMin}`;
+            if(precioMax) queryParams += `&precioMax=${precioMax}`;
+            if(destacadas) queryParams += `&destacadas=${destacadas}`;
+            //if(internacional) queryParams += `&internacional=${internacional}`;
+
+            const resp = await axios.get(`${actual}/propiedades/propsMap${queryParams}`); 
+            dispatch({type: GET_PROPS_MAP, payload: resp.data});
+        } catch (error) {
+            console.log(error);
+        }
+    }
+}
 //trae props
 export const getProps = (limit, offset, operacion, tipoPropiedad, precioMin, precioMax, ambientes, destacadas) => {
     return async function(dispatch) {
@@ -23,7 +45,7 @@ export const getProps = (limit, offset, operacion, tipoPropiedad, precioMin, pre
             if(destacadas) queryParams += `&destacadas=${destacadas}`;
             //if(internacional) queryParams += `&internacional=${internacional}`;
 
-            const resp = await axios.get(`${actual}/propiedades${queryParams}`); 
+            const resp = await axios.get(`${actual}/propiedades/propiedades${queryParams}`); 
             dispatch({ type: GET_PROPS, payload: resp.data });
         } catch (error) {
             console.log(error);

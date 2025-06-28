@@ -47,7 +47,10 @@
     justify-content: center;
     align-items: center;
 }
-
+.cont-propsMapa{
+    width: 80%;
+    margin-bottom: 20px;
+}
 /* responsive */
 @media screen and (max-width: 760px) {    
     .titulo-busqueda{

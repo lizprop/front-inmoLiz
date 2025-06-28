@@ -1,7 +1,7 @@
-.contCard {
+.contCard-chica {
     position: relative;
-    width: 400px;
-    height: 550px;
+    width: 350px;
+    height: 450px;
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -16,9 +16,9 @@
 }
 
 /* manejo espacio img */
-.card-image {
+.card-image-chica {
     width: 100%;
-    height: 300px;
+    height: 250px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,19 +26,17 @@
     /* Asegura que la imagen no se desborde del contenedor */
 }
 
-.card-img {
+.card-img-chica {
     width: 100%;
     /* Se ajusta al 100% del ancho del contenedor */
     height: auto;
     /* Mantiene la proporción de la imagen */
     transition: transform 0.3s ease;
 }
-.titulo-card{
-    margin-left: 10px;
-}
-.cont-operacion {
+
+.cont-operacion-chica {
     width: 100%;
-    height: 40px;
+    height: 30px;
     position: absolute;
     top: 0;
     left: 0;
@@ -46,14 +44,17 @@
     justify-content: space-between;
     align-items: center;
 }
-
+.titulo-card-chica{
+    font-size: 15px;
+    margin-left: 10px;
+}
 /* estilos msj detalle */
-.detail {
+.detail-chica {
     position: absolute;
     top: 0px;
     left: 50;
     width: 100%;
-    height: 300px;
+    height: 250px;
     background-color: rgba(0, 0, 0, 0.7);
     color: #fff;
     display: none;
@@ -64,7 +65,7 @@
     transition: opacity 0.3s ease;
 }
 
-.detail.show {
+.detail-chica.show-chica {
     display: flex;
     opacity: 1;
 }
@@ -74,24 +75,9 @@
     font-weight: 200;
 }
 
-/* espacio titulo */
-
-.titulo-card {
-    font-size: 28px;
-    font-weight: 200;
-    color: #fff;
-}
-
-.navLink-car {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 /* manejo de info1 */
 /* de acá le doy color a todas las palabras contenidas */
-.card-info1 {
+.card-info1-chica {
     width: 95%;
     height: 150px;
     display: flex;
@@ -109,9 +95,9 @@
     margin: 3px 0 3px 3px;
 }
 
-.cont-titulo-publicacion-card {
+.cont-titulo-publicacion-card-chica {
     width: 100%;
-    height: 75px;
+    height: 45px;
     display: flex;
     justify-content: start;
     align-items: center;
@@ -154,7 +140,7 @@
 }
 
 .precio {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 500;
     color: var(--color-fuente);
 }
@@ -173,10 +159,10 @@
     margin-top: 5px;
 }
 
-.info2,
-.icono-info-2 {
+.info2-chica,
+.icono-info-2-chica {
     margin: 3px;
-    font-size: 15px;
+    font-size: 10px;
     color: var(--color-fuente);
 }
 

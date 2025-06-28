@@ -31,7 +31,7 @@ function LandingMuestraTarjetas() {
 
     return (
         <div className='cont-muestra-tarjetas'>
-            <h1 className='titulo-tarjetas'>Nuestras Propiedades</h1>
+            <h1 className='titulo-tarjetas'>Propiedades por categorías</h1>
             <div className='cont-tarjetas'>
                 <div
                     ref={(el) => (tarjetasRef.current[0] = el)}

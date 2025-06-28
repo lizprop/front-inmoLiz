@@ -13,6 +13,7 @@ import VideocamIcon from '@mui/icons-material/Videocam';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import Loading from '../../Components/Loading';
 import './estilos.css';
+import ListaPropsSimilares from '../../Components/ListaPropsSimilares';
 
 function DetalleProp() {
 
@@ -45,7 +46,7 @@ function DetalleProp() {
             if (!linea) continue;
 
             if (linea.endsWith(':')) {
-                resultado.push(`<div className="p-parrafo">${linea}</div>`);
+                resultado.push(`<p>${linea}</p>`);
                 enLista = true;
             } else if (enLista) {
                 resultado.push(`<p class="p-viñeta">🔸 ${linea}</p>`);
@@ -159,7 +160,10 @@ function DetalleProp() {
                                 <div className='col-descrip-fila1'>
                                     <div className='cont-p-col-1'>
                                         <p className='p-col-key' data-translate>Precio:</p>
-                                        <p className='p-col-value'>{moneda}{formatMoney(precio)}</p>
+                                        <p className='p-col-value'>
+                                            <p style={{fontSize: '15px'}}>{moneda}</p>
+                                            {formatMoney(precio)}
+                                        </p>
                                     </div>
                                     <div className='cont-p-col-2'>
                                         <p className='p-col-key' data-translate>Sup. Total:</p>
@@ -226,6 +230,14 @@ function DetalleProp() {
                                     <MapProp lat={propiedad.geoLat} lng={propiedad.geoLong} />
                                 </div>
                             </div>
+
+                            {/* Lista propiedades similares */}
+                            {/* <div className="cont-lista-props-similares">
+                                <p className='p-titulo-props-similares' data-translate>Propiedades recomendadas para tu busqueda</p>
+                                <div className="cont-comp-props-similares">
+                                    <ListaPropsSimilares  precioProp={precio} vista={"ambas"}/>
+                                </div>
+                            </div> */}
 
                             {/* Modal Video */}
                             {

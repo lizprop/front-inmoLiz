@@ -15,3 +15,5 @@ export const RESET_EMPRENDIMIENTO = "RESET_EMPRENDIMIENTO";
 export const SUMO_ME_GUSTA = "SUMO_ME_GUSTA";
 export const GET_ME_GUSTA_PROP = "GET_ME_GUSTA_PROP";
 export const RESTO_ME_GUSTA = "RESTO_ME_GUSTA";
+//trae props para el mapa
+export const GET_PROPS_MAP = "GET_PROPS_MAP";

@@ -13,7 +13,7 @@ function LandigA() {
             <div className='cont-textosLanding' data-translate>
                 <div className='cont-textoLanding-h1'>
                     <h1 className='tituloLanding' data-translate>
-                        Nuestros 50 años de experiencia nos respaldan...
+                        Nuestros 55 años de experiencia nos respaldan...
                     </h1>
                     <p className='textoLanding-p' data-translate>
                         Encontrá la propiedad que estás buscando, en el lugar que siempre soñaste...
@@ -28,8 +28,8 @@ function LandigA() {
                     <img src={logoNuevo} alt='not found' className='logoNuevoLanding' />
                 </div>
             {/* flecha que señala hacia abajo compuesta por dos palitos blancos con movimiento hacia arriba y abjo */}
-            <div className='cont-flecha'>
-                <div className='flecha'>
+            <div className='cont-flecha-home'>
+                <div className='flecha-home'>
                     <div className='linea linea1'></div>
                     <div className='linea linea2'></div>
                 </div>

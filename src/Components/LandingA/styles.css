@@ -92,7 +92,7 @@
 /* animación */
 
 /* estilos flecha que señala hacia abajo compuesta por dos palitos blancos con movimiento hacia arriba y abjo */
-.cont-flecha {
+.cont-flecha-home {
     position: absolute;
     bottom: 20px;
     display: flex;
@@ -100,7 +100,7 @@
     align-items: center;
     width: 100%;
 }
-.flecha {
+.flecha-home {
     display: flex;
     align-items: center;
     animation: bounce 2s infinite;

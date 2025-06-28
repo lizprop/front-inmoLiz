@@ -14,41 +14,46 @@ import Contactanos from './Pages/Contactanos';
 import Footbar from './Components/Footbar';
 import PropsInternacionales from './Pages/PropsInternacionales';
 import DetalleEmp from './Pages/DetalleEmprendimiento';
+import { LoadScript } from '@react-google-maps/api';
+import MapaPAge from './Pages/MapaPage';
 import './App.css';
 
 function App() {
 
   return (
-    <InmobiliariaProvider>
-      <div className="App">
-        <header className="App-header">
-          <Navbar />
-        </header>
+    <LoadScript googleMapsApiKey="AIzaSyBRL5HhMoPtnSqZ5VjFR6rbpMu0ZsRLTxc">
+      <InmobiliariaProvider>
+        <div className="App">
+          <header className="App-header">
+            <Navbar />
+          </header>
 
-        <main className='cont-main'>          
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path='/ventas' element={<PropsVenta />} />
-            <Route path='/alquiler' element={<PropsAlquiler/>} />
-            <Route path='/emprendimientos' element={<Emprendimientos />} />
-            <Route path='/internacional' element={<PropsInternacionales />} />
-            <Route path='/nosotros' element={<NosotrosPage />} />
-            <Route path='/contacto' element={<Contactanos />} />
-            <Route path='/detalle/:id' element={<DetalleProp />} />
-            <Route path='/detalleEmp/:id' element={<DetalleEmp />} />
-            <Route path='/favoritos' element={<FavoritosPage />} />
-            <Route path='*' element={<Home />} />
-          </Routes>
-          {/* btn whatsapp */}
-          <WhatsAppButton />
-        </main>
+          <main className='cont-main'>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path='/ventas' element={<PropsVenta />} />
+              <Route path='/alquiler' element={<PropsAlquiler />} />
+              <Route path='/emprendimientos' element={<Emprendimientos />} />
+              <Route path='/internacional' element={<PropsInternacionales />} />
+              <Route path='/nosotros' element={<NosotrosPage />} />
+              <Route path='/contacto' element={<Contactanos />} />
+              <Route path='/detalle/:id' element={<DetalleProp />} />
+              <Route path='/detalleEmp/:id' element={<DetalleEmp />} />
+              <Route path='/favoritos' element={<FavoritosPage />} />
+              <Route path='/mapa' element={< MapaPAge/>}/> 
+              <Route path='*' element={<Home />} />
+            </Routes>
+            {/* btn whatsapp */}
+            <WhatsAppButton />
+          </main>
 
-        <footer>
-          <Footbar />
-        </footer>
-        
-      </div>
-    </InmobiliariaProvider>
+          <footer>
+            <Footbar />
+          </footer>
+
+        </div>
+      </InmobiliariaProvider>
+    </LoadScript>
   );
 }
 

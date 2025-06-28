@@ -17,7 +17,7 @@ const MapaPropiedades = ({ propiedades }) => {
     const [markers, setMarkers] = useState([]);
 
     const { isLoaded } = useJsApiLoader({
-        googleMapsApiKey: process.env.REACT_APP_API_GOOGLE_MAP
+        googleMapsApiKey: process.env.REACT_APP_API_GOOGLE_MAP //clave google map
     });
 
     useEffect(() => {

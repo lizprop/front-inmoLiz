@@ -234,12 +234,12 @@ function DetalleProp() {
                             </div>
 
                             {/* Lista propiedades similares */}
-                            <div className="cont-lista-props-similares">
+                            {/* <div className="cont-lista-props-similares">
                                 <h2 data-translate>Propiedades recomendadas para tu busqueda</h2>
                                 <div className="cont-comp-props-similares">
                                     <ListaPropsSimilares  precioProp={precio} tipoProp={tipoProp} vista={"ambas"} idProp={id}/>
                                 </div>
-                            </div>
+                            </div> */}
 
                             {/* Modal Video */}
                             {

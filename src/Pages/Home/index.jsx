@@ -92,12 +92,12 @@ function Home() {
                     </div>
                 </div>
 
-                <div className='cont-titulo-filtros-listaProps'>
+                {/* <div className='cont-titulo-filtros-listaProps'>
                     <h1 className='titulo-busqueda' data-translate>Nuestras propiedades en el mapa</h1>
                     <div className='cont-propsMapa'>
                         <MapaPropiedades propiedades={allPropsMap.propiedades} />
                     </div>                    
-                </div>
+                </div> */}
 
                 <LandingC />
                 <LandingMuestraTarjetas />

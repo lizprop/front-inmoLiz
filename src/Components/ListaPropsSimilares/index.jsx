@@ -1,17 +1,19 @@
 import React, { useRef } from 'react';
 import { useSelector } from 'react-redux';
-import NoHayProps from '../NoHayProps';
-import CardChica from '../CardChica';
+import CardChicaImagenGrande from '../CardChicaImgGrande';
 import './styles.css';
 
-function ListaPropsSimilares({ precioProp, vista }) {
+
+function ListaPropsSimilares({ precioProp, tipoProp, vista, id }) {
     const allProps = useSelector(state => state.propiedades);
     const contenedorRef = useRef(null);
 
-    const propsFiltradas = allProps?.filter(p => {
+    const propsFiltraPrecio = allProps?.filter(p => {
         const precio = Number(p.operacion[0]?.precios[0]?.precio);
-        return !isNaN(precio) && precio > precioProp - 20000 && precio < precioProp + 80000 && precio !== precioProp;
+        return !isNaN(precio) && precio >= precioProp - 30000 && precio <= precioProp + 80000 && precio !== precioProp ;
     });
+    //ahora filtro por tipo propiedad
+    const propsFiltradas = propsFiltraPrecio.filter(p => p.tipo.nombre === tipoProp);
 
     const scroll = (offset) => {
         contenedorRef.current.scrollBy({ left: offset, behavior: 'smooth' });
@@ -25,15 +27,15 @@ function ListaPropsSimilares({ precioProp, vista }) {
                     <div className='contListaPsimilares' ref={contenedorRef}>
                         {propsFiltradas.map(p => (
                             <div className='cont-card' key={p.id}>
-                                <CardChica {...p} vista={vista} />
+                                <CardChicaImagenGrande {...p} vista={vista} />
                             </div>
                         ))}
                     </div>
                     <button className="flecha derecha" onClick={() => scroll(300)}>▶</button>
                 </>
             ) : (
-                <div className='no-props'>
-                    <NoHayProps />
+                <div className='no-props-similares'>
+                    <h2>No hay propiedades similares para recomendarte</h2>
                 </div>
             )}
         </div>

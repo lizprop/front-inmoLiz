@@ -12,8 +12,8 @@ import RoomIcon from '@mui/icons-material/Room';
 import VideocamIcon from '@mui/icons-material/Videocam';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import Loading from '../../Components/Loading';
-import './estilos.css';
 import ListaPropsSimilares from '../../Components/ListaPropsSimilares';
+import './estilos.css';
 
 function DetalleProp() {
 
@@ -24,6 +24,8 @@ function DetalleProp() {
     const moneda = propiedad?.operacion?.[0]?.precios?.[0]?.moneda;
     //otengo el precio de la prop
     const precio = propiedad?.operacion?.[0]?.precios?.[0]?.precio;
+    //obtengo el tipo de propiedad
+    const tipoProp = propiedad?.tipo?.nombre;
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const contexto = useContext(InmobiliariaContext);
@@ -232,12 +234,12 @@ function DetalleProp() {
                             </div>
 
                             {/* Lista propiedades similares */}
-                            {/* <div className="cont-lista-props-similares">
-                                <p className='p-titulo-props-similares' data-translate>Propiedades recomendadas para tu busqueda</p>
+                            <div className="cont-lista-props-similares">
+                                <h2 data-translate>Propiedades recomendadas para tu busqueda</h2>
                                 <div className="cont-comp-props-similares">
-                                    <ListaPropsSimilares  precioProp={precio} vista={"ambas"}/>
+                                    <ListaPropsSimilares  precioProp={precio} tipoProp={tipoProp} vista={"ambas"} idProp={id}/>
                                 </div>
-                            </div> */}
+                            </div>
 
                             {/* Modal Video */}
                             {

@@ -20,7 +20,15 @@ function formatDate(date) {
     return `${day}/${month}/${year}`;
 }
 
+//funcion 1er letra mayus resto minus
+function capitalizar(texto) {
+    if (!texto) return '';
+    return texto.charAt(0).toUpperCase() + texto.slice(1).toLowerCase();
+}
+
+
 export {
     formatMoney,
-    formatDate
+    formatDate,
+    capitalizar
 }

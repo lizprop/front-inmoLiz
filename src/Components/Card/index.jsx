@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { formatMoney } from '../../Helps';
-import IconoUbicacion from '../../Images/Iconos/iconoUbicacion.png';
+import { capitalizar, formatMoney } from '../../Helps';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
 import Favorito from '../Favoritos';
 import HomeIcon from '@mui/icons-material/Home';
 import TagIcon from '@mui/icons-material/Tag';
@@ -52,14 +52,15 @@ function Card({ id, direccionF, cantCocheras, operacion, imagenes, tituloPublica
             {/* info 1 */}
             <div className='card-info1'>
                 <div className='cont-titulo-publicacion-card'>
-                    <h5 className='tituloPublicacion' data-translate>{tituloPublicacion}</h5>
+                    <div className='cont-titulo-card'>
+                        <h5 className='tituloPublicacion' data-translate>{capitalizar(tituloPublicacion)}</h5>
+                    </div>
+                    <div className='cont-direcc-icono-card'>
+                        <LocationOnIcon sx={{ color: 'grey' }} />
+                        <p className='direcc-card' data-translate>{direccionF}</p>
+                    </div>
                 </div>
-                <div className='cont-info1'>
-                    <img src={IconoUbicacion} alt='iconoUbi' style={{width:'30px', height:'30px'}}/>
-                    <p className='direccion-card' data-translate>
-                        {/* Barrio: {ubicacion.barrio} | */} {direccionF}
-                    </p>
-                </div>
+                
                 {/* precio */}
                 <div className='cont-precio-fav'>
                     <div className='cont-precio'>
@@ -93,7 +94,6 @@ function Card({ id, direccionF, cantCocheras, operacion, imagenes, tituloPublica
                             </p>
                         )}
                     </div>
-
 
                     {/* favorito */}
                     <div className='cont-fav'>

@@ -52,13 +52,26 @@
     margin-bottom: 20px;
 }
 /* responsive */
+@media screen and (max-width: 1000px) {
+    .cont-propsMapa{
+        width: 90%;
+    }
+}
 @media screen and (max-width: 760px) {    
     .titulo-busqueda{
         font-size: 17px;
     }
+    .cont-propsMapa{
+        width: 90%;
+    }
 }
 @media screen and (max-width: 600px) {
-    .cont-listaProps-home{
-        width: 95%;
+    .cont-listaProps-home,
+    .cont-propsMapa{
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 0 0 0;
     }
 }

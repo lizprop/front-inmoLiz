@@ -25,11 +25,11 @@
 /* estilos seccion titulo y btn atras, video */
 .info-1 {
     width: 100%;
-    height: 80px;
+    height: auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: start;
+    align-items: start;
     margin-top: 10px;
     margin-bottom: 10px;
     border-radius: 10px;
@@ -37,16 +37,17 @@
 }
 
 .cont-btn_Y_tituilo-precio {
-    width: 95%;
-    height: 80px;
+    width: 100%;
+    height: auto;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
+    
 }
 
 .cont-btn_Y_tituilo {
-    width: 80%;
-    height: 50px;
+    width: 100%;
+    height: 35px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -67,19 +68,27 @@
 }
 
 .cont-btns-direccion {
-    width: 95%;
-    height: 30px;
+    width: 100%;
+    height: 35px;
     display: flex;
     justify-content: start;
     align-items: center;
 }
 
 .cont-titulo-icono-direcc {
+    width: 50%;
+    height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
 }
-
+.cont-precio-detallee{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
 .detalle-titulo-prop {
     margin-left: 10px;
     font-size: 28px;
@@ -255,7 +264,7 @@
 .col-descrip-fila1,
 .col-descrip-fila2,
 .col-descrip-fila3 {
-    width: 80%;
+    width: 90%;
     display: flex;
     justify-content: start;
     align-items: center;
@@ -281,6 +290,8 @@
 
 .p-col-key,
 .p-col-value {
+    display: flex;
+    flex-direction: column;
     font-size: 20px;
     font-weight: 300;
     color: white;
@@ -377,9 +388,9 @@
     font-weight: 600;
 }
 /* responsive */
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1250px) {
     .info-1 {
-        width: 90%;
+        width: 100%;
     }
 
     .cont-imgs-info {
@@ -400,6 +411,7 @@
         height: auto;
         justify-content: center;
         align-items: center;
+        margin-bottom: 15px;
     }
 
     .cont-titulo-descripcion-form {
@@ -410,9 +422,8 @@
         align-items: center;
         margin-top: 50px;
     }
-
     .cont-descrip {
-        width: 80%;
+        width: 100%;
         margin-bottom: 20px;
     }
 }
@@ -611,5 +622,8 @@
         width: 90%;
         height: 550px;
         margin-top: 0px;
+    }
+    .titulo-props-similares{
+        font-size: 15px;
     }
 }

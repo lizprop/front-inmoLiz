@@ -11,7 +11,7 @@ function ListaPropiedades({ allProps, vista }) {
                 {
                     allProps ? (
                         allProps?.map(p => (
-                            <div className='cont-card' key={p.id}>
+                            <div className='cont-card-listaProps' key={p.id}>
                                 <Card
                                     id={p.id}
                                     direccionF={p.direccionF}

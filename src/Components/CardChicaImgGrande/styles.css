@@ -1,13 +1,13 @@
 .cont-card-imgGrande {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
     width: 400px;
     height: 400px;
     display: flex;
     flex-direction: column;
-    justify-content: start;
-    align-items: center;
-    /* ackground-color: #dadada; */
     border-radius: 5px;
 }
+
 .detail-chica {
     position: absolute;
     top: 0;
@@ -129,8 +129,25 @@
     margin-top: 5px;
 }
 
+.tituloPublicacion-cardIG{
+    white-space: nowrap;        /* No permite saltos de línea */
+    overflow: hidden;           /* Oculta el desbordamiento */
+    text-overflow: ellipsis;    /* Muestra los "..." al final */
+}
+
 .direccion-cardG {
     margin: 0;
     font-size: 14px;
     color: #777;
+}
+
+@media (max-width: 600px) {
+    .cont-card-imgGrande {
+        width: 300px;
+        height: 300px;
+        margin-right: 10px;
+    }
+    .tituloPublicacion-cardIG{
+        font-size: 15px;
+    }
 }

@@ -1,4 +1,4 @@
-.contCard {
+.contCardHome {
     position: relative;
     width: 400px;
     height: 550px;
@@ -8,7 +8,6 @@
     align-items: center;
     font-family: roboto;
     text-align: center;
-    margin: 0 20px 20px 0;
     border-radius: 3px;
     background-color: #fff;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
@@ -193,7 +192,7 @@
 
 /* responsive */
 @media screen and (max-width: 600px) {
-    .contCard {
+    .contCardHome {
         width: 100%;
     }
     .card-title {

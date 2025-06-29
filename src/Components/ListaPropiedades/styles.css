@@ -8,8 +8,11 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+}
+.cont-card-listaProps{
+    margin-bottom: 20px;
 }
 .no-props{
     width: 100%;
@@ -37,10 +40,13 @@
     
 }
 @media screen and (max-width: 600px) {
-    .cont-card{
-        width: 99%;
+    .contGralListaP,
+    .cont-card-listaProps,
+    .contListaP{
+        width: 100%;
         display: flex;
         justify-content: center;
-        margin-left: 10px;
+        align-items: center;
     }
+
 }

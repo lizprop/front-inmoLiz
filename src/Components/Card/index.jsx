@@ -19,7 +19,7 @@ function Card({ id, direccionF, cantCocheras, operacion, imagenes, tituloPublica
     const alquiler = operacion.find(op => op.operacion === "Alquiler");
 
     return (
-        <div className='contCard'>
+        <div className='contCardHome'>
             {/* img + animacion + abre detalle */}
             <NavLink to={`/detalle/${id}`} className='navLink-car'>
                 <div

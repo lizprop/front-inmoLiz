@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProperty, resetProperty } from '../../Redux/Actions';
 import { InmobiliariaContext } from '../../Context';
-import { formatMoney } from '../../Helps';
+import { capitalizar, formatMoney } from '../../Helps';
 import Carrusel from '../../Components/Carrusel';
 import MapProp from '../../Components/MapaProp';
 import FormularioContacto from '../../Components/FormularioContacto';
@@ -20,8 +20,6 @@ function DetalleProp() {
     const loading = useSelector(state => state.loading);
     const { id } = useParams();  //let id = props.match.params.id 
     const propiedad = useSelector(state => state.propiedad);
-    //obt el tipo de moneda
-    const moneda = propiedad?.operacion?.[0]?.precios?.[0]?.moneda;
     //otengo el precio de la prop
     const precio = propiedad?.operacion?.[0]?.precios?.[0]?.precio;
     //obtengo el tipo de propiedad
@@ -29,7 +27,9 @@ function DetalleProp() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const contexto = useContext(InmobiliariaContext);
-
+    //busco si q operaciones vienen
+    const venta = propiedad?.operacion?.find(op => op.operacion === "Venta");
+    const alquiler = propiedad?.operacion?.find(op => op.operacion === "Alquiler");
 
     const handleClickAtras = (e) => {
         navigate(-1);
@@ -102,15 +102,10 @@ function DetalleProp() {
                                         {/* Titulo prop */}
                                         <div className='cont-titulo-detalle'>
                                             <p className='detalle-titulo-prop' data-translate>
-                                                {propiedad.tituloPublicacion}
+                                                {capitalizar(propiedad.tituloPublicacion)}
                                             </p>
                                         </div>
-                                    </div>
-                                    {/* precio */}
-                                    <div className='cont-precio-detalle'>
-                                        <p className='moneda-detalle'>{moneda}</p>
-                                        <p className='precio-detalle'>{formatMoney(precio)}</p>
-                                    </div>
+                                    </div>                                    
                                 </div>
 
                                 <div className='cont-btns-direccion'>
@@ -120,6 +115,19 @@ function DetalleProp() {
                                         <p className='detalle-titulo-direccion' data-translate>
                                             {propiedad.direccion}
                                         </p>
+                                    </div>
+                                    {/* precio */}
+                                    <div className='cont-precio-detallee'>
+                                        {venta && (
+                                            <div style={{color: 'white', display: 'flex', justifyContent: 'center', alignContent: 'center', marginRight:'10px', fontSize: '18'}}>
+                                                <p style={{ fontSize: '18px' }}>Venta: {venta.precios[0].moneda}{formatMoney(venta.precios[0].precio)}</p>                                                
+                                            </div>
+                                        )}
+                                        {alquiler && (
+                                            <div style={{color: 'white',display: 'flex', justifyContent: 'center', alignContent: 'center', marginRight:'10px', fontSize: '18'}}>
+                                                <p style={{ fontSize: '18px' }}>Alquiler: {alquiler.precios[0].moneda}{formatMoney(alquiler.precios[0].precio)}</p>
+                                            </div>
+                                        )}
                                     </div>
                                 </div>
                             </div>
@@ -131,13 +139,16 @@ function DetalleProp() {
                                     {/* botones multimedia */}
                                     <div className='cont-multimedia'>
                                         {/* btn-video */}
-                                        <button
+                                        {
+                                            propiedad?.video?.length &&
+                                            <button
                                             onClick={() => contexto.handleIsOpen()}
                                             className='btn-video'
                                         >
                                             <VideocamIcon />
                                             Ver video
                                         </button>
+                                        }
                                     </div>
                                     {
                                         propiedad?.imagenes
@@ -161,24 +172,6 @@ function DetalleProp() {
                                 <p className='titulo-descrip-prop'>Detalle Propiedad</p>
                                 <div className='col-descrip-fila1'>
                                     <div className='cont-p-col-1'>
-                                        <p className='p-col-key' data-translate>Precio:</p>
-                                        <p className='p-col-value'>
-                                            <p style={{fontSize: '15px'}}>{moneda}</p>
-                                            {formatMoney(precio)}
-                                        </p>
-                                    </div>
-                                    <div className='cont-p-col-2'>
-                                        <p className='p-col-key' data-translate>Sup. Total:</p>
-                                        <p className='p-col-value'>{propiedad.supTotal}{propiedad.unidadMedida}</p>
-                                    </div>
-                                    <div className='cont-p-col-3'>
-                                        <p className='p-col-key' data-translate>Sup. Cubierta:</p>
-                                        <p className='p-col-value'>{propiedad.supCubierta}{propiedad.unidadMedida}</p>
-                                    </div>
-                                </div>
-
-                                <div className='col-descrip-fila2'>
-                                    <div className='cont-p-col-1'>
                                         <p className='p-col-key' data-translate>Ambientes:</p>
                                         <p className='p-col-value'>{propiedad.ambientes}</p>
                                     </div>
@@ -192,14 +185,18 @@ function DetalleProp() {
                                     </div>
                                 </div>
 
+                                {/* <div className='col-descrip-fila2'>
+                                    
+                                </div> */}
+
                                 <div className='col-descrip-fila3'>
                                     <div className='cont-p-col-1'>
                                         <p className='p-col-key' data-translate>Tipo Op:</p>
                                         {
-                                            propiedad.operacion?.map(o => {
+                                            propiedad.operacion?.map((o, i) => {
                                                 return (
                                                     <div key={o.operacion_id}>
-                                                        <p className='p-col-value' data-translate>{propiedad.operacion[0]?.operacion}</p>
+                                                        <p className='p-col-value' data-translate>{propiedad.operacion[i]?.operacion} /</p>
                                                     </div>
                                                 )
                                             })
@@ -235,9 +232,9 @@ function DetalleProp() {
 
                             {/* Lista propiedades similares */}
                             <div className="cont-lista-props-similares">
-                                <h2 data-translate>Propiedades recomendadas para tu busqueda</h2>
+                                <h2 className='titulo-props-similares' data-translate>Propiedades recomendadas para tu busqueda</h2>
                                 <div className="cont-comp-props-similares">
-                                    <ListaPropsSimilares  precioProp={precio} tipoProp={tipoProp} vista={"ambas"} idProp={id}/>
+                                    <ListaPropsSimilares precioProp={precio} tipoProp={tipoProp} vista={"ambas"} idProp={id} />
                                 </div>
                             </div>
 

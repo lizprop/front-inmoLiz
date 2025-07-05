@@ -10,19 +10,19 @@ function Navbar() {
     const isHome = location.pathname === '/';
 
     useEffect(() => {
-    const handleScroll = () => {
-        const isScrolled = window.scrollY > 1;
-        console.log("ScrollY:", window.scrollY, "| scrolled:", isScrolled);
-        setScrolled(isScrolled);
-    };
+        const handleScroll = () => {
+            const isScrolled = window.scrollY > 1;
+            console.log("ScrollY:", window.scrollY, "| scrolled:", isScrolled);
+            setScrolled(isScrolled);
+        };
 
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Ejecuta al montar
+        window.addEventListener("scroll", handleScroll);
+        handleScroll(); // Ejecuta al montar
 
-    return () => {
-        window.removeEventListener("scroll", handleScroll);
-    };
-}, []);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
 
 
     // Determina la clase según scroll y si está en home

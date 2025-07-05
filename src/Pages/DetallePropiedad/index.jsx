@@ -68,8 +68,6 @@ function DetalleProp() {
 
     useEffect(() => {
         dispatch(getProperty(id));
-        // Desplazarse hacia la parte superior de la página al cargar el componente
-        window.scrollTo(0, 0);
 
         return () => { dispatch(resetProperty()); }
     }, [dispatch, id]);

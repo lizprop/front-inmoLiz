@@ -19,7 +19,7 @@ function CarruselImgPequeñas({ imagenes, indexImgActual, handleClick }) {
             {imagenes?.map((img, index) => (
                 <img
                     key={index}
-                    src={img.pequeña}
+                    src={img.pequeña || img.imagenChica}
                     alt={`Miniatura ${index + 1}`}
                     className={`miniatura ${index === indexImgActual ? 'active' : ''}`}
                     onClick={() => handleClick(index)}

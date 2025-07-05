@@ -1,20 +1,17 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useNavigate, useParams  } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getEmprendimiento, resetEmprendimientos, } from '../../Redux/Actions';
 import { InmobiliariaContext } from '../../Context';
-import { formatDate } from '../../Helps';
+import { capitalizar } from '../../Helps';
+import VideocamIcon from '@mui/icons-material/Videocam';
 import MapProp from '../../Components/MapaProp';
-import IconoUbicacion from '../../Images/Iconos/iconoUbicacion.png';
 import ModalVideo from '../../Components/ModalVideo';
 import FormularioContacto from '../../Components/FormularioContacto';
-import OndemandVideoIcon from '@mui/icons-material/OndemandVideo';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import Loading from '../../Components/Loading';
-import CarruselEmp from '../../Components/CarruselEmp';
-
-import './estilos.css';
-
+import Carrusel from '../../Components/Carrusel';
+import RoomIcon from '@mui/icons-material/Room';
 
 function DetalleEmp(){
 
@@ -24,25 +21,31 @@ function DetalleEmp(){
     const navigate = useNavigate();
     const dispatch = useDispatch();    
     const contexto = useContext(InmobiliariaContext); 
-    //estado para el tooltipText
-    const [showTooltipVideo, setShowTooltipVideo] = useState(false);
-    //estado para el tooltipText
-    const [showTooltipVolver, setShowTooltipVolver] = useState(false);
-    const tooltipTextVideo = "Ver video emprendimiento";
-    const tooltipTextVolver = "Volver atrás";
 
-    const handleMouseEnter = () => {
-        setShowTooltipVideo(true);
-    };
-    const handleMouseLeave = () => {
-        setShowTooltipVideo(false);
-    };
-    const handleMouseEnterVolver = () => {
-        setShowTooltipVolver(true);
-    };
-    const handleMouseLeaveVolver = () => {
-        setShowTooltipVolver(false);
-    };
+    // Función para reemplazar puntos por saltos de línea
+    function formatearDescripcion(texto) {
+        if (!texto || typeof texto !== 'string') return '';
+
+        const partes = texto.split(/(?<=[.:])\s*/);
+        const resultado = [];
+        let enLista = false;
+
+        for (let parte of partes) {
+            const linea = parte.trim();
+            if (!linea) continue;
+
+            if (linea.endsWith(':')) {
+                resultado.push(`<p>${linea}</p>`);
+                enLista = true;
+            } else if (enLista) {
+                resultado.push(`<p class="p-viñeta">🔸 ${linea}</p>`);
+            } else {
+                resultado.push(`<div>${linea}</div>`);
+            }
+        }
+
+        return resultado.join('');
+    }
 
     const handleClickAtras = (e) => {
         if (window.history.length > 1) {
@@ -53,13 +56,16 @@ function DetalleEmp(){
     };
 
     useEffect(() => {
-        dispatch(getEmprendimiento(id));
         // Desplazarse hacia la parte superior de la página al cargar el componente
         window.scrollTo(0, 0);
-
-        return () => { dispatch(resetEmprendimientos()); }
     }, [dispatch, id]);
 
+    useEffect(()=>{
+        console.log("entré")
+        dispatch(getEmprendimiento(id));
+
+        return () => { dispatch(resetEmprendimientos()); }
+    },[dispatch, id]);
 
     return (
         <>
@@ -73,57 +79,60 @@ function DetalleEmp(){
                         <div className='cont-detail'>
                             {/* datos principales */}
                             <div className='info-1'>
-                                {/* Titulo prop */}
-                                <div className='cont-titulo-detalle'>
-                                    <span className='detalle-titulo-prop' data-translate>
-                                        {emprendimiento.tituloPublicacion} || Fecha entrega: {formatDate(emprendimiento.fechaEntrega)}
-                                    </span>
+                                <div className='cont-btn_Y_tituilo-precio'>
+                                    <div className='cont-btn_Y_tituilo'>
+                                        {/* btn atrás */}
+                                        <div>
+                                            <button
+                                                type='button'
+                                                onClick={handleClickAtras}
+                                                className='btn-volver'
+                                            >
+                                                <ArrowBackIcon sx={{ color: 'white' }} />
+                                            </button>
+                                        </div>
+                                        {/* Titulo prop */}
+                                        <div className='cont-titulo-detalle'>
+                                            <p className='detalle-titulo-prop' data-translate>
+                                                {capitalizar(emprendimiento.tituloPublicacion)}
+                                            </p>
+                                        </div>
+                                    </div>                                    
                                 </div>
 
                                 <div className='cont-btns-direccion'>
-                                    {/* btn-atrás */}
-                                    <button
-                                        onClick={handleClickAtras}
-                                        className='btn-volver'
-                                        onMouseEnter={handleMouseEnterVolver}
-                                        onMouseLeave={handleMouseLeaveVolver}
-                                    >
-                                        <ArrowBackIcon />
-                                    </button>
-                                    {/* msj toolTip */}
-                                    {
-                                        showTooltipVolver && <div className="tooltipVolver">{tooltipTextVolver}</div>
-                                    }
                                     {/* dirección */}
                                     <div className='cont-titulo-icono-direcc'>
-                                        <img src={IconoUbicacion} alt='' style={{ width: '40px', height: '40px' }} />
-                                        <span className='detalle-titulo-direccion' data-translate>
-                                            {emprendimiento.direccionF}
-                                        </span>
+                                        <RoomIcon sx={{ color: 'white', marginLeft: '40px' }} />
+                                        <p className='detalle-titulo-direccion' data-translate>
+                                            {emprendimiento.direccion}
+                                        </p>
                                     </div>
-                                    {/* btn-video */}
-                                    <button
-                                        onClick={() => contexto.handleIsOpen()}
-                                        className='btn-video'
-                                        onMouseEnter={handleMouseEnter}
-                                        onMouseLeave={handleMouseLeave}
-                                    >
-                                        <OndemandVideoIcon className='icono-video' />
-                                    </button>
-                                    {/* msj toolTip */}
-                                    {
-                                        showTooltipVideo && <div className="tooltip">{tooltipTextVideo}</div>
-                                    }
                                 </div>
                             </div>
 
                             {/* carrusel y formulario */}
                             <div className='cont-imgs-info'>
+                                {/* carrusel */}
                                 <div className='cont-imagenes'>
+                                    {/* botones multimedia */}
+                                    <div className='cont-multimedia'>
+                                        {/* btn-video */}
+                                        {
+                                            emprendimiento?.video?.length &&
+                                            <button
+                                            onClick={() => contexto.handleIsOpen()}
+                                            className='btn-video'
+                                        >
+                                            <VideocamIcon />
+                                            Ver video
+                                        </button>
+                                        }
+                                    </div>
                                     {
                                         emprendimiento?.imagenes
                                             ?
-                                            <CarruselEmp imagenes={emprendimiento.imagenes} />
+                                            <Carrusel imagenes={emprendimiento.imagenes} />
                                             :
                                             <p>No img</p>
                                     }
@@ -131,34 +140,27 @@ function DetalleEmp(){
 
                                 <div className='cont-form-contacto'>
                                     <FormularioContacto
-                                        tituloPublicacion={emprendimiento.tituloPublicacion}                                        
+                                        tituloPublicacion={emprendimiento.tituloPublicacion}
+                                        codigoReferencia={emprendimiento.codigoReferencia}
                                     />
                                 </div>
                             </div>
 
-                            {/* descrip prop */}
-                            <div className='cont-titulo-descripcion-form descripEmp'>
-                                <div className='cont-descrip detalleEmp'>
-                                    <p className='titulo-descrip-prop' data-translate>Descripción emprendimiento</p>
-                                    {/* Renderizar HTML dentro de la descripción */}
-                                        <p
-                                            className="p-descrip-detalle"
-                                            data-translate
-                                            dangerouslySetInnerHTML={{
-                                                __html: emprendimiento?.descripcion
-                                                    ? emprendimiento.descripcion.replace(/\n/g, '<br />')
-                                                    : '', // Muestra una cadena vacía si descripcion no está definida
-                                            }}
-                                        />
-
-                                </div>
-
+                            {/* descrip */}
+                            <div className="cont-texto-descrip-detalle">
+                                <p className='titulo-descrip-prop'>Detalle Propiedad</p>
+                                <div
+                                    className="subCont-texto-descrip-detalle"
+                                    dangerouslySetInnerHTML={{ __html: formatearDescripcion(emprendimiento.descripcion) }}
+                                />
                             </div>
 
                             {/* google map */}
-                            <div className='cont-map'>
-                                <p className='p-titulo-mapa' data-translate>Ubicacion emprendimiento</p>
-                                <MapProp lat={emprendimiento.geolat} lng={emprendimiento.geolong} />
+                            <div className='cont-map-detalle'>
+                                <p className='p-titulo-mapa' data-translate>Ubicacion Propiedad</p>
+                                <div className='cont-mapa-detalle'>
+                                    <MapProp lat={emprendimiento.geoLat} lng={emprendimiento.geoLong} />
+                                </div>
                             </div>
 
                             {/* Modal Video */}

@@ -1,0 +1,67 @@
+.cont-lista-props-destacadas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.titulo-props-destacadas {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.carrusel-botones {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.boton-carrusel {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    z-index: 1;
+    transition: background 0.2s;
+}
+
+.boton-carrusel:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.carrusel-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 1.5rem;
+    padding: 1rem 0;
+    width: 100%;
+}
+
+.carrusel-container::-webkit-scrollbar {
+    height: 6px;
+}
+
+.carrusel-container::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+}
+
+.carrusel-item {
+    flex: 0 0 auto;
+    min-width: 280px;
+    scroll-snap-align: start;
+    transition: transform 0.3s ease;
+}
+
+
+@media screen and (max-width: 600px){
+.boton-carrusel {
+    font-size: 0.5rem;
+    padding: 0.5rem;
+}
+}

@@ -118,7 +118,7 @@ export const getEmprendimientos = (tipo) => {
 }
 
 //trae emprendimiento por ID
-export const getEmprendimiento = (id) => { 
+export const getEmprendimiento = (id) => {
     return async function(dispatch) {
         dispatch({type: LOADING});
         const resp = await axios.get(`${actual}/emprendimientos/${id}`);

@@ -1,24 +1,18 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import IconoUbicacion from '../../Images/Iconos/iconoUbicacion.png';
-import IconoSup from '../../Images/Iconos/IconoSup';
-import IconoAmb from '../../Images/Iconos/IconoAmb';
-import IconoDormitorio from '../../Images/Iconos/IconoDormitorios';
-import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
-import './styles.css';
+import { capitalizar } from '../../Helps';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+//import Favorito from '../Favoritos';
+//import MeGusta from '../BotonMeGusta';
+import './styles.css'
 
-function CardEmprendimiento({ id, imagen, direccionF, locacion, tituloPublicacion, tipo }) {
+function CardEmp({ id, direccionF, imagen, tituloPublicacion, descripcion }) {
 
     //estado para el hover
     const [showDetail, setShowDetail] = useState(false);
 
     return (
-        <div className='contCard'>
-            {/* titulo */}
-            <div className='card-title'>
-                <h2 className='titulo-card' data-translate>Emprendimiento</h2>
-            </div>
-
+        <div className='contCardHome cardEmp'>
             {/* img + animacion + abre detalle */}
             <NavLink to={`/detalleEmp/${id}`} className='navLink-car'>
                 <div
@@ -39,45 +33,23 @@ function CardEmprendimiento({ id, imagen, direccionF, locacion, tituloPublicacio
 
             {/* info 1 */}
             <div className='card-info1'>
-                <div className='cont-titulo-publicacion'>
-                    <span className='tituloPublicacion' data-translate>{tituloPublicacion}</span>
+                <div className='cont-titulo-publicacion-card'>
+                    <div className='cont-titulo-card'>
+                        <h5 className='tituloPublicacion' data-translate>{capitalizar(tituloPublicacion)}</h5>
+                    </div>
+                    <div className='cont-direcc-icono-card'>
+                        <LocationOnIcon sx={{ color: 'grey' }} />
+                        <p className='direcc-card' data-translate>{direccionF}</p>
+                    </div>
                 </div>
-                <div className='cont-info1'>
-                    <img src={IconoUbicacion} alt='iconoUbi' style={{width:'30px', height:'30px'}}/>
-                    <span className='direccion-card' data-translate>
-                        {/* Barrio: {ubicacion.barrio} | */} {direccionF}
-                    </span>
-                </div>
-
-                <div className='cont-precio-fav locacion-card'>
-                    <p className='locacion-p'>{locacion}</p>
-                </div>
-            </div>
-            
-            {/* info 2 */}
-            <div className='card-info2'>
-                <div className='div-info2'>
-                    <IconoSup />
-                    <p className='info2'>Superficie</p>
-                </div>
-
-                <div className='div-info2'>
-                    <IconoAmb />
-                    <p className='info2' data-translate>Ambientes</p>
-                </div>
-
-                <div className='div-info2'>
-                    <IconoDormitorio />
-                    <p className='info2' data-translate>Dormitorios</p>
-                </div>
-
-                <div className='div-info2'>
-                    <DirectionsCarIcon sx={{ color: 'rgba(171, 132, 94, 1)', width: '28px', height: '28px' }} />
-                    <p className='info2' data-translate>Cocheras</p>
+                
+                {/* precio */}
+                <div className='cont-precio-fav'>
+                    <p className='p-descrip-emp'>{capitalizar(descripcion)}</p>
                 </div>
             </div>
         </div>
     )
 }
 
-export default CardEmprendimiento;
+export default CardEmp;

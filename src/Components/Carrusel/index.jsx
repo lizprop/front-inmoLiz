@@ -43,7 +43,7 @@ function Carrusel({imagenes}) {
 
                 {/* imagen a mostrar */}
                 <img 
-                    src={imagenes[indexImgActual].original} 
+                    src={imagenes[indexImgActual].original || imagenes[indexImgActual].imagen} 
                     alt='' 
                     onClick={() => handleOpenModal()}
                     className='img-carrusel'

@@ -20,8 +20,10 @@ import './App.css';
 
 function App() {
 
+  const passGoogle = process.env.REACT_APP_API_GOOGLE_MAP;
+
   return (
-    <LoadScript googleMapsApiKey="AIzaSyBRL5HhMoPtnSqZ5VjFR6rbpMu0ZsRLTxc">
+    <LoadScript googleMapsApiKey={passGoogle}> {/* cambié aca por el string */}
       <InmobiliariaProvider>
         <div className="App">
           <header className="App-header">

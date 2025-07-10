@@ -42,7 +42,7 @@ function Home() {
     }, []);
 
     useEffect(() => {
-        dispatch(getPropsDestacadas(operacion, tipoPropiedad, precioMin, precioMax, ambientes));
+        dispatch(getPropsDestacadas());
         dispatch(getProps(limit, offset, operacion, tipoPropiedad, precioMin, precioMax, ambientes));
         dispatch(getPropsMap(limit, offset, operacion, tipoPropiedad, precioMin, precioMax, ambientes));
     }, [dispatch, limit, offset, operacion, tipoPropiedad, ambientes, precioMin, precioMax, destacadas]);

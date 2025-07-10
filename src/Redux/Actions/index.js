@@ -7,17 +7,10 @@ import { actual } from "../../url";
 
 
 //--actions para props-------------------------------------------------------------
-export const getPropsDestacadas = (operacion, tipoPropiedad, precioMin, precioMax, ambientes) => {
+export const getPropsDestacadas = () => {
     return async function (dispatch) {
         try {
-            //construimos los parametros dinamicamente
-            let queryParams = `?operacion=${operacion}`;
-            if(tipoPropiedad) queryParams += `&tipo=${tipoPropiedad}`;
-            if(ambientes) queryParams += `&ambientes=${ambientes}`;
-            if(precioMin) queryParams += `&precioMin=${precioMin}`;
-            if(precioMax) queryParams += `&precioMax=${precioMax}`;
-
-            const resp = await axios.get(`${actual}/propiedades/propsDestacadas${queryParams}`); 
+            const resp = await axios.get(`${actual}/propiedades/propsDestacadas`); 
             dispatch({type: GET_PROPS_DESTADAS, payload: resp.data});
         } catch (error) {
             console.log(error);

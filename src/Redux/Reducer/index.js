@@ -3,9 +3,11 @@ import {
     LOADING,GET_EMPRENDIMIENTO, GET_EMPRENDIMIENTOS,
     RESET_EMPRENDIMIENTO,  RESET_PROPERTY,
     RESET_PROPS, GET_PROPS_MAP,
+    GET_PROPS_DESTADAS,
 } from "../Actions/actionsType";
 
 const initialState = {
+    propsDestacadas: [],
     propiedades: [],
     propsMap: [],
     totPropiedades: 0,
@@ -25,6 +27,11 @@ export default function rootReducer (state = initialState, action) {
                 ...state,
                 loading: false
             };
+        case GET_PROPS_DESTADAS:
+            return{
+                ...state,
+                propsDestacadas: action.payload,
+            }
         case GET_PROPS:
             return {
                 ...state,
@@ -47,7 +54,6 @@ export default function rootReducer (state = initialState, action) {
                 ...state,
                 propsMap: action.payload,
             }
-        
         case IS_OPEN_MODAL_PICTURE:
             return{
                 ...state,

@@ -1,33 +1,30 @@
 import axios from "axios";
 import {  GET_PROPERTY,  GET_PROPS, IS_OPEN_MODAL_PICTURE, LOADING, RESET_PROPS, GET_PROPS_MAP,
-    RESET_PROPERTY, GET_EMPRENDIMIENTOS, GET_EMPRENDIMIENTO, RESET_EMPRENDIMIENTO, 
+    RESET_PROPERTY, GET_EMPRENDIMIENTOS, GET_EMPRENDIMIENTO, RESET_EMPRENDIMIENTO,
+    GET_PROPS_DESTADAS, 
 } from "./actionsType";
 import { actual } from "../../url";
 
 
 //--actions para props-------------------------------------------------------------
-export const getPropsMap = (limit, offset, operacion, tipoPropiedad, precioMin, precioMax, ambientes, destacadas) => {
+export const getPropsDestacadas = (operacion, tipoPropiedad, precioMin, precioMax, ambientes) => {
     return async function (dispatch) {
-        
         try {
             //construimos los parametros dinamicamente
-            let queryParams = `?limit=${limit}&offset=${offset}`;
-
-            if(operacion) queryParams += `&operacion=${operacion}`;
+            let queryParams = `?operacion=${operacion}`;
             if(tipoPropiedad) queryParams += `&tipo=${tipoPropiedad}`;
             if(ambientes) queryParams += `&ambientes=${ambientes}`;
             if(precioMin) queryParams += `&precioMin=${precioMin}`;
             if(precioMax) queryParams += `&precioMax=${precioMax}`;
-            if(destacadas) queryParams += `&destacadas=${destacadas}`;
-            //if(internacional) queryParams += `&internacional=${internacional}`;
 
-            const resp = await axios.get(`${actual}/propiedades/propsMap${queryParams}`); 
-            dispatch({type: GET_PROPS_MAP, payload: resp.data});
+            const resp = await axios.get(`${actual}/propiedades/propsDestacadas${queryParams}`); 
+            dispatch({type: GET_PROPS_DESTADAS, payload: resp.data});
         } catch (error) {
             console.log(error);
         }
     }
 }
+
 //trae props
 export const getProps = (limit, offset, operacion, tipoPropiedad, precioMin, precioMax, ambientes, destacadas) => {
     return async function(dispatch) {
@@ -47,6 +44,29 @@ export const getProps = (limit, offset, operacion, tipoPropiedad, precioMin, pre
 
             const resp = await axios.get(`${actual}/propiedades/propiedades${queryParams}`); 
             dispatch({ type: GET_PROPS, payload: resp.data });
+        } catch (error) {
+            console.log(error);
+        }
+    }
+}
+
+export const getPropsMap = (limit, offset, operacion, tipoPropiedad, precioMin, precioMax, ambientes, destacadas) => {
+    return async function (dispatch) {
+        
+        try {
+            //construimos los parametros dinamicamente
+            let queryParams = `?limit=${limit}&offset=${offset}`;
+
+            if(operacion) queryParams += `&operacion=${operacion}`;
+            if(tipoPropiedad) queryParams += `&tipo=${tipoPropiedad}`;
+            if(ambientes) queryParams += `&ambientes=${ambientes}`;
+            if(precioMin) queryParams += `&precioMin=${precioMin}`;
+            if(precioMax) queryParams += `&precioMax=${precioMax}`;
+            if(destacadas) queryParams += `&destacadas=${destacadas}`;
+            //if(internacional) queryParams += `&internacional=${internacional}`;
+
+            const resp = await axios.get(`${actual}/propiedades/propsMap${queryParams}`); 
+            dispatch({type: GET_PROPS_MAP, payload: resp.data});
         } catch (error) {
             console.log(error);
         }
@@ -87,20 +107,6 @@ export const resetPropiedades = () => {
         dispatch({type: RESET_PROPS});
     }
 }
-
-//elimina propiedad
-export const eliminaProp = (_id) => {
-    return async function() {
-        await axios.delete(`${actual}/propiedades/eliminaProp/${_id}`);
-    }
-};
-
-//edita propiedad
-export const editaProp = (data) => {
-    return async function() {
-        await axios.put(`${actual}/propiedades/editaProp`, data);
-    }
-};
 
 //--EMPRENDIMIENTOS------------------------------
 //trae emprendimientos

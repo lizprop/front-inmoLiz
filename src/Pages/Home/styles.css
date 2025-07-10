@@ -1,27 +1,51 @@
-.cont-home{
+.cont-home {
     width: 100%;
     height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: white;
 }
-.cont-titulo-filtros-listaProps{
+
+.cont-home-destacadas-y-titulo,
+.cont-titulo-filtros-listaProps {
     width: 100%;
-    height: auto;
+    min-height: auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
-    background-color: #dbdcdc;
+    margin-bottom: 20px;
 }
-.titulo-busqueda{
+
+.cont-home-destacadas {
     width: 90%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
-.cont-filtros-props{
+
+.cont-titulos {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.titulo-props-destacadas {
+    font-size: 1.8rem;
+    text-align: center;
+    padding: 0 0.5rem;
+    margin: 0;
+}
+
+.linea-destacadas {
+    width: 400px;
+    height: 1px;
+    background-color: rgb(149, 148, 148);
+}
+
+.cont-filtros-props {
     width: 100%;
     height: auto;
     display: flex;
@@ -29,7 +53,8 @@
     justify-content: center;
     align-items: center;
 }
-.cont-filtros-home{
+
+.cont-filtros-home {
     max-width: 1230px;
     height: auto;
     display: flex;
@@ -39,7 +64,8 @@
     margin-bottom: 20px;
     margin-right: 25px;
 }
-.cont-listaProps-home{
+
+.cont-listaProps-home {
     max-width: 1300px;
     min-height: 709px;
     display: flex;
@@ -47,31 +73,52 @@
     justify-content: center;
     align-items: center;
 }
-.cont-propsMapa{
+
+.cont-propsMapa {
     width: 80%;
     margin-bottom: 20px;
 }
+
 /* responsive */
 @media screen and (max-width: 1000px) {
-    .cont-propsMapa{
+    .cont-propsMapa {
         width: 90%;
     }
+
+    .titulo-props-destacadas {
+        font-size: 1rem;
+        text-align: center;
+        padding: 0 0.5rem;
+        margin: 0;
+    }
+
+    .linea-destacadas {
+        width: 300px;
+    }
 }
-@media screen and (max-width: 760px) {    
-    .titulo-busqueda{
+
+@media screen and (max-width: 760px) {
+    .titulo-busqueda {
         font-size: 17px;
     }
-    .cont-propsMapa{
+.linea-destacadas {
+        width: 150px;
+    }
+    .cont-propsMapa {
         width: 90%;
     }
 }
+
 @media screen and (max-width: 600px) {
     .cont-listaProps-home,
-    .cont-propsMapa{
+    .cont-propsMapa {
         width: 90%;
         display: flex;
         justify-content: center;
         align-items: center;
         margin: 20px 0 0 0;
+    }
+    .linea-destacadas {
+        width: 60px;
     }
 }

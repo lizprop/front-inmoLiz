@@ -1,20 +1,18 @@
 .cont-lista-props-destacadas {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     width: 100%;
-}
-
-.titulo-props-destacadas {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
+    background-color: rgb(234, 233, 233);
 }
 
 .carrusel-botones {
-    display: flex;
-    align-items: center;
     width: 100%;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .boton-carrusel {
@@ -33,6 +31,8 @@
 
 .carrusel-container {
     display: flex;
+    justify-content: flex-start;
+    align-items: center;
     overflow-x: auto;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;

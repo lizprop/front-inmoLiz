@@ -5,7 +5,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: start;
-    /* background-color: rgb(107, 108, 108); */
 }
 
 .subCont-filtrosSelect {
@@ -26,12 +25,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
-    color: black;
     width: 150px;
     height: 100%;
     font-size: 18px;
     border: none;
+    color: black;
+    background-color: rgb(209, 208, 208);
 }
 
 /* div selects */
@@ -42,7 +41,7 @@
     justify-content: start;
     align-items: center;
     gap: 5px;
-    background-color: white;
+    background-color: rgb(209, 208, 208);
 }
 
 .cont-op-tipoP,
@@ -61,7 +60,8 @@
     border: none;
     border-radius: 5px;
     margin-left: 10px;
-    background-color: rgb(223, 223, 224);
+    color: black; /* color palabra selects */
+    background-color: white;
 }
 
 /* precios */
@@ -72,16 +72,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid black;
+    border: 1px solid white;
     padding: 20px 10px 10px;
     border-radius: 5px;
+    background-color: white;
 }
 
 .cont-filtro-precioMaxMin label {
     position: absolute;
     top: -10px;
     left: 10px;
-    ;
     background: white;
     /* Asegura que el texto no se mezcle con el fondo */
     padding: 0 5px;
@@ -104,10 +104,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid black;
     padding: 0px 10px;
     border-radius: 5px;
     margin-left: 10px;
+    background-color: white;
 }
 .p-destacadas{
         font-size: 18px;
@@ -126,7 +126,6 @@
         flex-wrap: wrap;
         justify-content: start;
         align-items: center;
-        background-color: white;
     }
 
     .select-tipoProp {

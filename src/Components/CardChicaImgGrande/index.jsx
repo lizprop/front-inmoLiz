@@ -7,19 +7,12 @@ import './styles.css';
 const CardChicaImagenGrande = ({
     id,
     direccionF,
-    cantCocheras,
     operacion,
     imagenes = [],
     tituloPublicacion,
-    ambientes,
-    dormitorios,
-    supTotal,
-    supCubierta,
-    supDescubierta,
-    unidadMedida,
-    tipo,
     vista
 }) => {
+    console.log("op: ", operacion)
     const [imgIndex, setImgIndex] = useState(0);
     const [showDetail, setShowDetail] = useState(false);
 

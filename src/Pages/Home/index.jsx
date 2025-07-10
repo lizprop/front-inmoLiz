@@ -9,8 +9,8 @@ import ListaPropiedades from '../../Components/ListaPropiedades';
 import Paginacion from '../../Components/Paginacion';
 import FiltrosSelect from '../../Components/FiltrosSelect';
 import MapaPropiedades from '../../Components/MapProps';
-import './styles.css';
 import ListaPropsDestacadas from '../../Components/ListaPropsDestacadas';
+import './styles.css';
 
 function Home() {
 

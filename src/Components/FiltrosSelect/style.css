@@ -67,7 +67,7 @@
 /* precios */
 .cont-filtro-precioMaxMin {
     position: relative;
-    width: 300px;
+    width: 400px;
     height: 18px;
     display: flex;
     justify-content: space-between;
@@ -98,20 +98,20 @@
     background-color: rgb(223, 223, 224);
 }
 
-.cont-destacadas {
-    width: 175px;
-    height: 48px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0px 10px;
-    border-radius: 5px;
-    margin-left: 10px;
-    background-color: white;
+.btn-aplicar-precio {
+    background-color: var(--fondo-navbar);
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
-.p-destacadas{
-        font-size: 18px;
-    }
+
+.btn-aplicar-precio:hover {
+    background-color: #0056b3;
+}
+
 /* responsive */
 @media screen and (max-width: 1200px) {
     .cont-filtrosSelect {
@@ -132,7 +132,6 @@
         margin: 10px;
     }
 }
-
 @media screen and (max-width: 860px) {
     .cont-filtrosSelect {
         width: 95%;
@@ -169,7 +168,6 @@
         margin-left: 10px;
     }
 }
-
 @media screen and (max-width: 834px) {
     .cont-filtrosSelect {
         width: 500px;

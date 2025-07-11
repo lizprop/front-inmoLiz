@@ -15,7 +15,7 @@ const MapProp = ({ lat,lng }) => {
     return (
         <iframe
             title="Map"
-            className="map"
+            className="iframe-map"
             src={generateMapUrl(lat, lng)}
             allowFullScreen
         ></iframe>

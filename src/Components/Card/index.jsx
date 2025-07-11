@@ -28,7 +28,7 @@ function Card({ id, direccionF, cantCocheras, operacion, imagenes, tituloPublica
                 >
                     {/* imagen */}
                     <div className='card-image'>
-                        <img src={imagenes[0].original} alt='not found' className='card-img' />
+                        <img src={imagenes[0]?.original} alt='not found' className='card-img' />
                     </div>
 
                     {/* msj detalle si hay hover */}

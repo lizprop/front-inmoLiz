@@ -6,7 +6,7 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 //import MeGusta from '../BotonMeGusta';
 import './styles.css'
 
-function CardEmp({ id, direccionF, imagen, tituloPublicacion, descripcion }) {
+function CardEmp({ id, direccionF, imagenes, tituloPublicacion, descripcion }) {
 
     //estado para el hover
     const [showDetail, setShowDetail] = useState(false);
@@ -21,7 +21,7 @@ function CardEmp({ id, direccionF, imagen, tituloPublicacion, descripcion }) {
                 >
                     {/* imagen */}
                     <div className='card-image'>
-                        <img src={imagen} alt='not found' className='card-img' />
+                        <img src={imagenes[0].imagen} alt='not found' className='card-img' />
                     </div>
 
                     {/* msj detalle si hay hover */}

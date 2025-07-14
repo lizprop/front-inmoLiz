@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getEmprendimientos } from '../../Redux/Actions';
 import Loading from '../../Components/Loading';
-import ListaPropsDestacadas from '../../Components/ListaPropsDestacadas';
+import ListaEmprendimientos from '../../Components/ListaEmprendimientos';
 import './styles.css';
 
 
@@ -30,11 +30,11 @@ function Emprendimiento() {
                 ) : (
                     <div className='cont-titulo-y-props-venta'>
                         <div className='cont-titulo-emp'>
-                            <p className='titulo-props-emprendimientos' data-translate>Emprendimientos y oportunidades de negocios</p>
+                            <p className='titulo-props-emprendimientos' >Emprendimientos y oportunidades de negocios</p>
                         </div>
                         {/* Destacadas */}
                         <div className='cont-home-propsDestacadas'>
-                            <ListaPropsDestacadas allPropsDestacadas={allEmp} />
+                            <ListaEmprendimientos allEmp={allEmp} />
                         </div>
                     </div>
 

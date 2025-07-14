@@ -11,7 +11,10 @@ import IconoSup from '../../Images/Iconos/IconoSup';
 import MeGusta from '../BotonMeGusta';
 import './styles.css'
 
-function Card({ id, direccionF, cantCocheras, operacion, imagenes, tituloPublicacion, ambientes, dormitorios, supTotal, supCubierta, supDescubierta, unidadMedida, tipo, vista }) {
+function Card({ 
+    id, direccionF, cantCocheras, operacion, imagenes, tituloPublicacion, ambientes, 
+    dormitorios, supTotal, supCubierta, supDescubierta, unidadMedida, tipo, vista 
+}) {
 
     //estado para el hover
     const [showDetail, setShowDetail] = useState(false);

@@ -19,7 +19,7 @@ function NavbarInf() {
                         <NavLink to='/' className='navlink-navbarInf'>
                             {/* <img src={LogoNuevo} alt='Logo' className='logo-navbarInfR' /> */}
                             <div className='cont-ortizLizmar'>
-                                <p className='nav-nombre'>ORTIZ LIZMAR</p>
+                                <p className='nav-nombre-ortiz'>ORTIZ LIZMAR</p>
                                 <p className='p-propiedades'>PROPIEDADES</p>
                             </div>
                         </NavLink>

@@ -183,10 +183,6 @@ function DetalleProp() {
                                     </div>
                                 </div>
 
-                                {/* <div className='col-descrip-fila2'>
-                                    
-                                </div> */}
-
                                 <div className='col-descrip-fila3'>
                                     <div className='cont-p-col-1'>
                                         <p className='p-col-key' data-translate>Tipo Op:</p>

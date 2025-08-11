@@ -101,15 +101,18 @@
     .titulo-busqueda {
         font-size: 17px;
     }
-.linea-destacadas {
+
+    .linea-destacadas {
         width: 150px;
     }
+
     .cont-propsMapa {
         width: 90%;
     }
 }
 
 @media screen and (max-width: 600px) {
+
     .cont-listaProps-home,
     .cont-propsMapa {
         width: 90%;
@@ -118,6 +121,7 @@
         align-items: center;
         margin: 20px 0 0 0;
     }
+
     .linea-destacadas {
         width: 60px;
     }

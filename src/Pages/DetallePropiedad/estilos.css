@@ -42,7 +42,7 @@
     display: flex;
     justify-content: start;
     align-items: center;
-    
+
 }
 
 .cont-btn_Y_tituilo {
@@ -82,13 +82,15 @@
     justify-content: start;
     align-items: center;
 }
-.cont-precio-detallee{
+
+.cont-precio-detallee {
     width: 50%;
     height: 100%;
     display: flex;
     justify-content: end;
     align-items: center;
 }
+
 .detalle-titulo-prop {
     margin-left: 10px;
     font-size: 28px;
@@ -131,6 +133,7 @@
     background-color: var(--fondo-navbar);
     border-radius: 10px;
 }
+
 .cont-imagenes {
     position: relative;
     width: 60%;
@@ -139,8 +142,9 @@
     justify-content: center;
     align-items: start;
 }
+
 /* btns multimedia */
-.cont-multimedia{
+.cont-multimedia {
     width: 20%;
     position: absolute;
     top: 25px;
@@ -151,6 +155,7 @@
     border-top-left-radius: 10px;
     z-index: 4;
 }
+
 .btn-video {
     display: flex;
     justify-content: center;
@@ -231,6 +236,7 @@
     background-color: var(--fondo-navbar);
     margin-bottom: 40px;
 }
+
 .cont-titulo-descripcion-form {
     width: 95%;
     display: flex;
@@ -328,6 +334,7 @@
 .p-viñeta {
     margin: 0;
 }
+
 .p-viñeta {
     padding-left: 1.5em;
     text-indent: -1.7em;
@@ -352,8 +359,10 @@
     margin-bottom: 30px;
     border-radius: 5px;
     background-color: #fff;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* sombra derecha e inferior */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    /* sombra derecha e inferior */
 }
+
 .p-titulo-mapa {
     width: 80%;
     font-size: 23px;
@@ -362,10 +371,12 @@
     border-radius: 10px;
     color: rgb(4, 4, 4);
 }
-.cont-mapa-detalle{
+
+.cont-mapa-detalle {
     height: 400px;
 }
-.cont-lista-props-similares{
+
+.cont-lista-props-similares {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -375,18 +386,42 @@
     border-radius: 10px;
     /* box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.25); */
 }
-.cont-comp-props-similares{
+
+.cont-comp-props-similares {
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: start;
-    align-items: start;   
+    align-items: start;
 }
-.p-titulo-props-similares{
+
+.p-titulo-props-similares {
     margin: 10px 0 0 10px;
     font-size: 20px;
     font-weight: 600;
 }
+
+.btn-share {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.cont-btn-share {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.mensaje-copiado {
+    color: #00e676;
+    font-size: 0.9rem;
+    margin-left: 8px;
+    transition: opacity 0.3s ease-in-out;
+}
+
+
 /* responsive */
 @media screen and (max-width: 1250px) {
     .info-1 {
@@ -422,6 +457,7 @@
         align-items: center;
         margin-top: 50px;
     }
+
     .cont-descrip {
         width: 100%;
         margin-bottom: 20px;
@@ -429,6 +465,7 @@
 }
 
 @media screen and (max-width: 950px) {
+
     /* estilos seccion titulo y btn atras, video */
     .info-1 {
         width: 95%;
@@ -443,28 +480,34 @@
     .cont-btn_Y_tituilo {
         width: 70%;
     }
+
     .cont-titulo-detalle {
         width: 99%;
     }
+
     .cont-precio-detalle {
         width: 30%;
         display: flex;
         justify-content: center;
         align-items: center;
     }
+
     .cont-btns-direccion {
         width: 100%;
         display: flex;
         justify-content: start;
         align-items: center;
     }
+
     .detalle-titulo-prop,
     .detalle-titulo-direccion {
         font-size: 17px;
     }
+
     .cont-descrip {
         width: 90%;
     }
+
     .col-descrip-fila1,
     .col-descrip-fila2,
     .col-descrip-fila3 {
@@ -497,15 +540,16 @@
 
 @media screen and (max-width: 730px) {
     .cont-detail {
-    width: 98vw;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 80px;
-    margin-bottom: 10px;
-}
+        width: 98vw;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 80px;
+        margin-bottom: 10px;
+    }
+
     .info-1 {
         width: 95%;
         height: 80px;
@@ -519,35 +563,43 @@
     .cont-btn_Y_tituilo {
         width: 70%;
     }
+
     .cont-titulo-detalle {
         width: 99%;
     }
+
     .cont-precio-detalle {
         width: 30%;
         display: flex;
         justify-content: center;
         align-items: center;
     }
+
     .cont-btns-direccion {
         width: 100%;
         display: flex;
         justify-content: start;
         align-items: center;
     }
+
     .detalle-titulo-prop,
     .detalle-titulo-direccion {
         font-size: 15px;
     }
-    .precio-detalle{
+
+    .precio-detalle {
         font-size: 15px;
     }
-    .moneda-detalle{
+
+    .moneda-detalle {
         font-size: 12px;
     }
+
     /* estilos seccion imagenes */
-    .cont-multimedia{
+    .cont-multimedia {
         width: 40%;
     }
+
     .cont-imgs-info {
         width: 98%;
         margin-bottom: 20px;
@@ -566,9 +618,10 @@
     }
 
     /* cont descr  */
-    .cont-descrip{
+    .cont-descrip {
         width: 98%;
     }
+
     .cont-titulo-descripcion-form {
         width: 98%;
         display: flex;
@@ -580,15 +633,18 @@
     .cont-texto-descrip-detalle {
         width: 95%;
     }
+
     /* cont descripción */
     .cont-descrip {
         width: 95%;
     }
+
     .col-descrip-fila1,
     .col-descrip-fila2,
     .col-descrip-fila3 {
         width: 100%;
     }
+
     .cont-p-col-1,
     .cont-p-col-2,
     .cont-p-col-3 {
@@ -598,6 +654,7 @@
         align-items: center;
         border-right: 1px solid white;
     }
+
     .cont-p-col-1,
     .cont-p-col-2,
     .cont-p-col-3 {
@@ -609,21 +666,25 @@
         border-right: 1px solid white;
         margin-bottom: 10px;
     }
-    .cont-p-col-3{
+
+    .cont-p-col-3 {
         border-right: none
     }
+
     .p-col-key,
     .p-col-value {
         font-size: 17px;
         margin: 0;
     }
+
     /* mapa */
     .cont-map {
         width: 90%;
         height: 550px;
         margin-top: 0px;
     }
-    .titulo-props-similares{
+
+    .titulo-props-similares {
         font-size: 15px;
     }
 }

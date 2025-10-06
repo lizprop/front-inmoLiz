@@ -120,7 +120,8 @@ function Home() {
                         <MapaPropiedades propiedades={allPropsMap.propiedades} />
                     </div>
                 </div>
-
+                {/* Lista props Destacadas */}
+                
                 <LandingC />
                 <LandingMuestraTarjetas />
             </div>

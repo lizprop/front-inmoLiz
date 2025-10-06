@@ -688,3 +688,17 @@
         font-size: 15px;
     }
 }
+
+@media screen and (max-width: 500px) {
+    .cont-btn_Y_tituilo-precio {
+        width: 100%;
+        height: auto;
+    }
+
+    .cont-btn_Y_tituilo {
+        width: 100%;
+    }
+    .cont-titulo-detalle {
+        width: 99%;
+    }
+}

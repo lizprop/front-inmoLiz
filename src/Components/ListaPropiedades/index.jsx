@@ -3,12 +3,12 @@ import Card from '../Card';
 import NoHayProps from '../NoHayProps';
 import './styles.css';
 
-function ListaPropiedades({ allProps, vista }) {
+function ListaPropiedades({ allProps, vista }) { console.log("props: ", allProps)
     return (
         <div className='contGralListaP'>
             <div className='contListaP'>
                 {
-                    allProps && allProps.length > 0 ? (
+                    allProps ? (
                         allProps.map(p => (
                             <div 
                                 className='cont-card-listaProps' 

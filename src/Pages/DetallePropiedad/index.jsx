@@ -43,7 +43,7 @@ function DetalleProp() {
     const handleShare = async () => {
         const url = window.location.href;
         const title = propiedad?.tituloPublicacion || "Propiedad disponible";
-        const text = `Mirá esta propiedad en Mendive Inmobiliaria: ${title}`;
+        const text = `Mirá esta propiedad en Ortiz Lizmar Propiedades: ${title}`;
 
         if (navigator.share && window.isSecureContext) {
             try {

@@ -32,14 +32,14 @@ function DetalleProp() {
     const [copiado, setCopiado] = useState(false);
     const [soportaShare, setSoportaShare] = useState(false);
 
-    // 🟢 Verificar soporte de la API al montar
+    //Verificar soporte de la API al montar
     useEffect(() => {
         setSoportaShare(!!navigator.share);
     }, []);
 
     const handleClickAtras = () => navigate(-1);
 
-    // 🟢 Función para compartir la propiedad
+    //Función para compartir la propiedad
     const handleShare = async () => {
         const url = window.location.href;
         const title = propiedad?.tituloPublicacion || "Propiedad disponible";
@@ -122,7 +122,8 @@ function DetalleProp() {
                                     {/* Título prop */}
                                     <div className='cont-titulo-detalle'>
                                         <p className='detalle-titulo-prop' data-translate>
-                                            {capitalizar(propiedad.tituloPublicacion)}
+                                            {propiedad.tituloPublicacion}
+                                            {/* {capitalizar(propiedad.tituloPublicacion)} */}
                                         </p>
                                     </div>
 

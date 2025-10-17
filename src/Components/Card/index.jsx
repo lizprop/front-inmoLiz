@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { capitalizar, formatMoney } from '../../Helps';
+import { formatMoney } from '../../Helps';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import Favorito from '../Favoritos';
 import HomeIcon from '@mui/icons-material/Home';
@@ -56,7 +56,7 @@ function Card({
             <div className='card-info1'>
                 <div className='cont-titulo-publicacion-card'>
                     <div className='cont-titulo-card'>
-                        <h5 className='tituloPublicacion' data-translate>{capitalizar(tituloPublicacion)}</h5>
+                        <h5 className='tituloPublicacion' data-translate>{tituloPublicacion}</h5>
                     </div>
                     <div className='cont-direcc-icono-card'>
                         <LocationOnIcon sx={{ color: 'grey' }} />

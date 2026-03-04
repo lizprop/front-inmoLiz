@@ -1,74 +1,143 @@
 .cont-listaProps-fav {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    margin-top: 80px;
-    background-color: rgb(171, 172, 172);
-}
-.cont-card-lista-props-fav {
-    width: 95%;
-    height: auto;
-    display: flex;    
-    flex-wrap: wrap; /* para el orden de las CARDS */
-    justify-content: center; /* eje x */
-    align-items: center;
-}
-/* estilos btns de los tipos de props */
-.cont-filtros-fav {
-    width: 70%;
-    display: flex;
-    padding: 20px 5px;
-    display: flex;
-    flex-direction:row;
-    justify-content: space-around;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    background-color: rgb(228, 228, 230);
-}
-.cont-filtros-fav button {
-    width: 110px;
-    display: flex;
-    justify-content: center;
-    align-items: center;    
-    padding: 8px 18px;
-    border: none;
-    background-color: white;
-    color: #025fc3;
-    font-weight: 500;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-size: 16px;
-}
-.cont-filtros-fav button:hover {
-    background-color: #007bff;
-    color: white;
-}
-.cont-filtros-fav button.activo {
-    background-color: #007bff;
-    color: white;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.6);
+    gap: 22px;
+    padding: 34px 20px 44px;
 }
 
-/* responsive */
-@media screen and (max-width: 1050px) {
-    .cont-listaProps-fav h1{
-        text-align: center;
+.encabezado-favoritos {
+    width: min(1200px, 100%);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 16px;
+    padding: 22px;
+    background: linear-gradient(120deg, rgba(7, 11, 16, 0.88) 0%, rgba(10, 17, 24, 0.72) 60%, rgba(11, 19, 28, 0.62) 100%);
+    box-shadow: 0 14px 38px rgba(0, 0, 0, 0.22);
+}
+
+.eyebrow-favoritos {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.74);
+}
+
+.titulo-favoritos {
+    margin: 10px 0 0 0;
+    font-size: clamp(30px, 3.8vw, 44px);
+    line-height: 1.08;
+    color: #fff;
+}
+
+.subtitulo-favoritos {
+    margin: 12px 0 0 0;
+    max-width: 70ch;
+    font-size: clamp(15px, 1.8vw, 18px);
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.88);
+}
+
+.cantidad-favoritos {
+    margin: 18px 0 0 0;
+    width: fit-content;
+    padding: 6px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.34);
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.panel-filtros-favoritos {
+    width: min(1200px, 100%);
+    border-radius: 14px;
+    border: 1px solid #d4dbe3;
+    padding: 16px;
+    background: #f5f7fa;
+    box-shadow: 0 8px 20px rgba(20, 28, 39, 0.08);
+}
+
+.label-filtros-favoritos {
+    margin: 0 0 12px 2px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #354252;
+}
+
+.cont-filtros-fav {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.cont-filtros-fav button {
+    min-width: 98px;
+    height: 38px;
+    padding: 0 16px;
+    border: 1px solid #c3ccd7;
+    background: #fff;
+    color: #1d2a3a;
+    font-weight: 600;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: 0.2s ease;
+    font-size: 14px;
+}
+
+.cont-filtros-fav button:hover {
+    border-color: #8fa2b8;
+    background: #edf2f7;
+}
+
+.cont-filtros-fav button.activo {
+    background: #102132;
+    color: #ffffff;
+    border-color: #102132;
+    box-shadow: 0 6px 16px rgba(16, 33, 50, 0.26);
+}
+
+.cont-card-lista-props-fav {
+    width: min(1280px, 100%);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+    align-items: start;
+    justify-items: center;
+}
+
+.cont-card-Fav-listaProps {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.no-props {
+    width: 100%;
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 900px) {
+    .cont-listaProps-fav {
+        padding: 24px 14px 34px;
     }
+
+    .encabezado-favoritos,
+    .panel-filtros-favoritos {
+        padding: 14px;
+    }
+
     .cont-card-lista-props-fav {
-        justify-content: space-around; /* eje x */
-    }
-    /* estilos btns de los tipos de props */
-    .cont-filtros-fav {
-        width: 80%;
-        height: auto;
-        flex-wrap: wrap;
-    }
-    .cont-filtros-fav button {
-        width: 90px;
-        font-weight: 500;
-        font-size: 14px;
-        margin-top: 3px;
+        grid-template-columns: 1fr;
     }
 }

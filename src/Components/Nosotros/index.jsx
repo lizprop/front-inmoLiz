@@ -6,34 +6,38 @@ import './estilos.css';
 function Nosotros() {
   return (
     <div className='cont-nosotros'>
-      <div className='cont-mitad-sup'>
+      <div className='capa-nosotros' />
+
+      <div className='cont-nosotros-contenido'>
         <div className='cont-textos-nosotros'>
-          <p className="p-texto-nosotros" data-translate>
-            Nos dedicamos a realizar gestiones inmobiliarias,
-            <br />
-            con un enfoque en propiedades de diseño único.
+          <p className='eyebrow-nosotros' data-translate>Nosotros</p>
+          <h2 className='titulo-nosotros' data-translate>
+            Asesoramiento inmobiliario con criterio y cercania
+          </h2>
+
+          <p className='p-texto-nosotros' data-translate>
+            Nos dedicamos a realizar gestiones inmobiliarias, con un enfoque en propiedades de diseño unico.
           </p>
-          <p className="p-texto-nosotros" data-translate>
+          <p className='p-texto-nosotros' data-translate>
             Creemos en la importancia de caminar juntos hacia el cumplimiento de tus objetivos, para que sientas nuestro respaldo en cada paso del proceso.
           </p>
-        </div>
-      </div>
 
-      <div className='cont-mitad-inf'>
-        <div className='cont-nombre-inmo'>
-          <NavLink to='/' className='navlink-navbarInf'>
-          {/* <img src={LogoSinFondo} alt='Logo' className='logo-navbarInfR' /> */}
-          <div className='cont-ortizLizmar'>
-            <p className='nav-nombre'>ORTIZ LIZMAR</p>
-            <p className='p-propiedades'>PROPIEDADES</p>
+          <div className='fila-datos-nosotros'>
+            <div className='dato-nosotros'>
+              <p className='dato-numero'>+55</p>
+              <p className='dato-texto' data-translate>Años de experiencia</p>
+            </div>
+            <div className='dato-nosotros'>
+              <p className='dato-numero'>360</p>
+              <p className='dato-texto' data-translate>Acompañamiento integral</p>
+            </div>
           </div>
-        </NavLink>
         </div>
       </div>
 
-      <WhatsAppButton/>
+      <WhatsAppButton />
     </div>
-  )
+  );
 }
 
-export default Nosotros
+export default Nosotros;

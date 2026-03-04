@@ -1,3 +1,9 @@
 .page-favoritos{
+    width: 100%;
     min-height: 100lvh;
+    padding-top: 86px;
+    background:
+        radial-gradient(circle at 15% 10%, rgba(181, 197, 216, 0.35), transparent 42%),
+        radial-gradient(circle at 88% 24%, rgba(204, 213, 228, 0.4), transparent 36%),
+        linear-gradient(180deg, #eef2f6 0%, #f8fafc 45%, #f5f7fb 100%);
 }

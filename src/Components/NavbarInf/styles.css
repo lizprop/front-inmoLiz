@@ -60,6 +60,7 @@
     font-size: 20px;
     font-weight: 500;
     margin: 0;
+    white-space: nowrap;
 }
 .p-propiedades{
     font-size: 12px;

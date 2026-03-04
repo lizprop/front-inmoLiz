@@ -1,57 +1,172 @@
 .cont-nosotros {
+    position: relative;
     width: 100%;
-    height: 90lvh;
+    min-height: 90vh;
     display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: start;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), url('../../Images/img-2.jpg');
-    background-size: cover; 
+    align-items: center;
+    justify-content: center;
+    padding: 48px 24px;
+    overflow: hidden;
+    background-image: url('../../Images/img-2.jpg');
+    background-size: cover;
     background-position: center;
 }
-.cont-mitad-sup,
-.cont-mitad-inf {
-    width: 100%;
-    height: 50%;
-}
-.cont-mitad-sup{
-    display: flex;
-    justify-content: start;
-    align-items: center;
-}
-.cont-textos-nosotros{
-    width: 60%;
-    margin-left: 30px;
-}
-.p-texto-nosotros {
-    font-size: 28px;
-    font-weight: 500;
-    padding: 10px;
-    margin: 0;
-    color: white;
+
+.capa-nosotros {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(110deg, rgba(13, 18, 24, 0.92) 0%, rgba(13, 18, 24, 0.75) 46%, rgba(13, 18, 24, 0.4) 100%);
 }
 
-.cont-mitad-inf{
-    display: flex;
-    justify-content: end;
-    align-items: end;
+.cont-nosotros-contenido {
+    position: relative;
+    z-index: 1;
+    width: min(1200px, 100%);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 320px;
+    gap: 32px;
+    align-items: stretch;
 }
-.cont-nombre-inmo{
-    width: 40%;
-    height: 100%;
+
+.cont-textos-nosotros {
+    padding: clamp(20px, 3.5vw, 36px);
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    border-radius: 16px;
+    background: rgba(6, 10, 14, 0.58);
+    backdrop-filter: blur(2px);
+}
+
+.eyebrow-nosotros {
+    margin: 0 0 12px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.titulo-nosotros {
+    margin: 0;
+    max-width: 24ch;
+    font-size: clamp(30px, 4vw, 48px);
+    line-height: 1.08;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.p-texto-nosotros {
+    max-width: 70ch;
+    margin: 16px 0 0 0;
+    font-size: clamp(16px, 1.8vw, 19px);
+    line-height: 1.65;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.92);
+}
+
+.fila-datos-nosotros {
+    margin-top: 24px;
     display: flex;
-    justify-content: end;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.dato-nosotros {
+    min-width: 180px;
+    padding: 12px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.dato-numero {
+    margin: 0;
+    font-size: 26px;
+    line-height: 1;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.dato-texto {
+    margin: 6px 0 0 0;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.cont-nombre-inmo {
+    padding: 22px;
+    border-radius: 16px;
+    background: rgba(6, 10, 14, 0.78);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
-/* Responsive */
-@media screen and (max-width: 600px) {
-    .cont-textos-nosotros {
-        width: 80%;
+
+.navlink-marca-nosotros {
+    width: 100%;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cont-nombre-inmo .cont-ortizLizmar {
+    width: auto;
+    text-align: center;
+}
+
+.cont-nombre-inmo .cont-ortizLizmar .nav-nombre-ortiz {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+    color: #ffffff;
+    letter-spacing: 0.03em;
+}
+
+.cont-nombre-inmo .cont-ortizLizmar .p-propiedades {
+    margin: 6px 0 0 0;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    color: rgba(255, 255, 255, 0.84);
+}
+
+@media screen and (max-width: 980px) {
+    .cont-nosotros {
+        padding: 38px 16px;
     }
+
+    .cont-nosotros-contenido {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .cont-nombre-inmo {
+        align-items: stretch;
+        min-height: 130px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .cont-nosotros {
+        min-height: auto;
+    }
+
+    .cont-textos-nosotros {
+        padding: 18px;
+    }
+
+    .titulo-nosotros {
+        font-size: 30px;
+    }
+
     .p-texto-nosotros {
-        font-size: 18px;
-        font-weight: 500;
-        padding: 10px;
-        margin: 0;
+        font-size: 16px;
+    }
+
+    .dato-nosotros {
+        width: 100%;
     }
 }

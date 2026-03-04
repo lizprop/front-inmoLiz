@@ -32,7 +32,7 @@ function Footbar() {
                                 </p>
 
                                 <p className='info-contactos'>
-                                    mail
+                                    mail: ortizlizmar@gmail.com
                                 </p>
                             </div>
                         </li>

@@ -12,12 +12,12 @@ const CardChicaImagenGrande = ({
     tituloPublicacion,
     vista
 }) => {
-    console.log("op: ", operacion)
     const [imgIndex, setImgIndex] = useState(0);
     const [showDetail, setShowDetail] = useState(false);
 
-    const venta = operacion.find(op => op.operacion === "Venta");
-    const alquiler = operacion.find(op => op.operacion === "Alquiler");
+    const operaciones = operacion || [];
+    const venta = operaciones.find(op => op.operacion === "Venta");
+    const alquiler = operaciones.find(op => op.operacion === "Alquiler");
 
     const handleNext = (e) => {
         e.stopPropagation();
@@ -35,7 +35,6 @@ const CardChicaImagenGrande = ({
         <div className="cards-scroll-wrapper">
             <div className="cont-card-imgGrande">
                 <div className="cont-imgG">
-                    {/* NavLink que solo cubre la imagen */}
                     <NavLink to={`/detalle/${id}`} className='navLink-car'>
                         <div
                             onMouseEnter={() => setShowDetail(true)}
@@ -44,24 +43,23 @@ const CardChicaImagenGrande = ({
                             <div className='card-image-chica'>
                                 <img
                                     src={imagenes[imgIndex]?.original}
-                                    alt='not found'
+                                    alt={tituloPublicacion || 'Propiedad destacada'}
                                     className='card-imgGrande'
                                 />
                             </div>
 
                             <div className={`detail-chica ${showDetail ? 'show-chica' : ''}`}>
-                                <p className='palabra-abre-detalle' data-translate>Detalle</p>
+                                <p className='palabra-abre-detalle' data-translate>Ver detalle</p>
                             </div>
                         </div>
                     </NavLink>
 
-                    {/* Badges sobre la imagen */}
                     <div className="badge operacionCG">
-                        {operacion.length > 1 ? (
+                        {operaciones.length > 1 ? (
                             "Venta/Alq"
-                        ) : operacion[0]?.operacion === 'Venta' ? (
+                        ) : operaciones[0]?.operacion === 'Venta' ? (
                             "Venta"
-                        ) : operacion[0]?.operacion === 'Alquiler' ? (
+                        ) : operaciones[0]?.operacion === 'Alquiler' ? (
                             "Alquiler"
                         ) : null}
                     </div>
@@ -94,11 +92,10 @@ const CardChicaImagenGrande = ({
                         )}
                     </div>
 
-                    {/* Flechas fuera del NavLink */}
                     {imagenes.length > 1 && (
                         <>
-                            <button className="img-nav left" onClick={handlePrev}>‹</button>
-                            <button className="img-nav right" onClick={handleNext}>›</button>
+                            <button className="img-nav left" onClick={handlePrev} aria-label="Imagen anterior">&lsaquo;</button>
+                            <button className="img-nav right" onClick={handleNext} aria-label="Imagen siguiente">&rsaquo;</button>
                         </>
                     )}
                 </div>
@@ -108,7 +105,7 @@ const CardChicaImagenGrande = ({
                         <h3 className='tituloPublicacion-cardIG' data-translate>{capitalizar(tituloPublicacion)}</h3>
                     </div>
                     <div className='cont-direcc-icono-card'>
-                        <LocationOnIcon sx={{ color: 'grey' }} />
+                        <LocationOnIcon className="icono-direccion-cardIG" />
                         <p className='direcc-card' data-translate>{direccionF}</p>
                     </div>
                 </div>

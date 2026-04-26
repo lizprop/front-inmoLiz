@@ -1,58 +1,149 @@
-.cont-tarjeta{
-    width: min(100%, 300px);
-    min-height: 400px;
-    height: auto;
+.cont-tarjeta {
+    min-height: 420px;
+    height: 100%;
+    position: relative;
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    border-radius: 10px;
-    background-color: azure;
-    box-shadow: 0px 0px 8px 0px #8a8a8a;
-    margin: 10px;
-    transition: 0.5s;
+    justify-content: flex-end;
+    overflow: hidden;
+    border-radius: 8px;
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #161a1f;
+    box-shadow: 0 20px 54px rgba(16, 18, 20, 0.16);
+    isolation: isolate;
+    transition: transform 0.24s ease, box-shadow 0.24s ease;
 }
-.cont-tarjeta:hover{
-    transform: scale(1.1);
+
+.cont-tarjeta:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 28px 68px rgba(16, 18, 20, 0.22);
 }
-.cont-img-tarjeta{
-    width: 90%;
-    aspect-ratio: 4 / 3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+.cont-img-tarjeta {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
 }
-.img-tarjeta{
+
+.cont-img-tarjeta::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+        linear-gradient(180deg, rgba(9, 12, 15, 0.06) 0%, rgba(9, 12, 15, 0.46) 48%, rgba(9, 12, 15, 0.88) 100%),
+        linear-gradient(90deg, rgba(9, 12, 15, 0.48) 0%, rgba(9, 12, 15, 0.04) 100%);
+}
+
+.img-tarjeta {
     width: 100%;
     height: 100%;
+    display: block;
     object-fit: cover;
     object-position: center;
-    border-radius: 10px 10px 0px 0px;
+    transition: transform 0.42s ease, filter 0.42s ease;
 }
-.titulo-tarjeta{
-    width: 100%;
-    height: 20%;
+
+.cont-tarjeta:hover .img-tarjeta {
+    transform: scale(1.055);
+    filter: saturate(1.06);
+}
+
+.cont-titulo-tarjeta {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 23px;
-    font-weight: 500;
-    color: black;
+    flex-direction: column;
+    gap: 12px;
+    padding: 24px 22px 84px;
+    box-sizing: border-box;
 }
-.btn-comprar{
-    width: 100%;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-    color: black;
-    border: 1px solid black;
-    background-color: transparent;
-    border-radius: 10px;
-    cursor: pointer;
+
+.categoria-tarjeta {
+    width: fit-content;
+    padding: 7px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.32);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.12);
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    backdrop-filter: blur(8px);
 }
-.btn-comprar:hover{
-    background-color: black;
-    color: white;
+
+.titulo-tarjeta {
+    margin: 0;
+    color: #ffffff;
+    font-size: clamp(1.35rem, 2vw, 1rem);
+    line-height: 1.08;
+    font-weight: 600;
+    text-wrap: balance;
+}
+
+.texto-tarjeta {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 0.92rem;
+    line-height: 1.48;
+}
+
+.btn-comprar {
+    position: absolute;
+    left: 22px;
+    right: 22px;
+    bottom: 22px;
+    min-height: 44px;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 0 15px;
+    border: 1px solid rgba(255, 255, 255, 0.34);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    box-sizing: border-box;
+    font-size: 0.92rem;
+    font-weight: 800;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    backdrop-filter: blur(10px);
+}
+
+.cont-tarjeta:hover .btn-comprar {
+    border-color: #ffffff;
+    background: #ffffff;
+    color: #161a1f;
+}
+
+.btn-comprar-icon {
+    font-size: 1.15rem;
+    line-height: 1;
+    transition: transform 0.2s ease;
+}
+
+.cont-tarjeta:hover .btn-comprar-icon {
+    transform: translateX(3px);
+}
+
+@media (max-width: 1100px) {
+    .cont-tarjeta {
+        min-height: 360px;
+    }
+}
+
+@media (max-width: 760px) {
+    .cont-tarjeta {
+        min-height: 330px;
+    }
+
+    .cont-titulo-tarjeta {
+        padding: 22px 18px 76px;
+    }
+
+    .btn-comprar {
+        left: 18px;
+        right: 18px;
+        bottom: 18px;
+    }
 }

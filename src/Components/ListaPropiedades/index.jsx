@@ -3,12 +3,14 @@ import Card from '../Card';
 import NoHayProps from '../NoHayProps';
 import './styles.css';
 
-function ListaPropiedades({ allProps, vista }) { console.log("props: ", allProps)
+function ListaPropiedades({ allProps, vista, id }) {
+    const hayPropiedades = Array.isArray(allProps) && allProps.length > 0;
+
     return (
-        <div className='contGralListaP'>
+        <div className='contGralListaP' id={id}>
             <div className='contListaP'>
                 {
-                    allProps ? (
+                    hayPropiedades ? (
                         allProps.map(p => (
                             <div 
                                 className='cont-card-listaProps' 

@@ -1,145 +1,139 @@
-/* Contenedor principal */
 .cont-muestra-tarjetas {
-    position: relative;
     width: 100%;
-    height: 700px;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    flex-direction: column;
-    background-color: rgb(211, 214, 219);
-    /* background-image: url('../../Images/Textura-04.jpg');
-    background-size: cover;
-    background-repeat: no-repeat; */
+    position: relative;
+    overflow: hidden;
+    padding: 92px 6vw 104px;
+    box-sizing: border-box;
+    background:
+        linear-gradient(180deg, #f7f7f5 0%, #ffffff 42%, #f7f7f5 100%);
 }
 
-/* Título */
+.cont-muestra-tarjetas::before {
+    content: '';
+    position: absolute;
+    left: 6vw;
+    right: 6vw;
+    top: 0;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(22, 26, 31, 0), rgba(22, 26, 31, 0.16), rgba(22, 26, 31, 0));
+}
+
+.muestra-tarjetas-header {
+    width: min(1180px, 100%);
+    margin: 0 auto 34px;
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(300px, 0.72fr);
+    column-gap: 56px;
+    row-gap: 16px;
+    align-items: end;
+}
+
+.muestra-tarjetas-eyebrow {
+    grid-column: 1 / -1;
+    width: fit-content;
+    padding: 7px 10px;
+    border-radius: 999px;
+    background: rgba(22, 26, 31, 0.07);
+    color: #30363d;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
 .titulo-tarjetas {
-    position: relative;
-    width: 50%;
-    top: -47px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 30px;
-    padding: 10px 40px;
-    color: #fff;
-    font-weight: 500;
-    border-radius: 10px;
-    background-color: black;
+    margin: 0;
+    color: #161a1f;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.03;
+    font-weight: 600;
+    text-wrap: balance;
 }
 
-/* Contenedor de tarjetas */
+.muestra-tarjetas-texto {
+    margin: 0;
+    color: #68707a;
+    font-size: 1rem;
+    line-height: 1.62;
+}
+
 .cont-tarjetas {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: row;
+    width: min(1180px, 100%);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
 }
 
-/* Ocultamos las tarjetas por defecto */
-.cont-tarjeta-1, 
-.cont-tarjeta-2, 
-.cont-tarjeta-3, 
-.cont-tarjeta-4 {
+.cont-tarjeta-categoria {
+    min-width: 0;
     opacity: 0;
+    transform: translateY(28px);
 }
 
-/* Animaciones solo cuando la clase 'animada' está presente */
-.cont-tarjeta-1.animada {
-    animation: slideInFromLeft 1s forwards;
+.cont-tarjeta-categoria.animada {
+    animation: categoriaReveal 0.7s ease forwards;
 }
 
-.cont-tarjeta-2.animada {
-    animation: slideInFromTop 1s forwards;
+.cont-tarjeta-categoria:nth-child(2).animada {
+    animation-delay: 0.08s;
 }
 
-.cont-tarjeta-3.animada {
-    animation: slideInFromBottom 1s forwards;
+.cont-tarjeta-categoria:nth-child(3).animada {
+    animation-delay: 0.16s;
 }
 
-.cont-tarjeta-4.animada {
-    animation: slideInFromRight 1s forwards;
+.cont-tarjeta-categoria:nth-child(4).animada {
+    animation-delay: 0.24s;
 }
-/* Definición de animaciones */
-@keyframes slideInFromLeft {
-    from {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
+
+@keyframes categoriaReveal {
     to {
-        transform: translateX(0);
         opacity: 1;
-    }
-}
-@keyframes slideInFromTop {
-    from {
-        transform: translateY(-100%);
-        opacity: 0;
-    }
-    to {
         transform: translateY(0);
-        opacity: 1;
-    }
-}
-@keyframes slideInFromBottom {
-    from {
-        transform: translateY(100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-@keyframes slideInFromRight {
-    from {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
     }
 }
 
-/* responsive */
-@media (max-width: 1200px) {
-    .titulo-tarjetas {
-        top: -37px;
-    }
+@media (max-width: 1100px) {
     .cont-tarjetas {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: center;
-        overflow-x: auto; /* Permite el desplazamiento horizontal */
-        scroll-snap-type: x mandatory; /* Hace que las tarjetas encajen al deslizar */
-        gap: 10px; /* Espaciado entre tarjetas */
-    }
-
-    .cont-tarjeta-1, 
-    .cont-tarjeta-2, 
-    .cont-tarjeta-3, 
-    .cont-tarjeta-4 {
-        flex: 0 0 20%; /* Cada tarjeta ocupa el 80% del ancho */
-        scroll-snap-align: center; /* Hace que cada tarjeta se alinee al centro */
-        opacity: 1; /* Para que las tarjetas sean visibles sin necesidad de animaciones */
-    }
-
-    /* Ocultamos la barra de scroll en algunos navegadores */
-    .cont-tarjetas::-webkit-scrollbar {
-        display: none;
-    }
-
-    .titulo-tarjetas {
-        font-size: 24px;
-        width: 80%;
-        text-align: center;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
+@media (max-width: 760px) {
+    .cont-muestra-tarjetas {
+        padding: 68px 18px 78px;
+    }
+
+    .muestra-tarjetas-header {
+        grid-template-columns: 1fr;
+        margin-bottom: 24px;
+    }
+
+    .muestra-tarjetas-texto {
+        max-width: 620px;
+    }
+
+    .cont-tarjetas {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .cont-tarjeta-categoria {
+        opacity: 1;
+        transform: none;
+    }
+
+    .cont-tarjeta-categoria.animada {
+        animation: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cont-tarjeta-categoria,
+    .cont-tarjeta-categoria.animada {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+}

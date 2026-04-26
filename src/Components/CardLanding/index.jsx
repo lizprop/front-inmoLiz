@@ -1,23 +1,26 @@
-import React from 'react'
-import './styles.css'
-import { NavLink } from 'react-router-dom'
+import React from 'react';
+import './styles.css';
+import { NavLink } from 'react-router-dom';
 
-function CardLanding({imagen, titulo, url}) {
+function CardLanding({ imagen, titulo, texto, url, etiqueta }) {
   return (
-    <div className='cont-tarjeta'>
-        <div className='cont-img-tarjeta'>
-            <img className='img-tarjeta' src={imagen} alt='Imagen de la propiedad'/>
-        </div>
-        <div className='cont-titulo-tarjeta'>
-            <h2 className='titulo-tarjeta' data-translate>{titulo}</h2>
-        </div>
-        <div className='cont-btn'>
-            <NavLink to={`/${url}`} style={{textDecoration: 'none'}}>
-              <button className='btn-comprar' data-translate>Ingresar</button>
-            </NavLink>
-        </div>
-    </div>
+    <NavLink to={`/${url}`} className='cont-tarjeta' aria-label={titulo}>
+      <div className='cont-img-tarjeta'>
+        <img className='img-tarjeta' src={imagen} alt={titulo} />
+      </div>
+
+      <div className='cont-titulo-tarjeta'>
+        <span className='categoria-tarjeta' data-translate>{etiqueta}</span>
+        <h3 className='titulo-tarjeta' data-translate>{titulo}</h3>
+        <p className='texto-tarjeta' data-translate>{texto}</p>
+      </div>
+
+      <span className='btn-comprar' data-translate>
+        Ingresar
+        <span className='btn-comprar-icon' aria-hidden='true'>→</span>
+      </span>
+    </NavLink>
   )
 }
 
-export default CardLanding
+export default CardLanding;

@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProperty, resetProperty } from '../../Redux/Actions';
 import { InmobiliariaContext } from '../../Context';
-import { capitalizar, formatMoney } from '../../Helps';
+import { formatMoney } from '../../Helps';
 import Carrusel from '../../Components/Carrusel';
 import MapProp from '../../Components/MapaProp';
 import FormularioContacto from '../../Components/FormularioContacto';
@@ -30,13 +30,6 @@ function DetalleProp() {
     const alquiler = propiedad?.operacion?.find(op => op.operacion === "Alquiler");
 
     const [copiado, setCopiado] = useState(false);
-    const [soportaShare, setSoportaShare] = useState(false);
-
-    //Verificar soporte de la API al montar
-    useEffect(() => {
-        setSoportaShare(!!navigator.share);
-    }, []);
-
     const handleClickAtras = () => navigate(-1);
 
     //Función para compartir la propiedad

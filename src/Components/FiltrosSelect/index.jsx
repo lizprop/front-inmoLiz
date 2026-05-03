@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import './style.css';
 
 function FiltrosSelect({
+    muestraVntaAlq = true,
     setOperacion,
     setTipoPropiedad,
     setAmbientes,
@@ -9,6 +10,7 @@ function FiltrosSelect({
     setPrecioMax,
     setCurrentPage,
 }) {
+    const mostrarOperacion = muestraVntaAlq === true || muestraVntaAlq === 'true';
     const operacion = ['Todas', 'Venta', 'Alquiler', 'Emprendimiento'];
     const tipoProp = [
         'Todas', 'Departamento', 'Casa', 'PH', 'Local',
@@ -64,10 +66,12 @@ function FiltrosSelect({
     };
 
     const limpiarFiltros = () => {
-        setOperacion('');
+        if (mostrarOperacion) {
+            setOperacion('');
+            setLocalOperacion('');
+        }
         setTipoPropiedad('Todas');
         setAmbientes();
-        setLocalOperacion('');
         setLocalTipoPropiedad('');
         setLocalAmbientes('');
         setLocalMin('');
@@ -82,19 +86,25 @@ function FiltrosSelect({
             <div className="subCont-filtrosSelect">
                 <div className="cont-filtro-tipoOperacion">
                     <p className='focoCompra' data-translate>Búsqueda de propiedades</p>
-                    <p className="focoCompra-sub" data-translate>Filtrá por operación, tipo, ambientes y rango de precio.</p>
+                    <p className="focoCompra-sub" data-translate>
+                        {mostrarOperacion
+                            ? 'Filtrá por operación, tipo, ambientes y rango de precio.'
+                            : 'Filtrá por tipo, ambientes y rango de precio.'}
+                    </p>
                 </div>
 
-                <div className="cont-selects" aria-label="Filtros de propiedades">
-                    <label className="filtro-field">
-                        <span data-translate>Operación</span>
-                        <select onChange={onChangeTipoOp} className="select-tipoProp" value={localOperacion}>
-                            <option value="" disabled>Tipo de operación</option>
-                            {operacion.map(op => (
-                                <option key={op} value={op}>{op}</option>
-                            ))}
-                        </select>
-                    </label>
+                <div className={`cont-selects ${!mostrarOperacion ? 'cont-selects-sin-operacion' : ''}`} aria-label="Filtros de propiedades">
+                    {mostrarOperacion && (
+                        <label className="filtro-field">
+                            <span data-translate>Operación</span>
+                            <select onChange={onChangeTipoOp} className="select-tipoProp" value={localOperacion}>
+                                <option value="" disabled>Tipo de operación</option>
+                                {operacion.map(op => (
+                                    <option key={op} value={op}>{op}</option>
+                                ))}
+                            </select>
+                        </label>
+                    )}
 
                     <label className="filtro-field">
                         <span data-translate>Propiedad</span>

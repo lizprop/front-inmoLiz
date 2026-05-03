@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProps, getPropsDestacadas, getPropsMap } from '../../Redux/Actions';
 import LandingA from '../../Components/LandingA';
@@ -33,6 +33,12 @@ function Home() {
     const limit = propiedadesPorPagina;
     const offset = (currentPage - 1) * limit;
     const dispatch = useDispatch();
+    const listaPropsRef = useRef(null);
+    const paginaInicialRef = useRef(currentPage);
+
+    const handlePageChange = (page) => {
+        setCurrentPage(page);
+    };
 
     //efecto para iniciar pag desde scroll 0
     useEffect(() => {
@@ -47,10 +53,17 @@ function Home() {
         dispatch(getPropsMap(limit, offset, operacion, tipoPropiedad, precioMin, precioMax, ambientes));
     }, [dispatch, limit, offset, operacion, tipoPropiedad, ambientes, precioMin, precioMax, destacadas]);
 
-    //vuelve el scroll hacia arriba
+    // Mantiene la vista en la lista al cambiar de pagina.
     useEffect(() => {
-        window.scrollTo(0, 600);
-    }, [currentPage]);
+        if (paginaInicialRef.current === currentPage) return;
+
+        requestAnimationFrame(() => {
+            listaPropsRef.current?.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        });
+    }, [currentPage, allProps]);
 
     return (
         loading ? (
@@ -88,8 +101,9 @@ function Home() {
                         <ListaPropsDestacadas allPropsDestacadas={allPropsDestacadas.propsDestacadas} vista={"ambas"} />
                     </div>
                 </div>
+
                 {/* Lista props */}
-                <div className='cont-titulo-filtros-listaProps'>
+                <div className='cont-titulo-filtros-listaProps' ref={listaPropsRef}>
                     <div className="cont-titulos">
                         <div className="linea-destacadas "></div>
                         <h2 className="titulo-props-destacadas" data-translate>Nuestras Propiedades</h2>
@@ -104,7 +118,7 @@ function Home() {
                                     <Paginacion
                                         allProps={allProps}
                                         currentPage={currentPage}
-                                        onPageChange={setCurrentPage}
+                                        onPageChange={handlePageChange}
                                         totalPropiedades={totalPropiedades}
                                         propiedadesPorPagina={propiedadesPorPagina}
                                     />
@@ -113,6 +127,7 @@ function Home() {
                         </div>
                     </div>
                 </div>
+
                 {/* Mapa */}
                 <div className='cont-titulo-filtros-listaProps'>
                     <h1 className='titulo-busqueda' data-translate>Nuestras propiedades en el mapa</h1>
@@ -120,7 +135,6 @@ function Home() {
                         <MapaPropiedades propiedades={allPropsMap.propiedades} />
                     </div>
                 </div>
-                {/* Lista props Destacadas */}
                 
                 <LandingC />
                 <LandingMuestraTarjetas />

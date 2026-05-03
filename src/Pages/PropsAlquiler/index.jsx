@@ -51,7 +51,7 @@ function PropsAlquiler() {
                         <div className='cont-filtros-props'>
                             <div className='cont-filtros-home'>
                                 <FiltrosSelect
-                                    muestraVntaAlq='true'
+                                    muestraVntaAlq={false}
                                     precioMin={precioMin}
                                     precioMax={precioMax}
                                     setPrecioMin={setPrecioMin}

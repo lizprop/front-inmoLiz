@@ -2,7 +2,11 @@ import React from 'react';
 import './estilos.css';
 
 function Paginacion({ currentPage, onPageChange, totalPropiedades, propiedadesPorPagina }) {
-    const totalPaginas = Math.ceil(totalPropiedades / propiedadesPorPagina);
+    const totalItems = Number(totalPropiedades) || 0;
+    const itemsPorPagina = Number(propiedadesPorPagina) || 1;
+    const totalPaginas = Math.ceil(totalItems / itemsPorPagina);
+
+    if (totalPaginas <= 1) return null;
 
     const handlePrevPage = () => {
         if (currentPage > 1) {
@@ -17,7 +21,9 @@ function Paginacion({ currentPage, onPageChange, totalPropiedades, propiedadesPo
     };
 
     const handlePageClick = (num) => {
-        onPageChange(num);
+        if (num !== currentPage) {
+            onPageChange(num);
+        }
     };
 
     const getPaginas = () => {
@@ -80,7 +86,7 @@ function Paginacion({ currentPage, onPageChange, totalPropiedades, propiedadesPo
             <button
                 className="paginacion-button"
                 onClick={handleNextPage}
-                disabled={currentPage === totalPaginas}
+                disabled={currentPage >= totalPaginas}
             >
                 Siguiente
             </button>

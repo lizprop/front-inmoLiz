@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { formatMoney } from '../../Helps';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import Favorito from '../Favoritos';
@@ -18,13 +18,17 @@ function Card({
 
     //estado para el hover
     const [showDetail, setShowDetail] = useState(false);
+    const location = useLocation();
     const venta = operacion.find(op => op.operacion === "Venta");
     const alquiler = operacion.find(op => op.operacion === "Alquiler");
+    const rutaOrigen = location.pathname.startsWith('/detalle')
+        ? location.state?.from || '/'
+        : `${location.pathname}${location.search}`;
 
     return (
         <div className='contCardHome'>
             {/* img + animacion + abre detalle */}
-            <NavLink to={`/detalle/${id}`} className='navLink-car'>
+            <NavLink to={`/detalle/${id}`} state={{ from: rutaOrigen }} className='navLink-car'>
                 <div
                     onMouseEnter={() => setShowDetail(true)}
                     onMouseLeave={() => setShowDetail(false)}

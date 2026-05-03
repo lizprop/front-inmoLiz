@@ -331,21 +331,6 @@
     padding: 10px;
 }
 
-.p-viñeta {
-    margin: 0;
-}
-
-.p-viñeta {
-    padding-left: 1.5em;
-    text-indent: -1.7em;
-    margin: 0;
-}
-
-.p-sinViñeta {
-    color: rgb(252, 251, 251);
-    margin: 0;
-}
-
 /* para formulario */
 .formulario-detalle {
     width: 35%;
@@ -419,6 +404,181 @@
     font-size: 0.9rem;
     margin-left: 8px;
     transition: opacity 0.3s ease-in-out;
+}
+
+.contGralDetalle {
+    background-color: #f4f2ef;
+}
+
+.cont-detail {
+    width: min(1180px, 88vw);
+    margin-bottom: 40px;
+}
+
+.info-1,
+.cont-imgs-info,
+.cont-descrip,
+.cont-texto-descrip-detalle {
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #171717;
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.14);
+}
+
+.info-1,
+.cont-imgs-info,
+.cont-descrip,
+.cont-texto-descrip-detalle {
+    margin-bottom: 28px;
+}
+
+.cont-btn_Y_tituilo {
+    min-height: 74px;
+    height: auto;
+    justify-content: start;
+    gap: 14px;
+    padding: 14px 18px;
+    box-sizing: border-box;
+}
+
+.btn-volver,
+.btn-share {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.08);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-volver {
+    min-width: 96px;
+    height: 42px;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.btn-share {
+    width: 42px;
+    height: 42px;
+}
+
+.btn-volver:hover,
+.btn-share:hover {
+    border-color: rgba(255, 255, 255, 0.55);
+    background-color: rgba(255, 255, 255, 0.14);
+}
+
+.cont-titulo-detalle {
+    flex: 1;
+    min-width: 0;
+    height: auto;
+}
+
+.detalle-titulo-prop {
+    margin: 0;
+    font-size: clamp(24px, 3vw, 36px);
+    line-height: 1.12;
+    font-weight: 500;
+}
+
+.cont-btns-direccion {
+    min-height: 58px;
+    height: auto;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 0 18px 16px;
+    box-sizing: border-box;
+}
+
+.cont-titulo-icono-direcc {
+    flex: 1;
+    min-width: 0;
+}
+
+.detalle-icono-direccion {
+    flex: 0 0 auto;
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.detalle-titulo-direccion {
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.35;
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.cont-precio-detallee {
+    flex: 0 0 auto;
+    width: auto;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.detalle-precio-chip {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 8px;
+    min-height: 38px;
+    padding: 8px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.08);
+    color: white;
+    box-sizing: border-box;
+}
+
+.detalle-precio-chip span {
+    color: rgba(255, 255, 255, 0.68);
+    font-size: 13px;
+}
+
+.detalle-precio-chip strong {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.titulo-descrip-prop {
+    font-size: 24px;
+    font-weight: 500;
+    padding: 18px 0 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.cont-p-col-1,
+.cont-p-col-2,
+.cont-p-col-3 {
+    border-right-color: rgba(255, 255, 255, 0.16);
+    padding: 14px 10px;
+    box-sizing: border-box;
+}
+
+.p-col-key,
+.p-col-value {
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.p-col-key {
+    color: rgba(255, 255, 255, 0.64);
+}
+
+.subCont-texto-descrip-detalle {
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 18px;
+    line-height: 1.75;
+    white-space: pre-line;
+    padding: 18px 0 26px;
+    margin: 0;
+}
+
+.cont-map-detalle {
+    overflow: hidden;
+    border-radius: 8px;
 }
 
 
@@ -700,5 +860,59 @@
     }
     .cont-titulo-detalle {
         width: 99%;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .info-1 {
+        height: auto;
+    }
+
+    .cont-btn_Y_tituilo {
+        width: 100%;
+    }
+
+    .cont-btns-direccion {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cont-titulo-icono-direcc,
+    .cont-precio-detallee {
+        width: 100%;
+    }
+
+    .cont-precio-detallee {
+        justify-content: flex-start;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .cont-detail {
+        width: 96vw;
+    }
+
+    .cont-btn_Y_tituilo {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .cont-btn-share {
+        margin-left: auto;
+    }
+
+    .detalle-titulo-prop {
+        width: 100%;
+        font-size: 24px;
+    }
+
+    .detalle-precio-chip {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .subCont-texto-descrip-detalle {
+        font-size: 16px;
+        line-height: 1.65;
     }
 }

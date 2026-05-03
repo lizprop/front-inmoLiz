@@ -80,6 +80,7 @@
 }
 
 .cont-listaProps-home {
+    width: 100%;
     max-width: 1300px;
     min-height: 709px;
     display: flex;

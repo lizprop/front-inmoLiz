@@ -41,14 +41,18 @@ function FiltrosSelect({
     };
 
     const onChangeTipoOp = (e) => {
-        setLocalOperacion(e.target.value);
-        setOperacion(e.target.value);
+        const value = e.target.value;
+
+        setLocalOperacion(value);
+        setOperacion(value === 'Todas' ? '' : value);
         resetPage();
     };
 
     const onChangeTipoProp = (e) => {
-        setLocalTipoPropiedad(e.target.value);
-        setTipoPropiedad(e.target.value);
+        const value = e.target.value;
+
+        setLocalTipoPropiedad(value);
+        setTipoPropiedad(value);
         resetPage();
     };
 

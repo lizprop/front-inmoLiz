@@ -5,6 +5,70 @@ import {  GET_PROPERTY,  GET_PROPS, IS_OPEN_MODAL_PICTURE, LOADING, RESET_PROPS,
 } from "./actionsType";
 import { actual } from "../../url";
 
+const isActiveFilter = (value) => value !== undefined && value !== null && value !== '' && value !== 'Todas';
+
+const appendQueryParam = (params, key, value) => {
+    if (isActiveFilter(value)) params.append(key, value);
+};
+
+const buildQueryParams = ({ limit, offset, operacion, tipoPropiedad, precioMin, precioMax, ambientes, destacadas }) => {
+    const params = new URLSearchParams();
+
+    params.append('limit', limit);
+    params.append('offset', offset);
+    appendQueryParam(params, 'operacion', operacion);
+    appendQueryParam(params, 'tipo', tipoPropiedad);
+    appendQueryParam(params, 'ambientes', ambientes);
+    appendQueryParam(params, 'precioMin', precioMin);
+    appendQueryParam(params, 'precioMax', precioMax);
+    appendQueryParam(params, 'destacadas', destacadas);
+
+    return `?${params.toString()}`;
+};
+
+const getPrecioParaFiltro = (propiedad, operacion) => {
+    const operaciones = Array.isArray(propiedad.operacion) ? propiedad.operacion : [];
+    const operacionFiltrada = isActiveFilter(operacion)
+        ? operaciones.find(op => op.operacion === operacion)
+        : operaciones[0];
+
+    return Number(operacionFiltrada?.precios?.[0]?.precio);
+};
+
+const filtrarPropiedadesLocalmente = (propiedades, { operacion, tipoPropiedad, precioMin, precioMax, ambientes }) => {
+    return propiedades.filter(propiedad => {
+        const operaciones = Array.isArray(propiedad.operacion) ? propiedad.operacion : [];
+        const precio = getPrecioParaFiltro(propiedad, operacion);
+
+        if (isActiveFilter(operacion) && !operaciones.some(op => op.operacion === operacion)) return false;
+        if (isActiveFilter(tipoPropiedad) && propiedad.tipo?.nombre !== tipoPropiedad) return false;
+        if (isActiveFilter(ambientes)) {
+            const cantidadAmbientes = Number(propiedad.ambientes);
+            if (ambientes === 'mas') {
+                if (cantidadAmbientes < 5) return false;
+            } else if (cantidadAmbientes !== Number(ambientes)) {
+                return false;
+            }
+        }
+        if (isActiveFilter(precioMin) && (!Number.isFinite(precio) || precio < Number(precioMin))) return false;
+        if (isActiveFilter(precioMax) && (!Number.isFinite(precio) || precio > Number(precioMax))) return false;
+
+        return true;
+    });
+};
+
+const getFallbackProps = async (filtros) => {
+    const queryParams = buildQueryParams({
+        ...filtros,
+        limit: 1000,
+        offset: 0,
+        operacion: '',
+    });
+    const resp = await axios.get(`${actual}/propiedades/propiedades${queryParams}`);
+
+    return filtrarPropiedadesLocalmente(resp.data.propiedades || [], filtros);
+};
+
 
 //--actions para props-------------------------------------------------------------
 export const getPropsDestacadas = () => {
@@ -24,21 +88,42 @@ export const getProps = (limit, offset, operacion, tipoPropiedad, precioMin, pre
         dispatch({type: LOADING});
 
         try {
-            //construimos los parametros dinamicamente
-            let queryParams = `?limit=${limit}&offset=${offset}`;
+            const filtros = { limit, offset, operacion, tipoPropiedad, precioMin, precioMax, ambientes, destacadas };
 
-            if(operacion) queryParams += `&operacion=${operacion}`;
-            if(tipoPropiedad) queryParams += `&tipo=${tipoPropiedad}`;
-            if(ambientes) queryParams += `&ambientes=${ambientes}`;
-            if(precioMin) queryParams += `&precioMin=${precioMin}`;
-            if(precioMax) queryParams += `&precioMax=${precioMax}`;
-            if(destacadas) queryParams += `&destacadas=${destacadas}`;
+            if (isActiveFilter(operacion) && isActiveFilter(tipoPropiedad)) {
+                const propiedadesFiltradas = await getFallbackProps(filtros);
+                dispatch({
+                    type: GET_PROPS,
+                    payload: {
+                        total: propiedadesFiltradas.length,
+                        propiedades: propiedadesFiltradas.slice(offset, offset + limit),
+                    },
+                });
+                return;
+            }
+
+            const queryParams = buildQueryParams(filtros);
             //if(internacional) queryParams += `&internacional=${internacional}`;
 
             const resp = await axios.get(`${actual}/propiedades/propiedades${queryParams}`); 
             dispatch({ type: GET_PROPS, payload: resp.data });
         } catch (error) {
             console.log(error);
+
+            if (isActiveFilter(operacion) && isActiveFilter(tipoPropiedad)) {
+                try {
+                    const propiedadesFiltradas = await getFallbackProps({ operacion, tipoPropiedad, precioMin, precioMax, ambientes, destacadas });
+                    dispatch({
+                        type: GET_PROPS,
+                        payload: {
+                            total: propiedadesFiltradas.length,
+                            propiedades: propiedadesFiltradas.slice(offset, offset + limit),
+                        },
+                    });
+                } catch (fallbackError) {
+                    console.log(fallbackError);
+                }
+            }
         }
     }
 }
@@ -47,21 +132,30 @@ export const getPropsMap = (limit, offset, operacion, tipoPropiedad, precioMin, 
     return async function (dispatch) {
         
         try {
-            //construimos los parametros dinamicamente
-            let queryParams = `?limit=${limit}&offset=${offset}`;
+            const filtros = { limit, offset, operacion, tipoPropiedad, precioMin, precioMax, ambientes, destacadas };
 
-            if(operacion) queryParams += `&operacion=${operacion}`;
-            if(tipoPropiedad) queryParams += `&tipo=${tipoPropiedad}`;
-            if(ambientes) queryParams += `&ambientes=${ambientes}`;
-            if(precioMin) queryParams += `&precioMin=${precioMin}`;
-            if(precioMax) queryParams += `&precioMax=${precioMax}`;
-            if(destacadas) queryParams += `&destacadas=${destacadas}`;
+            if (isActiveFilter(operacion) && isActiveFilter(tipoPropiedad)) {
+                const propiedadesFiltradas = await getFallbackProps(filtros);
+                dispatch({type: GET_PROPS_MAP, payload: { propiedades: propiedadesFiltradas }});
+                return;
+            }
+
+            const queryParams = buildQueryParams(filtros);
             //if(internacional) queryParams += `&internacional=${internacional}`;
 
             const resp = await axios.get(`${actual}/propiedades/propsMap${queryParams}`); 
             dispatch({type: GET_PROPS_MAP, payload: resp.data});
         } catch (error) {
             console.log(error);
+
+            if (isActiveFilter(operacion) && isActiveFilter(tipoPropiedad)) {
+                try {
+                    const propiedadesFiltradas = await getFallbackProps({ operacion, tipoPropiedad, precioMin, precioMax, ambientes, destacadas });
+                    dispatch({type: GET_PROPS_MAP, payload: { propiedades: propiedadesFiltradas }});
+                } catch (fallbackError) {
+                    console.log(fallbackError);
+                }
+            }
         }
     }
 }

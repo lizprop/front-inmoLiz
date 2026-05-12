@@ -2,7 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import InmobiliariaProvider  from './Context';
 import Home from './Pages/Home';
-import Navbar from './Components/Navbar';
+//import Navbar from './Components/Navbar';
 import PropsVenta from './Pages/PropsVenta';
 import PropsAlquiler from './Pages/PropsAlquiler';
 import Emprendimientos from './Pages/Emprendimientos';

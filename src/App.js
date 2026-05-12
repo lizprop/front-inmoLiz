@@ -50,7 +50,7 @@ function App() {
           </main>
 
           <footer>
-            <Footbar />
+            {/* <Footbar /> */}
           </footer>
 
         </div>

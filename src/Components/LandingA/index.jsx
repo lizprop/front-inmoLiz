@@ -9,9 +9,9 @@ function LandigA() {
             <div className='landing-overlay'>
                 <div className='landing-content' data-translate>
                     <div className='landing-copy'>
-                        <h1 className='landing-eyebrow' data-translate>Ortiz LizMar inmobiliaria</h1>
+                        <h1 className='landing-eyebrow' data-translate>{/* Ortiz LizMar inmobiliaria */}</h1>
                         <h1 className='tituloLanding' data-translate>
-                            NOS CARACTERIZAMOS POR TRATAR MAL A NUESTROS EMPLEADOS Y MASCOTA !!
+                            {/* NOS CARACTERIZAMOS POR TRATAR MAL A NUESTROS EMPLEADOS Y MASCOTA !! */}
                         </h1>
                     </div>
                 </div>

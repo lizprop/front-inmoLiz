@@ -103,7 +103,7 @@ function Footbar() {
                     título de propiedad de cada inmueble. Todas las fotos,
                     imagenes y videos son meramente ilustrativos y no contractuales.
                     Los precios enunciados son meramente orientativos y no contractuales..
-                    © 2025 Ortiz Lizmar Propiedades. DESARROLLO WEB: Marcos Forastiere
+                    © 2025 Ortiz Lizmar Propiedades. {/* DESARROLLO WEB: Marcos Forastiere */}
                 </p>
             </div>
         </footer>

@@ -11,7 +11,7 @@ import NosotrosPage from './Pages/Nosotros';
 import FavoritosPage from './Pages/Favoritos';
 import WhatsAppButton from './Components/BotonWhastApp';
 import Contactanos from './Pages/Contactanos';
-import Footbar from './Components/Footbar';
+//import Footbar from './Components/Footbar';
 import PropsInternacionales from './Pages/PropsInternacionales';
 //import DetalleEmp from './Pages/DetalleEmprendimiento';
 import { LoadScript } from '@react-google-maps/api';

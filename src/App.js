@@ -27,7 +27,7 @@ function App() {
       <InmobiliariaProvider>
         <div className="App">
           <header className="App-header">
-            <Navbar />
+            {/* <Navbar /> */}
           </header>
 
           <main className='cont-main'>

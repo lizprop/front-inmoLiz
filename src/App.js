@@ -9,7 +9,7 @@ import Emprendimientos from './Pages/Emprendimientos';
 import NosotrosPage from './Pages/Nosotros';
 //import DetalleProp from './Pages/DetallePropiedad';
 import FavoritosPage from './Pages/Favoritos';
-import WhatsAppButton from './Components/BotonWhastApp';
+//import WhatsAppButton from './Components/BotonWhastApp';
 import Contactanos from './Pages/Contactanos';
 //import Footbar from './Components/Footbar';
 import PropsInternacionales from './Pages/PropsInternacionales';
@@ -46,7 +46,7 @@ function App() {
               <Route path='*' element={<Home />} />
             </Routes>
             {/* btn whatsapp */}
-            <WhatsAppButton />
+            {/* <WhatsAppButton /> */}
           </main>
 
           <footer>
